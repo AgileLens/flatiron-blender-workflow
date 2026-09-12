@@ -1,6 +1,6 @@
 # Token and model receipt
 
-The successful live Blender construction run used GPT-6 Astra, medium reasoning, across **9 model requests in one user turn**. It reused the initial procedural script produced during the earlier attempts.
+The successful live Blender construction run used GPT-6 Astra, medium reasoning, across **9 model requests in one user turn**. It reused the initial procedural script produced during the earlier attempts. The successful session ran 2026-09-11 05:48:49.788–05:52:01.055 UTC, about 3 minutes 11 seconds; this excludes all prior setup.
 
 | Scope | Requests | Uncached input | Cached input | Output | Reasoning, included in output |
 |---|---:|---:|---:|---:|---:|

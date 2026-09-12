@@ -39,3 +39,11 @@ Code: MIT. Generated model: CC BY-SA 4.0. Photo-derived presentation media: CC B
 A fresh Blender GUI replay completed and matched every accepted mesh vertex, polygon and material assignment across all 12 meshes. Workbench preview pixels differ with display defaults; geometric equality is not pixel-identical rendering. The lit preview is a later presentation candidate, not the original accepted Workbench image.
 
 The distributed scene has local render/image paths sanitized; the private archived original is retained separately. Tabletop USDZ import was checked in Blender at approximately 0.403 × 0.850 × 1.014 metres including roof and sidewalk. Native headset appearance remains unverified.
+
+## Showcase media
+
+[Open the native Quick Look page](https://agilelens.github.io/flatiron-blender-workflow/) on Apple Vision Pro, or download `docs/flatiron_tabletop.usdz` to Files. The page image is a Cycles render; native lighting/materials can differ.
+
+For the video recipe, run `scripts/setup_showcase.py` in Blender after the replay, then `scripts/export_and_orbit.py` and `scripts/render_comparisons.py`. Each assumes a fresh or deliberately selected candidate scene. Outputs stay in `outputs/`. Run `python scripts/download_references.py` for the credited photos, then `python scripts/build_showcase_video.py --photos outputs/references`. The video composer requires FFmpeg with libfreetype/drawtext and libx264; on macOS use `ffmpeg-full` and pass its full path with `--ffmpeg` if needed. A platform font can be set with `--font`.
+
+The video is a reconstructed process presentation, not an original recording. The 12 fps rendered orbit is interpolated to 24 fps for playback. No new geometric frames are inferred by a language model.
