@@ -2,35 +2,49 @@ import SwiftUI
 import RealityKit
 import CryptoKit
 
-private enum Receipt {
-    static let documents = URL.documentsDirectory
+enum Receipt {
+    static var build: String { Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "unknown" }
     static func write(_ stage: String, _ values: [String: Any] = [:]) {
         var result = values
         result["stage"] = stage
         result["timestamp"] = ISO8601DateFormatter().string(from: Date())
-        result["bundle"] = "com.agilelens.FlatironTabletop"
-        result["build"] = "1"
+        result["bundle"] = Bundle.main.bundleIdentifier ?? "unknown"
+        result["build"] = build
         if let data = try? JSONSerialization.data(withJSONObject: result, options: [.prettyPrinted, .sortedKeys]) {
-            try? data.write(to: documents.appendingPathComponent("flatiron-\(stage).json"), options: .atomic)
+            // Build-specific names preserve the reviewed build 1 evidence.
+            try? data.write(to: URL.documentsDirectory.appendingPathComponent("flatiron-build\(build)-\(stage).json"), options: .atomic)
         }
     }
 }
 
 @main
 struct FlatironApp: App {
+    @State private var experience = FlatironExperience()
+
     init() {
         Receipt.write("launched")
         if let source = Bundle.main.url(forResource: "Flatiron", withExtension: "usdz") {
-            let destination = URL.documentsDirectory.appendingPathComponent("Flatiron Tabletop.usdz")
+            let destination = URL.documentsDirectory.appendingPathComponent("Flatiron Build \(Receipt.build).usdz")
             if !FileManager.default.fileExists(atPath: destination.path) {
                 try? FileManager.default.copyItem(at: source, to: destination)
             }
         }
     }
+
     var body: some SwiftUI.Scene {
-        WindowGroup("Flatiron Tabletop") { FlatironView() }
+        WindowGroup("Flatiron", id: "controls") {
+            FlatironControls(experience: experience)
+        }
+        .windowResizability(.contentSize)
+
+        WindowGroup("Flatiron Tabletop", id: "tabletop") { FlatironView() }
             .windowStyle(.volumetric)
             .defaultSize(width: 1.2, height: 1.2, depth: 1.2, in: .meters)
+
+        ImmersiveSpace(id: "flatiron-walkaround") {
+            FlatironImmersiveView(experience: experience)
+        }
+        .immersionStyle(selection: .constant(.mixed), in: .mixed)
     }
 }
 
@@ -63,13 +77,13 @@ struct FlatironView: View {
                 }
                 count(model)
                 let hash = try SHA256.hash(data: Data(contentsOf: url)).map { String(format: "%02x", $0) }.joined()
-                Receipt.write("loaded", ["meshEntities": meshes, "assetSHA256": hash,
+                Receipt.write("tabletop-loaded", ["meshEntities": meshes, "assetSHA256": hash,
                     "assetBoundsMeters": [bounds.extents.x, bounds.extents.y, bounds.extents.z],
                     "displayScale": scale, "addedToRealityView": true])
                 loaded = true
             } catch {
                 loadError = error.localizedDescription
-                Receipt.write("failed", ["error": error.localizedDescription])
+                Receipt.write("tabletop-failed", ["error": error.localizedDescription])
             }
             if let controls = attachments.entity(for: "controls") {
                 controls.position = [0, -0.52, 0.35]

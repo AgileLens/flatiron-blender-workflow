@@ -1,0 +1,25 @@
+--- a/scripts/flatiron_base.py
++++ b/scripts/flatiron_base.py
+@@ -18,7 +18,10 @@
+ def box(c,dim,ma=0,t=(1,0),n=(0,1)):
+  x,y,z=c;w,d,h=dim
+  v=[(x+t[0]*a+n[0]*b,y+t[1]*a+n[1]*b,z+cc) for a,b,cc in [(-w/2,-d/2,-h/2),(w/2,-d/2,-h/2),(w/2,d/2,-h/2),(-w/2,d/2,-h/2),(-w/2,-d/2,h/2),(w/2,-d/2,h/2),(w/2,d/2,h/2),(-w/2,d/2,h/2)]]
+- poly(v,[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)],ma)
++ f=[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]
++ # A mirrored tangent/outward basis reverses geometric handedness.
++ if t[0]*n[1]-t[1]*n[0]<0:f=[tuple(reversed(face)) for face in f]
++ poly(v,f,ma)
+ # Fillet the triangular footprint; dimensions are artistic assumptions in metres.
+ corners=[Vector((-16,-40)),Vector((16,-40)),Vector((0,40))];path=[];path_normals=[];segments=[]
+ for i,c in enumerate(corners):
+@@ -64,7 +67,9 @@
+   vs=[]
+   for rad in (rr-thick,rr):
+    for k in range(16):vs.append(local(q,t,n,x+rad*math.cos(k*math.tau/16),d,z+rad*math.sin(k*math.tau/16)))
+-  poly(vs,[(k,(k+1)%16,(k+1)%16+16,k+16) for k in range(16)],1)
++  f=[(k,(k+1)%16,(k+1)%16+16,k+16) for k in range(16)]
++  if t[0]*n[1]-t[1]*n[0]<0:f=[tuple(reversed(face)) for face in f]
++  poly(vs,f,1)
+ for idx,(q,t,n,bw) in enumerate(bays):
+  for fl,(lo,hi) in enumerate(zip(levels,levels[1:])):
+   crown=fl==20;base=fl<4;arched=fl in (18,20)

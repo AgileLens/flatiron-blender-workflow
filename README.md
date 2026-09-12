@@ -8,8 +8,8 @@ An editable architectural approximation built with GPT-6 Astra, Codex and live B
 
 ## Things to try
 
-1. Open `assets/flatiron_accepted.blend` in Blender 5.2.1 and orbit the model.
-2. Replay the successful construction in a fresh Blender GUI scene with `scripts/rebuild.py`.
+1. Open `assets/flatiron_corrected.blend` in Blender 5.2.1 and orbit the model; `flatiron_accepted.blend` preserves the original comparison baseline.
+2. Use `scripts/rebuild_corrected.py` in a fresh Blender GUI scene for the winding-corrected candidate; `scripts/rebuild.py` retains the original replay.
 3. Adjust the dimensions and facade parameters in `scripts/flatiron_base.py`, then replay.
 4. Use the prompts below with your own photos and compare rendered views after each revision.
 5. Read the [token receipt](docs/token-receipt.md) before quoting the cost.
@@ -28,7 +28,7 @@ Ask for one visible revision at a time. The render camera and interactive viewpo
 
 ## Scope and limits
 
-**Known issue in the v0.1.0 preview:** M5 wearer review exposed inward-facing normals on many generated facade primitives. Mesh auditing traced this to mirrored local coordinates in the procedural box helper; the USDZ export preserved the source winding. A corrected candidate is being validated. The original scene and release remain the comparison baseline.
+**Known issue in the v0.1.0 preview:** M5 wearer review exposed inward-facing normals on many generated facade primitives. Mesh auditing traced this to mirrored local coordinates in the procedural box helper; the USDZ export preserved the source winding. Corrected USDZ candidates now pass geometry and Apple USD/ARKit checks; headset visual review is pending. The original scene and release remain the comparison baseline.
 
 Rounded triangular footprint, 22 facade intervals, repetitive windows, facade relief and cornice. Nominal 87 m height and 80 × 32 m unrounded footprint were rough prior-knowledge estimates, not photo measurements. Ornamental sculpture is simplified. This is a visual approximation, not a measured digital twin.
 
@@ -54,10 +54,20 @@ The video is a reconstructed process presentation, not an original recording. Th
 
 ## Native viewer and material candidate
 
-[Build the native visionOS viewer](native/Flatiron/README.md). Its signed original was installed on an M5 Vision Pro; its first launch loaded the baseline model into RealityKit successfully. The public template contains no signing credentials.
+[Build the native visionOS viewer](native/Flatiron/README.md). The template now includes the corrected model, mixed-immersion full-scale walkaround, pinch-and-pull movement, scale controls and reset. It compiled successfully and passed five navigation math tests; headset review of this new candidate is pending. The original tabletop build loaded successfully on M5 and led to the normals report. The public template contains no signing credentials.
 
 `material_candidate.py` adds portable 512² stone basecolor, roughness and normal maps without changing geometry. `compare_materials.py` renders actual re-imported baseline and candidate packages under matching light. The candidate passed Apple USD/ARKit validation and retained geometry/bounds. The visible difference is modest warmer stone and deeper glass; bright daylight remains pale. [Download the separate candidate](docs/flatiron_tabletop_materials.usdz). It has not received headset visual acceptance.
 
 ## Photo alignment checks
 
 Our first real-photo alignment reduced held-out guide error from about 197 to 34 pixels, but camera-depth accuracy remains unverified. [Read the experiment limits and next geometry check](docs/photo-alignment.md) before treating a matching render as a calibrated reconstruction.
+
+## Corrected winding candidate
+
+[Corrected Blender scene](assets/flatiron_corrected.blend) · [Corrected baseline USDZ](docs/flatiron_tabletop_normals_fixed.usdz) · [Corrected textured USDZ](docs/flatiron_tabletop_materials_normals_fixed.usdz)
+
+The repair reverses affected face winding and authored normals, with corner-indexed UVs reordered to preserve their vertex association. Positions, dimensions, materials and texture bytes stay unchanged. Double-sided rendering was already enabled; enabling it again would not repair the source geometry.
+
+In a new Blender GUI scene, run `scripts/rebuild_corrected.py`. It applies the two determinant-aware generator fixes before replaying the original live steps and writes to `outputs/rebuild-corrected/`. The original generator and accepted scene remain unchanged. A full geometry replay verified all 12 meshes and 285,670 vertex positions unchanged, with no remaining diagnosed inward components; all 11 exported mesh index arrays match the directly repaired USDZ. The corrected Blender file was saved, reopened and checked with identical geometry fingerprints. A changed generator fails the source patch check rather than silently applying an unverified repair. The patch is also available as `scripts/flatiron_base_winding_fix.patch`.
+
+The published showcase video depicts the earlier baseline. New native normals and immersive interaction need separate headset review.
