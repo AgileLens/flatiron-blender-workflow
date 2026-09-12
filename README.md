@@ -39,3 +39,11 @@ Code: MIT. Generated model: CC BY-SA 4.0. Photo-derived presentation media: CC B
 A fresh Blender GUI replay completed and matched every accepted mesh vertex, polygon and material assignment across all 12 meshes. Workbench preview pixels differ with display defaults; geometric equality is not pixel-identical rendering. The lit preview is a later presentation candidate, not the original accepted Workbench image.
 
 The distributed scene has local render/image paths sanitized; the private archived original is retained separately. Tabletop USDZ import was checked in Blender at approximately 0.403 × 0.850 × 1.014 metres including roof and sidewalk. Native headset appearance remains unverified.
+
+## Portable material candidate
+
+This branch contains an artistic PBR refinement that preserves the accepted vertex and face data. Run `scripts/material_candidate.py` in Blender 5.2.1 to create the candidate under `outputs/`: six 512-pixel seamless limestone/terracotta base-color, roughness and tangent-normal maps, a source `.blend`, and a self-contained tabletop USDZ. Maps are synthesized from seeded mineral noise, not photographic scans or measured material data. Base color uses sRGB; roughness and normals use raw data.
+
+`verify_material_import.py` checks the packaged candidate against the bundled baseline. Both import with 11 meshes, 285,662 vertices, 186,699 faces and dimensions approximately 0.403 × 0.850 × 1.014 m. The ground plane is excluded in both exports. Apple `usdchecker` and `usdchecker --arkit` pass. `compare_materials.py` renders both imported packages with matching daylight, overview and detail cameras in a disposable GUI process.
+
+The stone repeat is 4 m in source scale, or 4/87 m on the tabletop. Face-projected UVs preserve topology but are not a hand-unwrapped asset; subtle seams may be visible on close inspection. Glazing is opaque and reflective because the accepted closed shell contains no interiors. Blender clearcoat settings are not guaranteed to translate to USD Preview Surface. No photo-calibrated reconstruction or headset visual acceptance is claimed.
