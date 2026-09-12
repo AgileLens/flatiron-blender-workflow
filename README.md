@@ -49,3 +49,9 @@ The distributed scene has local render/image paths sanitized; the private archiv
 For the video recipe, run `scripts/setup_showcase.py` in Blender after the replay, then `scripts/export_and_orbit.py` and `scripts/render_comparisons.py`. Each assumes a fresh or deliberately selected candidate scene. Outputs stay in `outputs/`. Run `python scripts/download_references.py` for the credited photos, then `python scripts/build_showcase_video.py --photos outputs/references`. The video composer requires FFmpeg with libfreetype/drawtext and libx264; on macOS use `ffmpeg-full` and pass its full path with `--ffmpeg` if needed. A platform font can be set with `--font`.
 
 The video is a reconstructed process presentation, not an original recording. The 12 fps rendered orbit is interpolated to 24 fps for playback. No new geometric frames are inferred by a language model.
+
+## Native viewer and material candidate
+
+[Build the native visionOS viewer](native/Flatiron/README.md). Its signed original was installed on an M5 Vision Pro; first launch awaits headset unlock. The public template contains no signing credentials.
+
+`material_candidate.py` adds portable 512² stone basecolor, roughness and normal maps without changing geometry. `compare_materials.py` renders actual re-imported baseline and candidate packages under matching light. The candidate passed Apple USD/ARKit validation and retained geometry/bounds. The visible difference is modest warmer stone and deeper glass; bright daylight remains pale. [Download the separate candidate](docs/flatiron_tabletop_materials.usdz). It has not received headset visual acceptance.
