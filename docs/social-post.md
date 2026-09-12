@@ -10,4 +10,4 @@ We are sharing the Blender file and replayable steps so others can try the workf
 
 Repository: https://github.com/AgileLens/flatiron-blender-workflow
 
-Video credits: reference photos by Epicgenius / Wikimedia Commons, CC BY-SA 4.0. Process sequence is a reconstruction, not an original session recording.
+Video credits: reference photos via Wikimedia Commons; individual author/license credits are in the repository. Process sequence is a reconstruction, not an original session recording.
