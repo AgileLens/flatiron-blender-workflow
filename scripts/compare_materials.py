@@ -15,7 +15,7 @@ def run():
    pts=[o.matrix_world @ Vector(v) for o in meshes for v in o.bound_box]
    bounds=[[min(p[k] for p in pts),max(p[k] for p in pts)] for k in range(3)]
    results[label]={'path':str(path),'meshes':len(meshes),'vertices':sum(len(o.data.vertices) for o in meshes),'polygons':sum(len(o.data.polygons) for o in meshes),'bounds':bounds,'dimensions':[b[1]-b[0] for b in bounds],'materials':{m.name:[{'name':n.name,'type':n.type,'image':n.image.filepath if n.type=='TEX_IMAGE' and n.image else None} for n in m.node_tree.nodes] for m in bpy.data.materials if m.use_nodes}}
-   (OUT/'import-verification.json').write_text(json.dumps(results,indent=2))
+   (OUT/'comparison-import-verification.json').write_text(json.dumps(results,indent=2))
    s.render.engine='CYCLES';s.cycles.device='CPU';s.cycles.samples=8;s.cycles.use_denoising=True
    s.render.threads_mode='FIXED';s.render.threads=2
    s.render.resolution_x=540;s.render.resolution_y=720;s.render.resolution_percentage=100
@@ -31,7 +31,7 @@ def run():
    for view,location,target,lens in [('overview',(110/87,220/87,110/87),(0,0,.48),62),('detail',(32/87,115/87,62/87),(0,18/87,56/87),85)]:
     c.location=location;c.data.lens=lens;c.rotation_euler=(Vector(target)-c.location).to_track_quat('-Z','Y').to_euler()
     s.render.filepath=str(OUT/(label+'_'+view+'.png'));print('RENDER_BEGIN',label,view,flush=True);bpy.ops.render.render(write_still=True);print('RENDER_DONE',label,view,flush=True)
-   (OUT/'import-verification.json').write_text(json.dumps(results,indent=2))
+   (OUT/'comparison-import-verification.json').write_text(json.dumps(results,indent=2))
   print('COMPARISON_COMPLETE',flush=True)
  except Exception:
   traceback.print_exc()

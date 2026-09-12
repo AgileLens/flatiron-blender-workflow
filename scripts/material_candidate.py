@@ -46,7 +46,7 @@ def stone(name,slug,base,roughness,grain):
  mat=bpy.data.materials[name];nodes=mat.node_tree.nodes;links=mat.node_tree.links
  bs=nodes.get('Principled BSDF')
  # Stored base color is sRGB. All scalar maps and tangent normals are data.
- pigment=(coarse*.045+fine*.009+streak*.006)*grain
+ pigment=(coarse*.10+fine*.012+streak*.006)*grain
  color=save_image(slug+'_basecolor',np.array(base)[None,None,:]+pigment[...,None],True)
  rough=save_image(slug+'_roughness',roughness+coarse*.12+fine*.045)
  height=(coarse*.15+fine*.018)*grain
@@ -65,8 +65,8 @@ def stone(name,slug,base,roughness,grain):
  bs.inputs['Roughness'].default_value=roughness
  mat['material_provenance']='Artist-authored seamless mineral texture, not a photographic sample; geometry unchanged.'
  return mat
-stone('Warm limestone','limestone',(.730,.709,.665),.76,1)
-stone('Pale terracotta relief','terracotta',(.810,.779,.721),.64,.7)
+stone('Warm limestone','limestone',(.675,.648,.600),.76,1)
+stone('Pale terracotta relief','terracotta',(.765,.728,.661),.64,.7)
 # The accepted closed shell has no interiors. Keep backed, reflective glazing;
 # transmission would falsely reveal that shell rather than credible rooms.
 glass=bpy.data.materials['Recessed blue charcoal glass'].node_tree.nodes.get('Principled BSDF')
