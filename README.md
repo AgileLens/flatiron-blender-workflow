@@ -28,6 +28,8 @@ Ask for one visible revision at a time. The render camera and interactive viewpo
 
 ## Scope and limits
 
+**Known issue in the v0.1.0 preview:** M5 wearer review exposed inward-facing normals on many generated facade primitives. Mesh auditing traced this to mirrored local coordinates in the procedural box helper; the USDZ export preserved the source winding. A corrected candidate is being validated. The original scene and release remain the comparison baseline.
+
 Rounded triangular footprint, 22 facade intervals, repetitive windows, facade relief and cornice. Nominal 87 m height and 80 × 32 m unrounded footprint were rough prior-knowledge estimates, not photo measurements. Ornamental sculpture is simplified. This is a visual approximation, not a measured digital twin.
 
 The original successful pass used Astra medium. Claude Sonnet 5 supervised the wider experiment; local Qwen3-Coder 30B supported separate research. See the receipt for boundaries and failed attempts.
