@@ -21,11 +21,13 @@ still('03',[photo(2),out/'match-overview.png'],'REFERENCE → EDITABLE GEOMETRY'
 still('04',[photo(4),out/'match-detail.png'],'INSPECT. REVISE. RENDER.','Facade relief and cornice refined through a live Blender MCP loop','Reference: Epicgenius / CC BY-SA 4.0. Sculpture remains simplified. Process reconstruction, not original timelapse.',4)
 if a.stills_only:raise SystemExit(0)
 frames=sorted((out/'orbit').glob('*.png'))
-if len(frames)!=144:raise SystemExit(f'Orbit incomplete: {len(frames)}/144 frames')
-filters="minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1,"+title('FLATIRON / Light and form','orbith',26,30)+','+title('Editable model · Cycles render','orbits',18,671,'0xeeeeee')+',fade=t=in:d=.18,fade=t=out:st=11.7:d=.18'
+if len(frames)<120:raise SystemExit(f'At least120 contiguous orbit frames required: {len(frames)}')
+if [p.name for p in frames]!=[f'{i:04d}.png' for i in range(len(frames))]:raise SystemExit('Noncontiguous orbit frames')
+orbit_duration=len(frames)/12
+filters="minterpolate=fps=24:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1,"+title('FLATIRON / Light and form','orbith',26,30)+','+title('Editable model · Cycles render','orbits',18,671,'0xeeeeee')+f',fade=t=in:d=0.18,fade=t=out:st={orbit_duration-.3}:d=0.18'
 run(['-framerate','12','-i',str(out/'orbit/%04d.png'),'-vf',filters,'-r','24','-c:v','libx264','-preset','fast','-crf','18','-pix_fmt','yuv420p',str(clips/'05.mp4')])
 # Closing card, with the audited pass explicitly scoped.
 still('06',[out/'hero-final.png'],'BUILD IT. INSPECT IT. SHARE IT.','Astra + Codex + Blender MCP | Open workflow by Agile Lens','Successful pass: 63,929 uncached input + 4,214 output + 438,656 cached input. Full experiment receipt in repository.',4)
 manifest=clips/'concat.txt';manifest.write_text(''.join(f"file '{clips / (str(i).zfill(2)+'.mp4')}'\n" for i in range(1,7)))
-run(['-f','concat','-safe','0','-i',str(manifest),'-c','copy','-movflags','+faststart',str(out/'flatiron-showcase.mp4')])
+run(['-f','concat','-safe','0','-i',str(manifest),'-vf','setsar=1,format=yuv420p','-c:v','libx264','-preset','fast','-crf','18','-movflags','+faststart',str(out/'flatiron-showcase.mp4')])
 print(out/'flatiron-showcase.mp4')

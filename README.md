@@ -4,6 +4,8 @@ An editable architectural approximation built with GPT-6 Astra, Codex and live B
 
 ![Flatiron lit render](assets/preview.png)
 
+[Watch the 29-second showcase](https://agilelens.github.io/flatiron-blender-workflow/flatiron-showcase.mp4)
+
 ## Things to try
 
 1. Open `assets/flatiron_accepted.blend` in Blender 5.2.1 and orbit the model.
