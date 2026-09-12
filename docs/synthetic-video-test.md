@@ -12,7 +12,7 @@ A rendered Unreal walkthrough is a useful first input for [ViPE](https://github.
 
 ## Run
 
-Use ViPE's [upstream installation instructions](https://github.com/nv-tlabs/vipe/blob/main/docs/installation.md) on a CUDA host. Its current source instructions are `conda env create -f envs/cu128.yml`, `conda activate cu128`, `uv sync`, then `uv run vipe infer YOUR_VIDEO.mp4`. Review the selected pipeline and downloaded model terms; the repository's Unik3D component has a noncommercial share-alike license. An overall Apache source license does not cover every downloaded dependency.
+Use ViPE's [upstream installation instructions](https://github.com/nv-tlabs/vipe/blob/main/docs/installation.md) on a CUDA host. Its current source instructions are `conda env create -f envs/cu128.yml`, `conda activate cu128`, `uv sync`, then `uv run vipe infer YOUR_VIDEO.mp4`. Review the selected pipeline and downloaded model terms; the default UniDepth checkpoint and stock dav3 DA3-GIANT checkpoint carry noncommercial terms. Our source-reviewed alternative selects dav3 keyframe depth with adaptive_dav3 depth alignment, but that route has not yet been GPU-tested. An overall Apache source license does not cover every downloaded dependency.
 
 ## Evaluate
 

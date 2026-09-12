@@ -40,7 +40,7 @@ Code: MIT. Generated model: CC BY-SA 4.0. Photo-derived presentation media: CC B
 
 A fresh Blender GUI replay completed and matched every accepted mesh vertex, polygon and material assignment across all 12 meshes. Workbench preview pixels differ with display defaults; geometric equality is not pixel-identical rendering. The lit preview is a later presentation candidate, not the original accepted Workbench image.
 
-The distributed scene has local render/image paths sanitized; the private archived original is retained separately. Tabletop USDZ import was checked in Blender at approximately 0.403 × 0.850 × 1.014 metres including roof and sidewalk. Native headset appearance remains unverified.
+The distributed scene has local render/image paths sanitized; the private archived original is retained separately. Tabletop USDZ import was checked in Blender at approximately 0.403 × 0.850 × 1.014 metres including roof and sidewalk. Native runtime model loading is verified; headset appearance remains unverified.
 
 ## Showcase media
 
@@ -52,6 +52,10 @@ The video is a reconstructed process presentation, not an original recording. Th
 
 ## Native viewer and material candidate
 
-[Build the native visionOS viewer](native/Flatiron/README.md). Its signed original was installed on an M5 Vision Pro; first launch awaits headset unlock. The public template contains no signing credentials.
+[Build the native visionOS viewer](native/Flatiron/README.md). Its signed original was installed on an M5 Vision Pro; its first launch loaded the baseline model into RealityKit successfully. The public template contains no signing credentials.
 
 `material_candidate.py` adds portable 512² stone basecolor, roughness and normal maps without changing geometry. `compare_materials.py` renders actual re-imported baseline and candidate packages under matching light. The candidate passed Apple USD/ARKit validation and retained geometry/bounds. The visible difference is modest warmer stone and deeper glass; bright daylight remains pale. [Download the separate candidate](docs/flatiron_tabletop_materials.usdz). It has not received headset visual acceptance.
+
+## Photo alignment checks
+
+Our first real-photo alignment reduced held-out guide error from about 197 to 34 pixels, but camera-depth accuracy remains unverified. [Read the experiment limits and next geometry check](docs/photo-alignment.md) before treating a matching render as a calibrated reconstruction.
