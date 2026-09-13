@@ -1,8 +1,9 @@
 import XCTest
+import simd
 @testable import FlatironNavigationMath
 
 final class NavigationMathTests: XCTestCase {
-    func testScalePreservesWorldPointUnderViewerAnchor() {
+    func testUniformScalePreservesChosenWorldAnchor() {
         let position = SIMD3<Float>(3, -4, -20)
         let anchor = SIMD3<Float>(2, 1.7, 5)
         let oldScale: Float = 87
@@ -10,6 +11,33 @@ final class NavigationMathTests: XCTestCase {
         let localAnchor = (anchor - position) / oldScale
         let nextPosition = NavigationMath.scaledPosition(position, around: anchor, ratio: ratio)
         assertVector(nextPosition + localAnchor * oldScale * ratio, equals: anchor)
+    }
+
+    func testObjectScalePreservesRotatedBaseCenterAndReducesHeight() {
+        let localBase = SIMD3<Float>(0.02, -0.003, 0.15)
+        let rotation = simd_quatf(angle: 1.1, axis: [0, 1, 0])
+        let scale = SIMD3<Float>(repeating: 87)
+        let position = SIMD3<Float>(5, 0.261, -40)
+        let fixedBase = position + rotation.act(localBase * scale)
+        let ratio: Float = 0.5
+        let next = NavigationMath.scaledPosition(position, around: fixedBase, ratio: ratio)
+        assertVector(next + rotation.act(localBase * scale * ratio), equals: fixedBase)
+        let roof = localBase + SIMD3<Float>(0, 1, 0)
+        let oldRoof = position + rotation.act(roof * scale)
+        let newRoof = next + rotation.act(roof * scale * ratio)
+        XCTAssertEqual(newRoof.y - fixedBase.y, (oldRoof.y - fixedBase.y) * ratio, accuracy: 0.0001)
+    }
+
+    func testTurntableKeepsOffsetPivotFixedOverRepeatedFullTurns() {
+        let pivot = SIMD3<Float>(3, 0, -40)
+        let local = SIMD3<Float>(0.02, -0.003, 0.15)
+        let scale = SIMD3<Float>(repeating: 21.75)
+        let initial = simd_quatf(angle: 0.73, axis: [0, 1, 0])
+        for step in 0...2400 {
+            let rotation = simd_quatf(angle: Float(step) * .pi / 300, axis: [0, 1, 0]) * initial
+            let position = NavigationMath.positionForPivot(pivot, local: local, rotation: rotation, scale: scale)
+            assertVector(position + rotation.act(local * scale), equals: pivot)
+        }
     }
 
     func testReleaseHoldsOutputEvenWhenFingerMoves() {

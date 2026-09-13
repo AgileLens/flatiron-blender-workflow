@@ -8,8 +8,8 @@ An editable architectural approximation built with GPT-6 Astra, Codex and live B
 
 ## Things to try
 
-1. Open `assets/flatiron_corrected.blend` in Blender 5.2.1 and orbit the model; `flatiron_accepted.blend` preserves the original comparison baseline.
-2. Use `scripts/rebuild_corrected.py` in a fresh Blender GUI scene for the winding-corrected candidate; `scripts/rebuild.py` retains the original replay.
+1. Open `assets/flatiron_supported.blend` in Blender 5.2.1 and orbit the model; `flatiron_accepted.blend` preserves the original comparison baseline.
+2. Use `scripts/rebuild_supported.py` in a fresh Blender GUI scene for the winding and medallion-support candidate; `scripts/rebuild.py` retains the original replay.
 3. Adjust the dimensions and facade parameters in `scripts/flatiron_base.py`, then replay.
 4. Use the prompts below with your own photos and compare rendered views after each revision.
 5. Read the [token receipt](docs/token-receipt.md) before quoting the cost.
@@ -46,7 +46,7 @@ The distributed scene has local render/image paths sanitized; the private archiv
 
 ## Showcase media
 
-[Open the native Quick Look page](https://agilelens.github.io/flatiron-blender-workflow/) on Apple Vision Pro, or download `docs/flatiron_tabletop.usdz` to Files. The page image is a Cycles render; native lighting/materials can differ.
+[Open the native Quick Look page](https://agilelens.github.io/flatiron-blender-workflow/) on Apple Vision Pro, or download `docs/flatiron_tabletop_supported.usdz` to Files. The page image is a Cycles render; native lighting/materials can differ.
 
 For the video recipe, run `scripts/setup_showcase.py` in Blender after the replay, then `scripts/export_and_orbit.py` and `scripts/render_comparisons.py`. Each assumes a fresh or deliberately selected candidate scene. Outputs stay in `outputs/`. Run `python scripts/download_references.py` for the credited photos, then `python scripts/build_showcase_video.py --photos outputs/references`. The video composer requires FFmpeg with libfreetype/drawtext and libx264; on macOS use `ffmpeg-full` and pass its full path with `--ffmpeg` if needed. A platform font can be set with `--font`.
 
@@ -54,7 +54,7 @@ The video is a reconstructed process presentation, not an original recording. Th
 
 ## Native viewer and material candidate
 
-[Build the native visionOS viewer](native/Flatiron/README.md). The template now includes the corrected model, mixed-immersion full-scale walkaround, pinch-and-pull movement, scale controls and reset. It compiled successfully and passed five navigation math tests; headset review of this new candidate is pending. The original tabletop build loaded successfully on M5 and led to the normals report. The public template contains no signing credentials.
+[Build the native visionOS viewer](native/Flatiron/README.md). The template now includes the corrected model, mixed-immersion full-scale walkaround, pinch-and-pull movement, visible base-centered scaling, separate tabletop sizing, a slow turntable and reset. The controls compiled successfully and passed seven navigation math tests; headset review of this new candidate is pending. The original tabletop build loaded successfully on M5 and led to the normals report. The public template contains no signing credentials.
 
 `material_candidate.py` adds portable 512² stone basecolor, roughness and normal maps without changing geometry. `compare_materials.py` renders actual re-imported baseline and candidate packages under matching light. The candidate passed Apple USD/ARKit validation and retained geometry/bounds. The visible difference is modest warmer stone and deeper glass; bright daylight remains pale. [Download the separate candidate](docs/flatiron_tabletop_materials.usdz). It has not received headset visual acceptance.
 
@@ -71,3 +71,15 @@ The repair reverses affected face winding and authored normals, with corner-inde
 In a new Blender GUI scene, run `scripts/rebuild_corrected.py`. It applies the two determinant-aware generator fixes before replaying the original live steps and writes to `outputs/rebuild-corrected/`. The original generator and accepted scene remain unchanged. A full geometry replay verified all 12 meshes and 285,670 vertex positions unchanged, with no remaining diagnosed inward components; all 11 exported mesh index arrays match the directly repaired USDZ. The corrected Blender file was saved, reopened and checked with identical geometry fingerprints. A changed generator fails the source patch check rather than silently applying an unverified repair. The patch is also available as `scripts/flatiron_base_winding_fix.patch`.
 
 The published showcase video depicts the earlier baseline. New native normals and immersive interaction need separate headset review.
+
+## Facade support and visible scaling
+
+[Supported Blender scene](assets/flatiron_supported.blend) · [Supported tabletop USDZ](docs/flatiron_tabletop_supported.usdz)
+
+M5 review exposed a second issue: 1,062 raised medallion rings were zero-thickness strips in front of their support. The new candidate gives those rings backs and sidewalls while preserving every original front vertex, face and normal, the ring openings, all other meshes and materials. Rear attachment samples contact the support within 10 micrometres; rear face centres overlap it by approximately 2 mm. A matched grazing render confirms the joins ([before/after comparison](docs/facade-attachment-comparison.png)). A separate set of 354 thin ledge ornaments already intersects closed support solids and remains unchanged.
+
+The candidate adds 33,984 vertices and 50,976 quads, bringing the USDZ to 25,634,073 bytes. Apple USD/ARKit validation passes. Source assumptions and simplified ornament remain approximate. This is a targeted attachment repair, not a claim that every feature matches the real building. The earlier textured experiment has not received this backing change.
+
+Run `scripts/rebuild_supported.py` in a fresh Blender GUI scene. It applies the winding correction and exact-topology backing helper before the final previews/save, writing to `outputs/rebuild-supported/`. `rebuild_corrected.py` still produces the normals-only version; `rebuild.py` retains the original baseline. The backing helper requires NumPy (included in the tested Blender install) and deliberately accepts only this diagnosed ring topology. SceneAudit informed the contact checks; its private source is not included.
+
+Native controls now resize around the building base rather than the viewer. Scaling around the viewer had changed size and viewing distance together, making the visible size change difficult to notice. Both tabletop and immersive views offer an optional 3°/second turntable; manual movement, scaling and reset stop it. No two-hand scale gesture is claimed.

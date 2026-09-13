@@ -6,7 +6,7 @@ let package = Package(
     products: [.library(name: "FlatironNavigationMath", targets: ["FlatironNavigationMath"])],
     targets: [
         .target(name: "FlatironNavigationMath", path: "Sources",
-                exclude: ["FlatironApp.swift", "FlatironImmersive.swift", "ViewerTracking.swift"],
+                exclude: ["FlatironApp.swift", "FlatironImmersive.swift", "ViewerTracking.swift", "Turntable.swift", "FlatironTabletop.swift"],
                 sources: ["NavigationMath.swift"]),
         .testTarget(name: "FlatironNavigationMathTests", dependencies: ["FlatironNavigationMath"], path: "Tests")
     ]

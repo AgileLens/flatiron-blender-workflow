@@ -22,6 +22,8 @@ struct FlatironApp: App {
     @State private var experience = FlatironExperience()
 
     init() {
+        TurntableComponent.registerComponent()
+        TurntableSystem.registerSystem()
         Receipt.write("launched")
         if let source = Bundle.main.url(forResource: "Flatiron", withExtension: "usdz") {
             let destination = URL.documentsDirectory.appendingPathComponent("Flatiron Build \(Receipt.build).usdz")
@@ -49,64 +51,45 @@ struct FlatironApp: App {
 }
 
 struct FlatironView: View {
-    @State private var angle: Float = 0
-    @State private var loadError: String?
-    @State private var loaded = false
+    @State private var tabletop = FlatironTabletop()
 
     var body: some View {
         RealityView { content, attachments in
-            do {
-                guard let url = Bundle.main.url(forResource: "Flatiron", withExtension: "usdz") else {
-                    throw CocoaError(.fileNoSuchFile)
-                }
-                let model = try await Entity(contentsOf: url)
-                let bounds = model.visualBounds(relativeTo: nil)
-                let largest = max(bounds.extents.x, max(bounds.extents.y, bounds.extents.z))
-                guard largest.isFinite, largest > 0 else { throw CocoaError(.fileReadCorruptFile) }
-                let scale: Float = 0.9 / largest
-                model.scale *= SIMD3<Float>(repeating: scale)
-                model.position = -bounds.center * scale
-                let root = Entity()
-                root.name = "flatiron-root"
-                root.addChild(model)
-                content.add(root)
-                var meshes = 0
-                @MainActor func count(_ entity: Entity) {
-                    if entity.components.has(ModelComponent.self) { meshes += 1 }
-                    for child in entity.children { count(child) }
-                }
-                count(model)
-                let hash = try SHA256.hash(data: Data(contentsOf: url)).map { String(format: "%02x", $0) }.joined()
-                Receipt.write("tabletop-loaded", ["meshEntities": meshes, "assetSHA256": hash,
-                    "assetBoundsMeters": [bounds.extents.x, bounds.extents.y, bounds.extents.z],
-                    "displayScale": scale, "addedToRealityView": true])
-                loaded = true
-            } catch {
-                loadError = error.localizedDescription
-                Receipt.write("tabletop-failed", ["error": error.localizedDescription])
-            }
+            await tabletop.install(in: content)
             if let controls = attachments.entity(for: "controls") {
                 controls.position = [0, -0.52, 0.35]
                 content.add(controls)
             }
-        } update: { content, _ in
-            content.entities.first(where: { $0.name == "flatiron-root" })?.orientation = simd_quatf(angle: angle, axis: [0, 1, 0])
         } attachments: {
             Attachment(id: "controls") {
                 VStack(spacing: 8) {
-                    Text("Flatiron Tabletop").font(.title2).bold()
-                    if let loadError { Text(loadError).foregroundStyle(.red) }
-                    else if !loaded { ProgressView("Loading Flatiron…") }
+                    Text("Tabletop controls").font(.title2).bold()
+                    if let error = tabletop.error { Text(error).foregroundStyle(.red) }
+                    else if !tabletop.ready { ProgressView("Loading Flatiron…") }
                     HStack {
-                        Button("Rotate left", systemImage: "arrow.counterclockwise") { angle += .pi / 8 }
-                        Button("Reset") { angle = 0 }
-                        Button("Rotate right", systemImage: "arrow.clockwise") { angle -= .pi / 8 }
+                        Button("Smaller") { tabletop.scale(by: 0.8) }
+                            .disabled(tabletop.relativeScale <= 0.25)
+                        Text("\(Int((tabletop.relativeScale * 100).rounded()))%")
+                            .monospacedDigit().frame(minWidth: 45)
+                        Button("Larger") { tabletop.scale(by: 1.25) }
+                            .disabled(tabletop.relativeScale >= 1.15)
+                        Button("Reset") { tabletop.reset() }
                     }
-                    Text("Walk around the model · Agile Lens").font(.caption).foregroundStyle(.secondary)
+                    HStack {
+                        Button("Rotate left", systemImage: "arrow.counterclockwise") { tabletop.rotate(by: .pi / 8) }
+                        Button("Rotate right", systemImage: "arrow.clockwise") { tabletop.rotate(by: -.pi / 8) }
+                    }
+                    Toggle("Slow turntable · 2 minutes per turn", isOn: Binding(
+                        get: { tabletop.turntableEnabled },
+                        set: { tabletop.setTurntable($0) }))
+                    Text("Size is limited to fit this volume · Agile Lens")
+                        .font(.caption).foregroundStyle(.secondary)
                 }
+                .disabled(!tabletop.ready)
                 .padding(18)
                 .glassBackgroundEffect()
             }
         }
+        .onDisappear { tabletop.setTurntable(false) }
     }
 }

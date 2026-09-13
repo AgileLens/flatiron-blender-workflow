@@ -1,8 +1,16 @@
+import simd
+
 // Shared by the app and the focused SwiftPM tests. No rendering dependency.
 enum NavigationMath {
-    /// Preserve the local point underneath an anchor when uniformly scaling a root.
+    /// Preserve a chosen world anchor when uniformly scaling a root.
     static func scaledPosition(_ position: SIMD3<Float>, around anchor: SIMD3<Float>, ratio: Float) -> SIMD3<Float> {
         anchor + (position - anchor) * ratio
+    }
+
+    /// Position a rotated/scaled local pivot at a fixed point in its parent.
+    static func positionForPivot(_ pivot: SIMD3<Float>, local: SIMD3<Float>,
+                                 rotation: simd_quatf, scale: SIMD3<Float>) -> SIMD3<Float> {
+        pivot - rotation.act(local * scale)
     }
 
     static func boundedStep(_ delta: SIMD3<Float>, maximum: Float) -> SIMD3<Float> {

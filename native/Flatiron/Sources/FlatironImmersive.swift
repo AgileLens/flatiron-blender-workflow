@@ -12,6 +12,7 @@ final class FlatironExperience {
     private(set) var error: String?
     private(set) var navigationEnabled = false
     private(set) var relativeScale: Float = 1
+    private(set) var turntableEnabled = false
     private(set) var trackingNotice: String?
     var movementGain: Float = 1
 
@@ -27,6 +28,7 @@ final class FlatironExperience {
     @ObservationIgnored private var drag = WorldDrag()
 
     func install(in content: RealityViewContent) async {
+        setTurntable(false)
         ready = false
         positioned = false
         error = nil
@@ -105,6 +107,7 @@ final class FlatironExperience {
 
     func reset() {
         guard let bounds = assetBounds else { return }
+        setTurntable(false)
         drag.end()
         let factor = Self.sourceToFullScale
         guard let pose = tracking.pose() else {
@@ -134,25 +137,37 @@ final class FlatironExperience {
             "viewerPoseSource": "ARKitDeviceAnchor"])
     }
 
+    private var baseCenter: SIMD3<Float>? {
+        guard let bounds = assetBounds else { return nil }
+        return [bounds.center.x, bounds.min.y, bounds.center.z]
+    }
+
+    func setTurntable(_ enabled: Bool) {
+        root.components.remove(TurntableComponent.self)
+        turntableEnabled = enabled && ready && positioned
+        if turntableEnabled, let pivot = baseCenter {
+            drag.end()
+            root.components.set(TurntableComponent(entity: root, localPivot: pivot))
+        }
+        Receipt.write("immersive-turntable", ["enabled": turntableEnabled, "degreesPerSecond": 3,
+            "rootPosition": vector(root.position)])
+    }
+
     func scale(by factor: Float) {
-        guard ready, positioned else { return }
+        guard ready, positioned, let localPivot = baseCenter else { return }
+        setTurntable(false)
         drag.end()
         let next = min(max(relativeScale * factor, 0.01), 2)
         let ratio = next / relativeScale
-        // Anchor at the viewer so scaling does not push them through the scene.
-        guard let pose = tracking.pose() else {
-            trackingNotice = "Head tracking is unavailable. Scaling is paused until tracking resumes."
-            Receipt.write("scale-paused", ["reason": "no tracked device anchor"])
-            return
-        }
-        trackingNotice = nil
-        // The holder is identity and never moves: ARKit world == holder frame.
-        let anchor = SIMD3<Float>(pose.columns.3.x, pose.columns.3.y, pose.columns.3.z)
+        // Object-size control: preserve the building's base center, rather than
+        // shrinking its distance to the eye and hiding the apparent size change.
+        let anchor = root.position + root.orientation.act(root.scale * localPivot)
         root.position = NavigationMath.scaledPosition(root.position, around: anchor, ratio: ratio)
         root.scale *= SIMD3<Float>(repeating: ratio)
         relativeScale = next
         Receipt.write("scale", ["relativeScale": next, "rootPosition": vector(root.position),
-            "viewerPosition": vector(anchor), "viewerPoseSource": "ARKitDeviceAnchor"])
+            "pivotPosition": vector(anchor), "pivot": "building base center",
+            "scaleApplied": vector(root.scale), "surface": "immersive"])
     }
 
     func dragChanged(start: SIMD3<Float>, current: SIMD3<Float>) {
@@ -163,7 +178,10 @@ final class FlatironExperience {
             return
         }
         if !drag.active {
-            drag.begin(root: root.position, hand: start, gain: movementGain)
+            setTurntable(false)
+            // Rebaseline at this sample after a button interrupts an existing
+            // gesture; stale gesture-start coordinates must not move the root.
+            drag.begin(root: root.position, hand: current, gain: movementGain)
         }
         root.position = drag.position(current: root.position, hand: current)
     }
@@ -175,6 +193,7 @@ final class FlatironExperience {
     }
 
     func close() {
+        setTurntable(false)
         setNavigation(false)
         tracking.stop()
         ready = false
@@ -232,6 +251,7 @@ struct FlatironControls: View {
             }
             if experience.ready {
                 Divider()
+                Text("Walkaround controls").font(.headline)
                 Toggle("Enable pinch-and-pull movement", isOn: Binding(
                     get: { experience.navigationEnabled },
                     set: { experience.setNavigation($0) }))
@@ -252,7 +272,11 @@ struct FlatironControls: View {
                     Button("Double size") { experience.scale(by: 2) }.disabled(!experience.positioned)
                     Button("Return to start") { experience.reset() }
                 }
-                Text("100% restores the model's original estimated dimensions. Return to start places you outside the narrow end.")
+                Toggle("Slow turntable · one turn in 2 minutes", isOn: Binding(
+                    get: { experience.turntableEnabled },
+                    set: { experience.setTurntable($0) }))
+                    .disabled(!experience.positioned)
+                Text("Size changes the building around its base. 100% is its original estimated size. Movement, scaling and Return to start stop the turntable.")
                     .font(.caption).foregroundStyle(.secondary)
             }
         }
