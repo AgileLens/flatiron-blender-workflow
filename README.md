@@ -6,19 +6,19 @@ An editable architectural approximation built with GPT-6 Astra, Codex and live B
 
 [Watch the 29-second showcase](https://agilelens.github.io/flatiron-blender-workflow/flatiron-showcase.mp4)
 
-## Things to try
-
-1. Open `assets/flatiron_supported.blend` in Blender 5.2.1 and orbit the model; `flatiron_accepted.blend` preserves the original comparison baseline.
-2. Use `scripts/rebuild_supported.py` in a fresh Blender GUI scene for the winding and medallion-support candidate; `scripts/rebuild.py` retains the original replay.
-3. Adjust the dimensions and facade parameters in `scripts/flatiron_base.py`, then replay.
-4. Use the prompts below with your own photos and compare rendered views after each revision.
-5. Read the [token receipt](docs/token-receipt.md) before quoting the cost.
-
-## Replay
+## Quickstart
 
 In Blender's Scripting workspace, open `scripts/rebuild.py` and run it. It clears the active scene, so use a new file. The script writes the rebuilt scene and two previews under `outputs/rebuild/`. Tested baseline: Blender 5.2.1 LTS on macOS, live GUI. Headless rendering crashed on the original Mac; a live GUI process worked.
 
 The replay is deterministic procedural Python captured from the successful MCP calls. It does not rerun a language model or guarantee what a fresh model session will produce. The accepted `.blend` is the comparison control.
+
+## Things to Try
+
+1. **Open `assets/flatiron_supported.blend` in Blender 5.2.1 and orbit the model** — you should see the corrected facade winding and backed medallion rings; `flatiron_accepted.blend` remains the original comparison baseline.
+2. **Run `scripts/rebuild.py` in a fresh Blender GUI scene** — it should write the deterministic baseline scene and two previews under `outputs/rebuild/`.
+3. **Run `scripts/rebuild_supported.py` in another fresh scene** — it should write the winding-and-medallion-support candidate under `outputs/rebuild-supported/` without replacing the baseline.
+4. **Adjust a dimension or facade parameter in `scripts/flatiron_base.py`, then replay** — the generated Blender geometry should reflect the changed parameter while remaining editable.
+5. **Read `docs/token-receipt.md` before quoting the experiment cost** — you should be able to distinguish model output, cached input, and supervising-model usage rather than presenting one undifferentiated token total.
 
 ## Agent workflow
 
@@ -37,6 +37,8 @@ The original successful pass used Astra medium. Claude Sonnet 5 supervised the w
 ## Credits and reuse
 
 Code: MIT. Generated model: CC BY-SA 4.0. Photo-derived presentation media: CC BY-SA 4.0. [Reference photo credits](docs/photo-credits.md). No private session logs or FSLA production assets are included.
+
+Maintained by **Agile Lens**.
 
 ## Verification
 
