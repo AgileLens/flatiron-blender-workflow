@@ -1,0 +1,454 @@
+{
+  "input": "docs/flatiron_tabletop_supported.usdz",
+  "scale_to_full_m": 87.0,
+  "contact_eps_m": 0.002,
+  "elements": 27362,
+  "triangles": 483116,
+  "vertices": 319646,
+  "ground_roots": 1,
+  "supported": 12670,
+  "floating": 14692,
+  "floating_clusters": 2412,
+  "floating_gap_full_scale_m": {
+    "n": 14692,
+    "min": 0.012493478134274483,
+    "p50": 0.14999842643737793,
+    "p95": 0.33999940752983093,
+    "max": 0.5202741622924805
+  },
+  "floating_with_gap_ge_1cm": 14692,
+  "floating_gap_tabletop_mm": {
+    "n": 14692,
+    "min": 0.1275133203471015,
+    "p50": 1.5309425602945785,
+    "p95": 3.4701668265811323,
+    "max": 5.310121425891744
+  },
+  "per_mesh": {
+    "Bronze_window_frames": {
+      "elements": 6785,
+      "floating": 3835,
+      "gap_full_scale_m": {
+        "n": 3835,
+        "min": 0.12999621033668518,
+        "p50": 0.1449987143278122,
+        "p95": 0.16147968173027039,
+        "max": 0.19696274399757385
+      }
+    },
+    "Pale_terracotta_relief": {
+      "elements": 4657,
+      "floating": 1534,
+      "gap_full_scale_m": {
+        "n": 1534,
+        "min": 0.07999420166015625,
+        "p50": 0.11999735981225967,
+        "p95": 0.13334184885025024,
+        "max": 0.14173980057239532
+      }
+    },
+    "Raised_medallions": {
+      "elements": 1062,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Recessed_blue_charcoal_glass": {
+      "elements": 1416,
+      "floating": 767,
+      "gap_full_scale_m": {
+        "n": 767,
+        "min": 0.08499695360660553,
+        "p50": 0.08499938249588013,
+        "p95": 0.0968642458319664,
+        "max": 0.10306453704833984
+      }
+    },
+    "Revision_relief_Bronze_window_frames": {
+      "elements": 59,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Revision_relief_Mortar_shadow": {
+      "elements": 4956,
+      "floating": 4661,
+      "gap_full_scale_m": {
+        "n": 4661,
+        "min": 0.125,
+        "p50": 0.15749938786029816,
+        "p95": 0.23195160925388336,
+        "max": 0.24433007836341858
+      }
+    },
+    "Revision_relief_Pale_terracotta_relief": {
+      "elements": 5017,
+      "floating": 1504,
+      "gap_full_scale_m": {
+        "n": 1504,
+        "min": 0.015276432037353516,
+        "p50": 0.14999935030937195,
+        "p95": 0.2923698425292969,
+        "max": 0.30517688393592834
+      }
+    },
+    "Revision_relief_Warm_limestone": {
+      "elements": 1400,
+      "floating": 1340,
+      "gap_full_scale_m": {
+        "n": 1340,
+        "min": 0.17924965918064117,
+        "p50": 0.3399996757507324,
+        "p95": 0.5067524313926697,
+        "max": 0.5202741622924805
+      }
+    },
+    "Roof_zinc": {
+      "elements": 2,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Sidewalk": {
+      "elements": 1,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Warm_limestone": {
+      "elements": 2007,
+      "floating": 1051,
+      "gap_full_scale_m": {
+        "n": 1051,
+        "min": 0.012493478134274483,
+        "p50": 0.012499276548624039,
+        "p95": 0.0149993896484375,
+        "max": 0.015092666260898113
+      }
+    }
+  },
+  "largest_gaps": [
+    {
+      "element": 25283,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17925333976745605,
+      "center_m": [
+        -1.145,
+        30.002,
+        18.07
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25284,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.2849998474121094,
+      "center_m": [
+        -1.145,
+        30.002,
+        18.69
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25285,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        19.31
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25288,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17925089597702026,
+      "center_m": [
+        -1.145,
+        30.002,
+        21.67
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25289,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.2849998474121094,
+      "center_m": [
+        -1.145,
+        30.002,
+        22.29
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25290,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        22.91
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25293,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17925089597702026,
+      "center_m": [
+        -1.145,
+        30.002,
+        25.27
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25294,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.2850017547607422,
+      "center_m": [
+        -1.145,
+        30.002,
+        25.89
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25295,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        26.51
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25298,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17925211787223816,
+      "center_m": [
+        -1.145,
+        30.002,
+        28.87
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25299,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.285003662109375,
+      "center_m": [
+        -1.145,
+        30.002,
+        29.49
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25300,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        30.11
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25303,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17924965918064117,
+      "center_m": [
+        -1.145,
+        30.002,
+        32.47
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25304,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.285003662109375,
+      "center_m": [
+        -1.145,
+        30.002,
+        33.09
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25305,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        33.71
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25308,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17925211787223816,
+      "center_m": [
+        -1.145,
+        30.002,
+        36.07
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25309,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.2849998474121094,
+      "center_m": [
+        -1.145,
+        30.002,
+        36.69
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25310,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        37.31
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25313,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17924965918064117,
+      "center_m": [
+        -1.145,
+        30.002,
+        39.67
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25314,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.2849998474121094,
+      "center_m": [
+        -1.145,
+        30.002,
+        40.29
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25315,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        40.91
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25318,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17925211787223816,
+      "center_m": [
+        -1.145,
+        30.002,
+        43.27
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25319,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.2849998474121094,
+      "center_m": [
+        -1.145,
+        30.002,
+        43.89
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25320,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.5202741622924805,
+      "center_m": [
+        -1.145,
+        30.002,
+        44.51
+      ],
+      "triangles": 12
+    },
+    {
+      "element": 25323,
+      "mesh": "Revision_relief_Warm_limestone",
+      "gap_m": 0.5202741622924805,
+      "nearest_supported_mesh": "Warm_limestone",
+      "gap_to_any_other_cluster_m": 0.17925211787223816,
+      "center_m": [
+        -1.145,
+        30.002,
+        46.87
+      ],
+      "triangles": 12
+    }
+  ],
+  "seconds": 50.2
+}

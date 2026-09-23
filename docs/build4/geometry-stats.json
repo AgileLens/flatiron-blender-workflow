@@ -1,0 +1,143 @@
+{
+  "materials": {
+    "Recessed blue charcoal glass": {
+      "vertices": 15552,
+      "faces": 11986
+    },
+    "Bronze window frames": {
+      "vertices": 48116,
+      "faces": 36882
+    },
+    "Warm limestone": {
+      "vertices": 16424,
+      "faces": 13652
+    },
+    "Mortar shadow": {
+      "vertices": 10532,
+      "faces": 8405
+    },
+    "Pale terracotta relief": {
+      "vertices": 126470,
+      "faces": 105451
+    },
+    "Roof zinc": {
+      "vertices": 202,
+      "faces": 294
+    },
+    "Sidewalk": {
+      "vertices": 76,
+      "faces": 111
+    },
+    "Asphalt": {
+      "vertices": 8,
+      "faces": 6
+    }
+  },
+  "vertices": 217380,
+  "faces": 176787,
+  "elements": 22667,
+  "element_kinds": {
+    "glass": 1801,
+    "frame": 3647,
+    "kick panel": 25,
+    "transom bar": 53,
+    "mullion": 116,
+    "spandrel": 1399,
+    "pier core": 1075,
+    "pier course": 5463,
+    "meeting rail": 876,
+    "sill": 857,
+    "lintel": 419,
+    "pier face": 219,
+    "pier panel": 22,
+    "pier boss": 22,
+    "wreath": 38,
+    "wreath tablet": 19,
+    "arch spandrel": 876,
+    "arch frame": 876,
+    "voussoir": 876,
+    "keystone": 73,
+    "lion's head": 44,
+    "roundel": 19,
+    "roundel boss": 19,
+    "metal spandrel": 24,
+    "pilaster": 19,
+    "capital": 19,
+    "mask": 19,
+    "triglyph": 246,
+    "oculus glass": 2,
+    "oculus frame": 2,
+    "console": 4,
+    "engaged column": 4,
+    "entablature": 2,
+    "entablature roundel": 6,
+    "core": 1,
+    "belt/cornice ring": 35,
+    "dentil": 1138,
+    "frieze roundel": 203,
+    "modillion": 149,
+    "meander": 1136,
+    "balustrade plinth": 1,
+    "balustrade rail": 1,
+    "baluster": 418,
+    "balustrade die": 23,
+    "oriel spandrel": 288,
+    "oriel corner post": 12,
+    "oriel core": 6,
+    "oriel band": 42,
+    "oriel corbel": 6,
+    "oriel hood": 12,
+    "prow column": 2,
+    "prow column capital": 2,
+    "loggia column": 2,
+    "loggia capital": 2,
+    "roof": 1,
+    "attic": 1,
+    "attic roof": 1,
+    "penthouse": 1,
+    "penthouse roof": 1,
+    "sidewalk": 1,
+    "asphalt": 1
+  },
+  "footprint": [
+    {
+      "kind": "arc",
+      "name": "SW",
+      "s0": 0.0,
+      "s1": 2.981,
+      "r": 1.9
+    },
+    {
+      "kind": "side",
+      "name": "22nd",
+      "s0": 2.981,
+      "s1": 24.7
+    },
+    {
+      "kind": "arc",
+      "name": "SE",
+      "s0": 24.7,
+      "s1": 28.063,
+      "r": 1.7
+    },
+    {
+      "kind": "side",
+      "name": "Broadway",
+      "s0": 28.063,
+      "s1": 86.085
+    },
+    {
+      "kind": "arc",
+      "name": "Prow",
+      "s0": 86.085,
+      "s1": 88.947,
+      "r": 1.05
+    },
+    {
+      "kind": "side",
+      "name": "Fifth",
+      "s0": 88.947,
+      "s1": 142.204
+    }
+  ]
+}

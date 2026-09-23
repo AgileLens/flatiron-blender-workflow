@@ -1,0 +1,54 @@
+{
+  "input": "outputs/build4/flatiron_tabletop_v4.usdz",
+  "scale_to_full_m": 87.0,
+  "contact_eps_m": 0.002,
+  "elements": 22666,
+  "triangles": 344464,
+  "vertices": 217372,
+  "ground_roots": 1,
+  "supported": 22666,
+  "floating": 0,
+  "floating_clusters": 0,
+  "floating_gap_full_scale_m": null,
+  "floating_with_gap_ge_1cm": 0,
+  "floating_gap_tabletop_mm": {},
+  "per_mesh": {
+    "Bronze_window_frames": {
+      "elements": 5617,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Mortar_shadow": {
+      "elements": 1082,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Pale_terracotta_relief": {
+      "elements": 12669,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Recessed_blue_charcoal_glass": {
+      "elements": 1803,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Roof_zinc": {
+      "elements": 3,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Sidewalk": {
+      "elements": 1,
+      "floating": 0,
+      "gap_full_scale_m": null
+    },
+    "Warm_limestone": {
+      "elements": 1491,
+      "floating": 0,
+      "gap_full_scale_m": null
+    }
+  },
+  "largest_gaps": [],
+  "seconds": 52.4
+}

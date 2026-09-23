@@ -8,8 +8,8 @@ An editable architectural approximation built with GPT-6 Astra, Codex and live B
 
 ## Things to try
 
-1. Open `assets/flatiron_supported.blend` in Blender 5.2.1 and orbit the model; `flatiron_accepted.blend` preserves the original comparison baseline.
-2. Use `scripts/rebuild_supported.py` in a fresh Blender GUI scene for the winding and medallion-support candidate; `scripts/rebuild.py` retains the original replay.
+1. Open `assets/flatiron_build4.blend` in Blender 5.2.1 and orbit the reference-guided build-4 model; `flatiron_supported.blend` (build 3) and `flatiron_accepted.blend` (original) remain as comparison baselines.
+2. Regenerate build 4 headless with `Blender -b --factory-startup --python scripts/flatiron_v4.py -- --out outputs/build4`, then run `scripts/audit_attachment.py` on the export and confirm it reports 0 floating parts.
 3. Adjust the dimensions and facade parameters in `scripts/flatiron_base.py`, then replay.
 4. Use the prompts below with your own photos and compare rendered views after each revision.
 5. Read the [token receipt](docs/token-receipt.md) before quoting the cost.
@@ -83,3 +83,19 @@ The candidate adds 33,984 vertices and 50,976 quads, bringing the USDZ to 25,634
 Run `scripts/rebuild_supported.py` in a fresh Blender GUI scene. It applies the winding correction and exact-topology backing helper before the final previews/save, writing to `outputs/rebuild-supported/`. `rebuild_corrected.py` still produces the normals-only version; `rebuild.py` retains the original baseline. The backing helper requires NumPy (included in the tested Blender install) and deliberately accepts only this diagnosed ring topology. SceneAudit informed the contact checks; its private source is not included.
 
 Native controls now resize around the building base rather than the viewer. Scaling around the viewer had changed size and viewing distance together, making the visible size change difficult to notice. Both tabletop and immersive views offer an optional 3°/second turntable; manual movement, scaling and reset stop it. No two-hand scale gesture is claimed.
+
+## Build 4: reference-guided facade, nothing floating
+
+[Build-4 Blender scene](assets/flatiron_build4.blend) · [Build-4 tabletop USDZ](docs/flatiron_tabletop_build4.usdz) · [Before/after renders](docs/build4/)
+
+M5 review of build 3 still showed facade pieces standing off the walls. `scripts/audit_attachment.py` (headless Blender, BVH contact graph over every loose part of the exported USDZ) measured the installed build-3 asset: **14,692 of 27,362 parts float**, 1.2 to 52 cm in front of the wall at full scale (median 15 cm; 0.13 to 5.3 mm in the tabletop). The gaps were authored in the generator, not added at export: the wall body was inset 12 cm (`ring(0,84.6,-.12,0)`) while glass, frames, sills, rustication and the later relief pass were placed from the lot line. For example, the glass was 8.5 cm proud of the wall. Build 3 backed only the medallions.
+
+`scripts/flatiron_v4.py` replaces the replayed facade with a generator that has a support contract. Every element is a closed, outward-wound solid (checked as it is built), and every facade piece is embedded in the element it hangs from. The same audit on the exported build-4 USDZ reports **0 floating parts out of 22,666**. A seeded 5 cm test block is detected at 5.0 cm, so the check works. Apple `usdchecker --arkit` passes. The file shrinks from 25.6 MB to 11.0 MB and from 483k to 344k triangles.
+
+Accuracy changes, from Wikipedia's *Flatiron Building* article and the credited input photos:
+
+- **Footprint:** a scalene right triangle, 197.5 ft on Fifth Avenue, 86 ft on 22nd Street and Broadway as the hypotenuse, with the prow rounded to about 2 m. The old model used a guessed isosceles 80 × 32 m triangle.
+- **Windows:** 18 bays on Fifth and Broadway and 8 on 22nd Street, in pairs with alternating wide and narrow piers at the documented column spacing, instead of one window every 3.05 m. Sash windows sit in 30 cm reveals with dark frames, meeting rails, sills and lintels. The rounded SW and SE corners have one window per story. The prow has three windows per story, the centre one wider.
+- **Stories:** a three-story rusticated limestone base with paired sashes in two-bay openings, storefronts, entrances with engaged columns and an oculus, and a projecting cornice. A transitional 4th story with wreaths and a roundel frieze. A meander frieze above the 6th. Three trapezoidal oriels on each long facade over the 7th–14th stories, with three windows per story. Rusticated 15th, arched 16th, transitional 17th. A double-height, double-width arcade on the 18th–19th. Square 20th-story windows with triglyphs. A main cornice with dentils and modillions projecting 1.7 m, a balustrade, a set-back attic and a penthouse.
+
+Still approximate: floor heights, pier widths, oriel projection, ornament shapes and the penthouse extent are estimates. The 1902 cowcatcher and the apex cherubs are not modeled. Colours are constant PBR values, slightly darker and warmer than the chalky build-3 stone. This is a reference-guided model, not a survey.
