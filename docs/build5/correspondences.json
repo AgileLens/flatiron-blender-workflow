@@ -1,0 +1,893 @@
+{
+ "flatiron_02.jpg": {
+  "size": [
+   1608,
+   1577
+  ],
+  "focal_px": null,
+  "init": {
+   "C": [
+    45,
+    95,
+    1.7
+   ],
+   "target": [
+    -5,
+    10,
+    40
+   ]
+  },
+  "points": [
+   {
+    "name": "win/Broadway/8/pair/18/crown",
+    "uv": [
+     758,
+     314
+    ]
+   },
+   {
+    "name": "win/Broadway/7/pair/18/crown",
+    "uv": [
+     716,
+     372
+    ]
+   },
+   {
+    "name": "win/Broadway/6/pair/18/crown",
+    "uv": [
+     680,
+     422
+    ]
+   },
+   {
+    "name": "win/Broadway/5/pair/18/crown",
+    "uv": [
+     644,
+     470
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Broadway/4/pair/18/crown",
+    "uv": [
+     612,
+     514
+    ]
+   },
+   {
+    "name": "win/Broadway/3/pair/18/crown",
+    "uv": [
+     586,
+     554
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Broadway/2/pair/18/crown",
+    "uv": [
+     560,
+     590
+    ]
+   },
+   {
+    "name": "win/Broadway/1/pair/18/crown",
+    "uv": [
+     536,
+     626
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Broadway/0/pair/18/crown",
+    "uv": [
+     512,
+     654
+    ]
+   },
+   {
+    "name": "top/Prow",
+    "uv": [
+     830,
+     175
+    ]
+   },
+   {
+    "name": "top/SE",
+    "uv": [
+     476,
+     616
+    ]
+   },
+   {
+    "name": "oculus/Broadway",
+    "uv": [
+     590,
+     1395
+    ]
+   },
+   {
+    "name": "band/Prow/ground_cornice",
+    "uv": [
+     815,
+     1426
+    ]
+   }
+  ],
+  "height_prior": [
+   1.7,
+   1.5
+  ],
+  "used": true,
+  "why": "Nine Broadway arcade crowns, prow and SE cornice, prow ground cornice, Broadway oculus; street-level height prior."
+ },
+ "flatiron_08.jpg": {
+  "size": [
+   1920,
+   2568
+  ],
+  "focal_px": null,
+  "init": {
+   "C": [
+    20,
+    230,
+    45
+   ],
+   "target": [
+    -10,
+    0,
+    45
+   ]
+  },
+  "points": [
+   {
+    "name": "band/Prow/cornice",
+    "uv": [
+     874,
+     301
+    ]
+   },
+   {
+    "name": "band/SE/cornice",
+    "uv": [
+     630,
+     424
+    ]
+   },
+   {
+    "name": "band/SW/cornice",
+    "uv": [
+     1037,
+     422
+    ]
+   },
+   {
+    "name": "band/Prow/c17",
+    "uv": [
+     874,
+     564
+    ]
+   },
+   {
+    "name": "band/SE/c17",
+    "uv": [
+     654,
+     621
+    ]
+   },
+   {
+    "name": "band/SW/c17",
+    "uv": [
+     1015,
+     622
+    ],
+    "holdout": true
+   },
+   {
+    "name": "band/SE/ground",
+    "uv": [
+     652,
+     1648
+    ],
+    "holdout": true
+   }
+  ],
+  "used": true,
+  "why": "Cornice and 17th-story cornice where they meet the three corners; SE ground. Elevated 1909 viewpoint."
+ },
+ "flatiron_01.jpg": {
+  "size": [
+   1920,
+   2382
+  ],
+  "focal_px": null,
+  "init": {
+   "C": [
+    -120,
+    110,
+    50
+   ],
+   "target": [
+    -13,
+    0,
+    40
+   ]
+  },
+  "points": [
+   {
+    "name": "win/Fifth/0/pair/18/crown",
+    "uv": [
+     830,
+     353
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/pair/18/crown",
+    "uv": [
+     905,
+     411
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/pair/18/crown",
+    "uv": [
+     970,
+     466
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/3/pair/18/crown",
+    "uv": [
+     1029,
+     517
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/4/pair/18/crown",
+    "uv": [
+     1084,
+     561
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/5/pair/18/crown",
+    "uv": [
+     1134,
+     602
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/6/pair/18/crown",
+    "uv": [
+     1176,
+     636
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/7/pair/18/crown",
+    "uv": [
+     1215,
+     670
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/8/pair/18/crown",
+    "uv": [
+     1259,
+     704
+    ],
+    "holdout": false
+   },
+   {
+    "name": "band/SW/cornice",
+    "uv": [
+     1310,
+     635
+    ]
+   },
+   {
+    "name": "band/Prow/ground_cornice",
+    "uv": [
+     712,
+     1978
+    ]
+   },
+   {
+    "name": "band/SW/ground_cornice",
+    "uv": [
+     1328,
+     1762
+    ]
+   },
+   {
+    "name": "oculus/Fifth",
+    "uv": [
+     1133,
+     1810
+    ]
+   },
+   {
+    "name": "band/Prow/dentil3",
+    "uv": [
+     712,
+     1767
+    ],
+    "holdout": true
+   }
+  ],
+  "used": true,
+  "why": "Arcade crowns on Fifth, cornice and ground-cornice ends, oculus. Prow cornice/c17 silhouette points were dropped: the rounded prow seen obliquely does not have its silhouette at the arc midpoint."
+ },
+ "flatiron_05.jpg": {
+  "size": [
+   1920,
+   1280
+  ],
+  "focal_px": 1808.1,
+  "focal_note": "EXIF 21 mm on Canon EOS Rebel T2i (22.3 mm sensor width)",
+  "height_prior": [
+   1.7,
+   1.5
+  ],
+  "init": {
+   "C": [
+    -35,
+    0,
+    1.7
+   ],
+   "target": [
+    -13,
+    -2,
+    10
+   ]
+  },
+  "points": [
+   {
+    "name": "oculus/Fifth",
+    "uv": [
+     1413,
+     645
+    ]
+   },
+   {
+    "name": "win/Fifth/1/pair/2/tl",
+    "uv": [
+     368,
+     562
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/pair/2/br",
+    "uv": [
+     573,
+     727
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/pair/2/tl",
+    "uv": [
+     682,
+     562
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/pair/2/br",
+    "uv": [
+     885,
+     727
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/3/pair/2/tl",
+    "uv": [
+     999,
+     562
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/3/pair/2/br",
+    "uv": [
+     1200,
+     727
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/5/pair/2/tl",
+    "uv": [
+     1623,
+     562
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/5/pair/2/br",
+    "uv": [
+     1825,
+     727
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/pair/3/tl",
+    "uv": [
+     391,
+     343
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/pair/3/br",
+    "uv": [
+     576,
+     487
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/pair/3/tl",
+    "uv": [
+     693,
+     343
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/2/pair/3/br",
+    "uv": [
+     885,
+     487
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/3/pair/3/tl",
+    "uv": [
+     999,
+     343
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/3/pair/3/br",
+    "uv": [
+     1191,
+     487
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/4/pair/3/tl",
+    "uv": [
+     1303,
+     343
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/4/pair/3/br",
+    "uv": [
+     1495,
+     487
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/5/pair/3/tl",
+    "uv": [
+     1602,
+     343
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/5/pair/3/br",
+    "uv": [
+     1797,
+     487
+    ],
+    "holdout": false
+   }
+  ],
+  "used": true,
+  "why": "Oculus over the Fifth entrance plus 2nd/3rd-story twin openings of pairs 1-5. EXIF focal."
+ },
+ "flatiron_04.jpg": {
+  "size": [
+   1920,
+   1280
+  ],
+  "focal_px": 3788.3,
+  "focal_note": "EXIF 44 mm on Canon EOS Rebel T2i (22.3 mm sensor width)",
+  "height_prior": [
+   1.7,
+   1.5
+  ],
+  "init": {
+   "C": [
+    -45,
+    22,
+    1.7
+   ],
+   "target": [
+    -13,
+    22,
+    14
+   ]
+  },
+  "bay_identification": "Face medallion on the end pier next to the prow, as in photo 05 (same camera, 33 s earlier); pairs counted from it",
+  "points": [
+   {
+    "name": "win/Fifth/1/0/4/tl",
+    "uv": [
+     782,
+     370
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/0/4/br",
+    "uv": [
+     919,
+     603
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/1/4/tl",
+    "uv": [
+     1015,
+     370
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/1/4/br",
+    "uv": [
+     1152,
+     603
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/0/4/tl",
+    "uv": [
+     1351,
+     370
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/0/4/br",
+    "uv": [
+     1481,
+     603
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/1/4/tl",
+    "uv": [
+     1591,
+     370
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/2/1/4/br",
+    "uv": [
+     1714,
+     603
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/0/1/4/tl",
+    "uv": [
+     453,
+     370
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/0/1/4/br",
+    "uv": [
+     590,
+     603
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/1/pair/3/tl",
+    "uv": [
+     789,
+     747
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/pair/3/br",
+    "uv": [
+     1173,
+     1042
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/pair/3/tl",
+    "uv": [
+     1371,
+     747
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/pair/3/br",
+    "uv": [
+     1755,
+     1042
+    ],
+    "holdout": false
+   }
+  ],
+  "used": true,
+  "why": "4th-story sash windows and 3rd-story twin openings, pairs counted from the face-medallion end pier (same series as 05). EXIF focal."
+ },
+ "flatiron_07.jpg": {
+  "size": [
+   1920,
+   2880
+  ],
+  "focal_px": 7087.2,
+  "focal_note": "EXIF 55 mm on Canon EOS Rebel T2i, portrait (14.9 mm sensor side across the 1920 px width)",
+  "height_prior": [
+   1.7,
+   1.5
+  ],
+  "init": {
+   "C": [
+    -45,
+    40,
+    1.7
+   ],
+   "target": [
+    -13,
+    25,
+    70
+   ]
+  },
+  "bay_identification": "First arcade arch right of the scaffold-covered prow taken as Fifth pair 0; checked by where the model prow lands in the overlay",
+  "points": [
+   {
+    "name": "win/Fifth/0/pair/18/crown",
+    "uv": [
+     825,
+     451
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/pair/18/crown",
+    "uv": [
+     1085,
+     605
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/pair/18/crown",
+    "uv": [
+     1344,
+     797
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/3/pair/18/crown",
+    "uv": [
+     1584,
+     960
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/4/pair/18/crown",
+    "uv": [
+     1805,
+     1113
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/0/0/16/crown",
+    "uv": [
+     791,
+     1071
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/0/1/16/crown",
+    "uv": [
+     912,
+     1133
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/1/0/16/crown",
+    "uv": [
+     1069,
+     1238
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/1/1/16/crown",
+    "uv": [
+     1187,
+     1306
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/2/0/16/crown",
+    "uv": [
+     1338,
+     1411
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/2/1/16/crown",
+    "uv": [
+     1453,
+     1478
+    ],
+    "holdout": false
+   }
+  ],
+  "used": true,
+  "why": "Arcade crowns and 16th-story arched windows next to the scaffolded prow; EXIF focal. Model prow windows land about 1.5-2 m closer to pair 0 than the real prow (model end-pier too short), noted."
+ },
+ "flatiron_06.jpg": {
+  "size": [
+   1920,
+   2880
+  ],
+  "focal_px": 7087.2,
+  "focal_note": "EXIF 55 mm on Canon EOS Rebel T2i, portrait",
+  "height_prior": [
+   1.7,
+   1.5
+  ],
+  "init": {
+   "C": [
+    -50,
+    -25,
+    1.7
+   ],
+   "target": [
+    -13,
+    0,
+    70
+   ]
+  },
+  "bay_identification": "ASSUMED: the visible oriel is the centre one (pair 4); the three oriels look identical. Inferred from the photo sequence (taken 63 s after photo 05 at the centre entrance) and the 5 Av title, not from a unique landmark",
+  "points": [
+   {
+    "name": "win/Fifth/2/pair/18/crown",
+    "uv": [
+     162,
+     1188
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/3/pair/18/crown",
+    "uv": [
+     576,
+     1065
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/4/pair/18/crown",
+    "uv": [
+     1004,
+     943
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/5/pair/18/crown",
+    "uv": [
+     1448,
+     819
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/3/0/16/crown",
+    "uv": [
+     384,
+     1630
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/3/1/16/crown",
+    "uv": [
+     588,
+     1575
+    ],
+    "holdout": true
+   },
+   {
+    "name": "win/Fifth/4/0/16/crown",
+    "uv": [
+     871,
+     1504
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/4/1/16/crown",
+    "uv": [
+     1081,
+     1442
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/5/0/16/crown",
+    "uv": [
+     1377,
+     1361
+    ],
+    "holdout": false
+   },
+   {
+    "name": "win/Fifth/5/1/16/crown",
+    "uv": [
+     1583,
+     1306
+    ],
+    "holdout": true
+   },
+   {
+    "name": "oriel/Fifth/4/hood",
+    "uv": [
+     970,
+     1813
+    ],
+    "holdout": true
+   }
+  ],
+  "used": true,
+  "why": "Arcade crowns and 16th-story arched windows; EXIF focal. Bay index ASSUMED (centre oriel, pair 4): identical oriels at pairs 1/4/7; timestamps favour 4 but 7 is not excluded, so the position may be off by one oriel spacing (about 17 m) along Fifth."
+ },
+ "flatiron_03.jpg": {
+  "size": [
+   1920,
+   1277
+  ],
+  "focal_px": 4373.3,
+  "focal_note": "EXIF 55 mm on Nikon D3200 (82 mm 35mm-equivalent)",
+  "used": false,
+  "why": "Not solved: an extreme upward view of one facade curving into a rounded corner with the cornice; no arcade, entrance or other unique landmark, and the corner (prow, SW or SE) cannot be identified. Shown in the panel without Align.",
+  "points": []
+ }
+}

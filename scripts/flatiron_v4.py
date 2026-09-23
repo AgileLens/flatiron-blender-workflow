@@ -268,6 +268,7 @@ class Geometry:
 
 
 G = Geometry()
+LAYOUT = []   # every opening with its side/pair/window/story tag; used by photo_landmarks.py
 
 
 def P3(path, s, d, z):
@@ -495,7 +496,9 @@ def build():
         else:
             zb, zt = zf + .72, top - .55
         ops = []
-        def add_op(s0, s1, kind, zb_=None, zt_=None):
+        def add_op(s0, s1, kind, zb_=None, zt_=None, tag=None):
+            LAYOUT.append({'story': n, 'tag': tag, 's0': s0, 's1': s1, 'kind': kind,
+                           'zb': zb if zb_ is None else zb_, 'zt': zt if zt_ is None else zt_})
             ops.append({'s0': s0, 's1': s1, 'kind': kind, 'zb': zb if zb_ is None else zb_,
                         'zt': zt if zt_ is None else zt_, 'mat': mat, 'zf': zf, 'hood': n in HOOD_STORIES})
         for side, centres in pairs.items():
@@ -503,38 +506,38 @@ def build():
                 half = WW + NP / 2
                 if n == 1:
                     add_op(c - half, c + half, 'door' if k in ENTRANCE_PAIRS[side] else 'store',
-                           0.0 if k in ENTRANCE_PAIRS[side] else None, 4.2 if k in ENTRANCE_PAIRS[side] else None)
+                           0.0 if k in ENTRANCE_PAIRS[side] else None, 4.2 if k in ENTRANCE_PAIRS[side] else None, (side, k, 'pair'))
                 elif n == 2 and k in ENTRANCE_PAIRS[side] and side != '22nd':
                     pass   # oculus above the entrance: solid wall, ornament added below
                 elif n in (2, 3):
-                    add_op(c - half, c + half, 'twin')
+                    add_op(c - half, c + half, 'twin', tag=(side, k, 'pair'))
                 elif n == 18:
-                    add_op(c - half, c + half, 'arcade')
+                    add_op(c - half, c + half, 'arcade', tag=(side, k, 'pair'))
                 elif 7 <= n <= 14 and k in ORIEL_PAIRS.get(side, []):
-                    add_op(c - half - .15, c + half + .15, 'oriel')
+                    add_op(c - half - .15, c + half + .15, 'oriel', tag=(side, k, 'pair'))
                     if n == 7:
                         oriels.append((side, c - half - .15, c + half + .15))
                 else:
                     kind = 'arched' if n == 16 else 'square' if n == 20 else 'sash'
                     w = .95 if n == 20 else WW
-                    for x in (c - (WW + NP) / 2, c + (WW + NP) / 2):
-                        add_op(x - w / 2, x + w / 2, kind)
+                    for j, x in enumerate((c - (WW + NP) / 2, c + (WW + NP) / 2)):
+                        add_op(x - w / 2, x + w / 2, kind, tag=(side, k, j))
         for name in ('SW', 'SE'):
             f = feats[name]; c = (f['s0'] + f['s1']) / 2
             w = 1.4 if n == 1 else .95 if n == 20 else 1.15
             kind = {1: 'door', 18: 'arcade1', 16: 'arched', 20: 'square'}.get(n, 'sash')
-            add_op(c - w / 2, c + w / 2, kind, 0.0 if n == 1 else None, 4.2 if n == 1 else None)
+            add_op(c - w / 2, c + w / 2, kind, 0.0 if n == 1 else None, 4.2 if n == 1 else None, (name, 0, 0))
         f = feats['Prow']; c = (f['s0'] + f['s1']) / 2
         if n == 1:
-            add_op(c - .7, c + .7, 'store')
+            add_op(c - .7, c + .7, 'store', tag=('Prow', 0, 1))
         elif n == 18:
-            add_op(f['s0'] + .22, f['s1'] - .22, 'loggia', zf + .25, top - .3)
+            add_op(f['s0'] + .22, f['s1'] - .22, 'loggia', zf + .25, top - .3, ('Prow', 0, 1))
         elif n == 20:
-            add_op(c - .4, c + .4, 'square')
+            add_op(c - .4, c + .4, 'square', tag=('Prow', 0, 1))
         else:
             kind = 'arched' if n == 16 else 'sash'
-            for x, w in ((c - .93, .55), (c, .8), (c + .93, .55)):
-                add_op(x - w / 2, x + w / 2, kind)
+            for j, (x, w) in enumerate(((c - .93, .55), (c, .8), (c + .93, .55))):
+                add_op(x - w / 2, x + w / 2, kind, tag=('Prow', 0, j))
         ops.sort(key=lambda o: o['s0'])
         for o in ops:
             opening(path, o, top)
