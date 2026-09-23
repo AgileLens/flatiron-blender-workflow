@@ -99,3 +99,29 @@ Accuracy changes, from Wikipedia's *Flatiron Building* article and the credited 
 - **Stories:** a three-story rusticated limestone base with paired sashes in two-bay openings, storefronts, entrances with engaged columns and an oculus, and a projecting cornice. A transitional 4th story with wreaths and a roundel frieze. A meander frieze above the 6th. Three trapezoidal oriels on each long facade over the 7th–14th stories, with three windows per story. Rusticated 15th, arched 16th, transitional 17th. A double-height, double-width arcade on the 18th–19th. Square 20th-story windows with triglyphs. A main cornice with dentils and modillions projecting 1.7 m, a balustrade, a set-back attic and a penthouse.
 
 Still approximate: floor heights, pier widths, oriel projection, ornament shapes and the penthouse extent are estimates. The 1902 cowcatcher and the apex cherubs are not modeled. Colours are constant PBR values, slightly darker and warmer than the chalky build-3 stone. This is a reference-guided model, not a survey.
+
+## Build 5: reference photos, camera solves and Align
+
+[Solved cameras](docs/build5/photo-cameras.json) · [Correspondences](docs/build5/correspondences.json) · [Overlay contact sheet](docs/build5/overlay-contact-sheet.jpg) · [Licence check](docs/build5/photo-licenses.json)
+
+Each reference photo gets a pinhole camera solved against the build-4 model:
+- **Landmarks.** `scripts/photo_landmarks.py` names model points (window corners, arcade crowns, the corners where the cornices and bands meet, the entrance oculus). I picked the matching photo pixels by hand from gridded crops.
+- **Solve.** `scripts/solve_photo_cameras.py` runs perspective-n-point with SciPy's robust least squares, because OpenCV isn't installed here. It uses the EXIF focal length from the Commons record when one exists, and a street-level height prior for photos taken from the pavement. Some points are held out of each fit so the error can be checked.
+- **Checks.** `scripts/render_photo_overlays.py` renders the model from each solved camera in Blender, with glass in magenta and frames in yellow, and confirms numerically that Blender projects every landmark where the solver did (0.07 px maximum difference). The sheets in `docs/build5/` were inspected by eye.
+
+| Photo | Fit RMSE | Held-out RMSE | Focal | Used |
+|---|---:|---:|---|---|
+| 01 Underhill 1903 | 10.9 px | 10.3 px | solved | yes |
+| 02 Chris06 2013 | 16.6 px | 14.5 px | solved | yes |
+| 03 Gutierrez 2016 | n/a | n/a | EXIF | no: no unique landmark in the view |
+| 04 Epicgenius 2022 | 11.8 px | 15.7 px | EXIF 44 mm | yes |
+| 05 Epicgenius 2022 | 7.9 px | 6.1 px | EXIF 21 mm | yes |
+| 06 Epicgenius 2022 | 4.1 px | 31.1 px | EXIF 55 mm | yes, but the bay is assumed (identical oriels) |
+| 07 Epicgenius 2022 | 10.8 px | 8.3 px | EXIF 55 mm | yes |
+| 08 1909 | 3.8 px | 12.0 px | solved | yes |
+
+The overlays also show where the model is still off. In photo 02 the prow and the far end of Broadway can't both fit, and in photo 07 the model's end pier next to the prow is 1.5–2 m short. That is useful input for a later geometry pass.
+
+The native viewer (build 5) bundles all eight photos with their credits and licence links: two public-domain photos, one CC BY 3.0 and five CC BY-SA 4.0, resized. Credits are shown in the app. To repopulate `native/Flatiron/Resources/Photos`, run `scripts/download_references.py` and then `scripts/build_photo_manifest.py`. Photo binaries are not committed here.
+
+The overlay sheets in `docs/build5/` combine the credited photos with renders. The CC BY-SA ones are shared under CC BY-SA 4.0; see [photo credits](docs/photo-credits.md).

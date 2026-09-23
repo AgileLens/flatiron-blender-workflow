@@ -26,6 +26,8 @@ final class FlatironExperience {
     @ObservationIgnored private let buildingTarget = Entity()
     @ObservationIgnored private var assetBounds: BoundingBox?
     @ObservationIgnored private var drag = WorldDrag()
+    @ObservationIgnored private var photoOverlay: ModelEntity?
+    private(set) var alignedPhotoID: String?
 
     func install(in content: RealityViewContent) async {
         setTurntable(false)
@@ -108,6 +110,7 @@ final class FlatironExperience {
     func reset() {
         guard let bounds = assetBounds else { return }
         setTurntable(false)
+        clearAlignment()
         drag.end()
         let factor = Self.sourceToFullScale
         guard let pose = tracking.pose() else {
@@ -146,6 +149,7 @@ final class FlatironExperience {
         root.components.remove(TurntableComponent.self)
         turntableEnabled = enabled && ready && positioned
         if turntableEnabled, let pivot = baseCenter {
+            clearAlignment()
             drag.end()
             root.components.set(TurntableComponent(entity: root, localPivot: pivot))
         }
@@ -156,6 +160,7 @@ final class FlatironExperience {
     func scale(by factor: Float) {
         guard ready, positioned, let localPivot = baseCenter else { return }
         setTurntable(false)
+        clearAlignment()
         drag.end()
         let next = min(max(relativeScale * factor, 0.01), 2)
         let ratio = next / relativeScale
@@ -179,6 +184,7 @@ final class FlatironExperience {
         }
         if !drag.active {
             setTurntable(false)
+            clearAlignment()
             // Rebaseline at this sample after a button interrupts an existing
             // gesture; stale gesture-start coordinates must not move the root.
             drag.begin(root: root.position, hand: current, gain: movementGain)
@@ -193,12 +199,64 @@ final class FlatironExperience {
     }
 
     func close() {
+        clearAlignment()
         setTurntable(false)
         setNavigation(false)
         tracking.stop()
         ready = false
         positioned = false
         phase = .closed
+    }
+
+    /// Put the viewer where the photographer stood: the solved camera lands on the measured head
+    /// position and its heading turns onto the viewer's current heading. Full source scale.
+    /// The photo is shown as a world-fixed plane on the camera's view axis, 2.5 m ahead, sized to
+    /// the solved field of view, so it lines up with the model when you look the way the camera did.
+    func align(to photo: ReferencePhoto, library: PhotoLibrary) async -> String {
+        guard ready, let camera = photo.camera else { return "Align needs a solved photo and a loaded walkaround." }
+        guard let pose = tracking.pose() else { return "Waiting for head tracking; try Align again in a moment." }
+        let texture: TextureResource
+        do { texture = try await library.texture(for: photo) } catch { return "Photo could not load: \(error.localizedDescription)" }
+        setTurntable(false)
+        clearAlignment()
+        drag.end()
+        let head = SIMD3<Float>(pose.columns.3.x, pose.columns.3.y, pose.columns.3.z)
+        let viewerForward = -SIMD3<Float>(pose.columns.2.x, pose.columns.2.y, pose.columns.2.z)
+        let yaw = PhotoAlignMath.alignmentYaw(cameraForward: camera.forward, viewerForward: viewerForward)
+        let rotation = simd_quatf(angle: yaw, axis: [0, 1, 0])
+        root.orientation = rotation
+        root.scale = .init(repeating: Self.sourceToFullScale)
+        relativeScale = 1
+        root.position = PhotoAlignMath.rootPosition(head: head, cameraOffset: camera.position, rotation: rotation)
+        root.isEnabled = true
+        positioned = true
+        let distance: Float = 2.5
+        let width = 2 * distance * tan(camera.hfovDeg * .pi / 360)
+        let height = 2 * distance * tan(camera.vfovDeg * .pi / 360)
+        let forward = rotation.act(camera.forward)
+        let overlay = PhotoLibrary.overlayEntity(texture: texture, width: width, height: height, opacity: library.overlayOpacity)
+        overlay.position = head + distance * forward
+        overlay.orientation = PhotoAlignMath.facingOrientation(right: rotation.act(camera.right),
+                                                               up: rotation.act(camera.up), forward: forward)
+        holder.addChild(overlay)
+        photoOverlay = overlay
+        alignedPhotoID = photo.id
+        Receipt.write("immersive-align", ["photo": photo.id, "rootPosition": vector(root.position), "rootYaw": yaw,
+            "head": vector(head), "cameraHeightM": camera.heightM, "cameraPitchDeg": camera.pitchDeg,
+            "overlaySizeMeters": [width, height], "overlayDistanceMeters": distance])
+        let look = camera.pitchDeg >= 0 ? "up" : "down"
+        return String(format: "Aligned to %@. Look %.0f° %@ from straight ahead; the photo is 2.5 m in front. Walking or resizing clears it.",
+                      photo.id, abs(camera.pitchDeg), look)
+    }
+
+    func setOverlayOpacity(_ value: Float) {
+        photoOverlay?.components.set(OpacityComponent(opacity: value))
+    }
+
+    func clearAlignment() {
+        photoOverlay?.removeFromParent()
+        photoOverlay = nil
+        alignedPhotoID = nil
     }
 
     private func vector(_ value: SIMD3<Float>) -> [Float] { [value.x, value.y, value.z] }
@@ -227,12 +285,15 @@ struct FlatironImmersiveView: View {
 
 struct FlatironControls: View {
     @Bindable var experience: FlatironExperience
+    let tabletop: FlatironTabletop
+    let library: PhotoLibrary
     @Environment(\.openImmersiveSpace) private var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) private var dismissImmersiveSpace
     @Environment(\.openWindow) private var openWindow
     @State private var entryError: String?
 
     var body: some View {
+        ScrollView {
         VStack(alignment: .leading, spacing: 16) {
             Text("Flatiron").font(.largeTitle).bold()
             Text("Walk around at approximate full scale, or inspect a tabletop model.")
@@ -279,9 +340,31 @@ struct FlatironControls: View {
                 Text("Size changes the building around its base. 100% is its original estimated size. Movement, scaling and Return to start stop the turntable.")
                     .font(.caption).foregroundStyle(.secondary)
             }
+            Divider()
+            PhotoPanel(library: library, experience: experience, tabletop: tabletop)
         }
         .padding(28)
-        .frame(width: 560)
+        }
+        .frame(width: 600, height: 980)
+        .task { await selfTestIfRequested() }
+    }
+
+    /// Launch-argument self-test for simulator/device verification without a wearer:
+    /// -FlatironSelfTest opens the tabletop, optionally resizes (-FlatironSelfTestScale 0.5) and
+    /// aligns to a photo (-FlatironSelfTestPhoto <0-based index>, default 1 = photo 02).
+    private func selfTestIfRequested() async {
+        let args = ProcessInfo.processInfo.arguments
+        guard args.contains("-FlatironSelfTest") else { return }
+        func value(_ key: String) -> String? { args.firstIndex(of: key).flatMap { args.indices.contains($0 + 1) ? args[$0 + 1] : nil } }
+        openWindow(id: "tabletop")
+        for _ in 0..<200 where !tabletop.ready { try? await Task.sleep(for: .milliseconds(100)) }
+        guard tabletop.ready else { Receipt.write("selftest-failed", ["reason": "tabletop not ready"]); return }
+        if let scale = value("-FlatironSelfTestScale").flatMap(Float.init) { tabletop.scale(by: scale) }
+        library.select(value("-FlatironSelfTestPhoto").flatMap(Int.init) ?? 1)
+        if let photo = library.current, photo.used {
+            let status = await tabletop.align(to: photo, library: library)
+            Receipt.write("selftest-aligned", ["photo": photo.id, "status": status])
+        }
     }
 
     private func toggleImmersion() async {

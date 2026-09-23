@@ -1,0 +1,438 @@
+{
+ "photos": [
+  {
+   "id": "flatiron_01",
+   "file": "flatiron_01.jpg",
+   "title": "\"Fuller_Building\"_(The_Flatiron)_LCCN00652679.jpg",
+   "author": "Irving Underhill (1903)",
+   "license": "Public domain",
+   "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:%22Fuller_Building%22_(The_Flatiron)_LCCN00652679.jpg",
+   "credit": "Irving Underhill (1903) \u00b7 Public domain \u00b7 Wikimedia Commons",
+   "used": true,
+   "note": "Arcade crowns on Fifth, cornice and ground-cornice ends, oculus. Prow cornice/c17 silhouette points were dropped: the rounded prow seen obliquely does not have its silhouette at the arc midpoint.",
+   "bayNote": "",
+   "camera": {
+    "positionBlender": [
+     -59.79576943401497,
+     74.00341408677181,
+     24.387115222703812
+    ],
+    "rightBlender": [
+     -0.8006973740165516,
+     -0.5989378973328562,
+     -0.012534368013391362
+    ],
+    "upBlender": [
+     -0.1122577270790418,
+     0.12945495244323946,
+     0.9852104435088809
+    ],
+    "forwardBlender": [
+     0.5884572354505002,
+     -0.7902624946347987,
+     0.17088964749082636
+    ],
+    "hfovDeg": 60.467639502015004,
+    "vfovDeg": 71.7369955490603,
+    "headingDeg": 143.32733456717992,
+    "pitchDeg": 9.839549058718196,
+    "heightM": 24.387115222703812,
+    "anchorBlender": [
+     -13.035459654648434,
+     -1.6693836424355897,
+     57.96357142857143
+    ],
+    "anchorUV": [
+     0.5687916352552628,
+     0.36598090648472176
+    ],
+    "anchorUpUV": [
+     0.5664163519095862,
+     0.2965041829517087
+    ],
+    "fitRMSEpx": 10.898701528549816,
+    "holdoutRMSEpx": 10.311056699729251,
+    "imageSizePx": [
+     1920,
+     2382
+    ],
+    "focalSource": "solved"
+   }
+  },
+  {
+   "id": "flatiron_02",
+   "file": "flatiron_02.jpg",
+   "title": "2013_Flatiron_Building_(New_York_City)_(1).jpg",
+   "author": "Chris06",
+   "license": "CC BY-SA 4.0",
+   "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:2013_Flatiron_Building_(New_York_City)_(1).jpg",
+   "credit": "Chris06 \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons \u00b7 resized",
+   "used": true,
+   "note": "Nine Broadway arcade crowns, prow and SE cornice, prow ground cornice, Broadway oculus; street-level height prior.",
+   "bayNote": "",
+   "camera": {
+    "positionBlender": [
+     -2.549498501584477,
+     98.56757861403784,
+     1.7824370965787804
+    ],
+    "rightBlender": [
+     -0.9924211445434543,
+     0.12281214349274579,
+     -0.004177232789414863
+    ],
+    "upBlender": [
+     0.05094440715198088,
+     0.4421307895659696,
+     0.8955026701789922
+    ],
+    "forwardBlender": [
+     -0.11182548565954428,
+     -0.8885029782327626,
+     0.4450365360602628
+    ],
+    "hfovDeg": 57.26330788977751,
+    "vfovDeg": 56.33006134564585,
+    "headingDeg": 187.1734323374517,
+    "pitchDeg": 26.425676355864198,
+    "heightM": 1.7824370965787804,
+    "anchorBlender": [
+     -0.5204260501233288,
+     0.994112965804131,
+     67.28153846153846
+    ],
+    "anchorUV": [
+     0.3869560294223815,
+     0.373851805889275
+    ],
+    "anchorUpUV": [
+     0.39082743697716743,
+     0.30887678604976065
+    ],
+    "fitRMSEpx": 16.59276875375173,
+    "holdoutRMSEpx": 14.455307356408204,
+    "imageSizePx": [
+     1608,
+     1577
+    ],
+    "focalSource": "solved"
+   }
+  },
+  {
+   "id": "flatiron_03",
+   "file": "flatiron_03.jpg",
+   "title": "31526579243_Jpg_(247407067).jpeg",
+   "author": "Mariano Gutierrez",
+   "license": "CC BY 3.0",
+   "licenseURL": "https://creativecommons.org/licenses/by/3.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:31526579243_Jpg_(247407067).jpeg",
+   "credit": "Mariano Gutierrez \u00b7 CC BY 3.0 \u00b7 Wikimedia Commons \u00b7 resized",
+   "used": false,
+   "note": "Not solved: an extreme upward view of one facade curving into a rounded corner with the cornice; no arcade, entrance or other unique landmark, and the corner (prow, SW or SE) cannot be identified. Shown in the panel without Align.",
+   "bayNote": ""
+  },
+  {
+   "id": "flatiron_04",
+   "file": "flatiron_04.jpg",
+   "title": "5_Av_Sep_2022_103.jpg",
+   "author": "Epicgenius",
+   "license": "CC BY-SA 4.0",
+   "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:5_Av_Sep_2022_103.jpg",
+   "credit": "Epicgenius \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons \u00b7 resized",
+   "used": true,
+   "note": "4th-story sash windows and 3rd-story twin openings, pairs counted from the face-medallion end pier (same series as 05). EXIF focal.",
+   "bayNote": "Face medallion on the end pier next to the prow, as in photo 05 (same camera, 33 s earlier); pairs counted from it",
+   "camera": {
+    "positionBlender": [
+     -47.75230668172793,
+     16.063525057256438,
+     2.9709773427175605
+    ],
+    "rightBlender": [
+     -0.025858474565204237,
+     -0.999660293488088,
+     -0.0032614285934322584
+    ],
+    "upBlender": [
+     -0.3138158376067199,
+     0.005019873574036049,
+     0.9494706003539517
+    ],
+    "forwardBlender": [
+     0.9491316870489328,
+     -0.02557534931550426,
+     0.3138390385962785
+    ],
+    "hfovDeg": 28.44015836497215,
+    "vfovDeg": 19.17814996324796,
+    "headingDeg": 91.54352139855715,
+    "pitchDeg": 18.29074183993262,
+    "heightM": 2.9709773427175605,
+    "anchorBlender": [
+     -13.106400000000006,
+     13.28151740901961,
+     14.832142857142859
+    ],
+    "anchorUV": [
+     0.5993330402902207,
+     0.46970537208713675
+    ],
+    "anchorUpUV": [
+     0.5898870807775585,
+     -0.23367643196001167
+    ],
+    "fitRMSEpx": 11.771306022232077,
+    "holdoutRMSEpx": 15.747332731319041,
+    "imageSizePx": [
+     1920,
+     1280
+    ],
+    "focalSource": "EXIF"
+   }
+  },
+  {
+   "id": "flatiron_05",
+   "file": "flatiron_05.jpg",
+   "title": "5_Av_Sep_2022_108.jpg",
+   "author": "Epicgenius",
+   "license": "CC BY-SA 4.0",
+   "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:5_Av_Sep_2022_108.jpg",
+   "credit": "Epicgenius \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons \u00b7 resized",
+   "used": true,
+   "note": "Oculus over the Fifth entrance plus 2nd/3rd-story twin openings of pairs 1-5. EXIF focal.",
+   "bayNote": "",
+   "camera": {
+    "positionBlender": [
+     -44.52848426674479,
+     6.848516521961495,
+     1.8435973393607679
+    ],
+    "rightBlender": [
+     -0.013797526620143552,
+     -0.9999025262414517,
+     -0.0021368844445637802
+    ],
+    "upBlender": [
+     -0.18708121463431227,
+     0.0004821487135813207,
+     0.9823443320259797
+    ],
+    "forwardBlender": [
+     0.9822475489356626,
+     -0.013953693008697754,
+     0.18706963158487855
+    ],
+    "hfovDeg": 55.93160592941988,
+    "vfovDeg": 38.98413019144724,
+    "headingDeg": 90.81388235036428,
+    "pitchDeg": 10.781820409103508,
+    "heightM": 1.8435973393607679,
+    "anchorBlender": [
+     -13.106400000000006,
+     4.252054251124871,
+     9.986842105263161
+    ],
+    "anchorUV": [
+     0.5623069906959127,
+     0.40765150174549714
+    ],
+    "anchorUpUV": [
+     0.5583214910482136,
+     0.008065360300410251
+    ],
+    "fitRMSEpx": 7.882295685260033,
+    "holdoutRMSEpx": 6.117128831750998,
+    "imageSizePx": [
+     1920,
+     1280
+    ],
+    "focalSource": "EXIF"
+   }
+  },
+  {
+   "id": "flatiron_06",
+   "file": "flatiron_06.jpg",
+   "title": "5_Av_Sep_2022_114.jpg",
+   "author": "Epicgenius",
+   "license": "CC BY-SA 4.0",
+   "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:5_Av_Sep_2022_114.jpg",
+   "credit": "Epicgenius \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons \u00b7 resized",
+   "used": true,
+   "note": "Arcade crowns and 16th-story arched windows; EXIF focal. Bay index ASSUMED (centre oriel, pair 4): identical oriels at pairs 1/4/7; timestamps favour 4 but 7 is not excluded, so the position may be off by one oriel spacing (about 17 m) along Fifth.",
+   "bayNote": "ASSUMED: the visible oriel is the centre one (pair 4); the three oriels look identical. Inferred from the photo sequence (taken 63 s after photo 05 at the centre entrance) and the 5 Av title, not from a unique landmark",
+   "camera": {
+    "positionBlender": [
+     -49.355107553331244,
+     -16.12181421744945,
+     1.517665137078397
+    ],
+    "rightBlender": [
+     0.3232407455283872,
+     -0.9456813086856058,
+     0.03467395035083676
+    ],
+    "upBlender": [
+     -0.8146078142438106,
+     -0.2594180813206539,
+     0.5187642702199448
+    ],
+    "forwardBlender": [
+     0.4815906242891089,
+     0.19593142036587827,
+     0.8542138778492396
+    ],
+    "hfovDeg": 15.428151155572843,
+    "vfovDeg": 22.970387985869085,
+    "headingDeg": 67.86143051039453,
+    "pitchDeg": 58.67299561338439,
+    "heightM": 1.517665137078397,
+    "anchorBlender": [
+     -13.189127272727278,
+     -0.5649371364349354,
+     68.86
+    ],
+    "anchorUV": [
+     0.4675078954395312,
+     0.45462742055989225
+    ],
+    "anchorUpUV": [
+     0.4855064523896349,
+     0.3115783711153043
+    ],
+    "fitRMSEpx": 4.050546739482343,
+    "holdoutRMSEpx": 31.09200698791588,
+    "imageSizePx": [
+     1920,
+     2880
+    ],
+    "focalSource": "EXIF"
+   }
+  },
+  {
+   "id": "flatiron_07",
+   "file": "flatiron_07.jpg",
+   "title": "5_Av_Sep_2022_94.jpg",
+   "author": "Epicgenius",
+   "license": "CC BY-SA 4.0",
+   "licenseURL": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:5_Av_Sep_2022_94.jpg",
+   "credit": "Epicgenius \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons \u00b7 resized",
+   "used": true,
+   "note": "Arcade crowns and 16th-story arched windows next to the scaffolded prow; EXIF focal. Model prow windows land about 1.5-2 m closer to pair 0 than the real prow (model end-pier too short), noted.",
+   "bayNote": "First arcade arch right of the scaffold-covered prow taken as Fifth pair 0; checked by where the model prow lands in the overlay",
+   "camera": {
+    "positionBlender": [
+     -64.42219712097685,
+     72.59722230735142,
+     4.752006521281475
+    ],
+    "rightBlender": [
+     -0.7065290918320664,
+     -0.7068494452306805,
+     -0.034358465798621785
+    ],
+    "upBlender": [
+     -0.4430814265766879,
+     0.4039797419430087,
+     0.8002994549057418
+    ],
+    "forwardBlender": [
+     0.5518111015716546,
+     -0.5806584451092911,
+     0.5986153007612968
+    ],
+    "hfovDeg": 15.428151155572843,
+    "vfovDeg": 22.970387985869085,
+    "headingDeg": 136.45917714720804,
+    "pitchDeg": 36.77079010539789,
+    "heightM": 4.752006521281475,
+    "anchorBlender": [
+     -13.106400000000006,
+     12.509753772655976,
+     70.60272727272728
+    ],
+    "anchorUV": [
+     0.6422229321618719,
+     0.3635832851832399
+    ],
+    "anchorUpUV": [
+     0.6227074203665529,
+     0.1897777387671856
+    ],
+    "fitRMSEpx": 10.828589435663188,
+    "holdoutRMSEpx": 8.318783143159076,
+    "imageSizePx": [
+     1920,
+     2880
+    ],
+    "focalSource": "EXIF"
+   }
+  },
+  {
+   "id": "flatiron_08",
+   "file": "flatiron_08.jpg",
+   "title": "Flat_Iron_Building,_New_York_1909.jpg",
+   "author": "Unknown author (1909)",
+   "license": "Public domain",
+   "licenseURL": "https://creativecommons.org/publicdomain/mark/1.0/",
+   "sourceURL": "https://commons.wikimedia.org/wiki/File:Flat_Iron_Building,_New_York_1909.jpg",
+   "credit": "Unknown author (1909) \u00b7 Public domain \u00b7 Wikimedia Commons",
+   "used": true,
+   "note": "Cornice and 17th-story cornice where they meet the three corners; SE ground. Elevated 1909 viewpoint.",
+   "bayNote": "",
+   "camera": {
+    "positionBlender": [
+     -46.00986314321626,
+     227.99517688737131,
+     55.95753589937871
+    ],
+    "rightBlender": [
+     -0.9897707985824546,
+     -0.1426435422534501,
+     0.002566345034804546
+    ],
+    "upBlender": [
+     0.019330306556639074,
+     -0.11626263696594487,
+     0.9930303814557492
+    ],
+    "forwardBlender": [
+     0.14135100113503202,
+     -0.9829220819063497,
+     -0.11783070643516934
+    ],
+    "hfovDeg": 28.084005937446136,
+    "vfovDeg": 36.99201678370148,
+    "headingDeg": 171.8165746693836,
+    "pitchDeg": -6.766922962732274,
+    "heightM": 55.95753589937871,
+    "anchorBlender": [
+     -2.000983957910552,
+     -13.646777000730967,
+     65.45142857142856
+    ],
+    "anchorUV": [
+     0.42529959391316247,
+     0.26359995693499516
+    ],
+    "anchorUpUV": [
+     0.42514752633156966,
+     0.2009701943334227
+    ],
+    "fitRMSEpx": 3.8009538257569657,
+    "holdoutRMSEpx": 12.02632111711746,
+    "imageSizePx": [
+     1920,
+     2568
+    ],
+    "focalSource": "solved"
+   }
+  }
+ ],
+ "coordinateNote": "Blender full scale, metres, Z up; USDZ asset = Blender / 87 with Z-up -> RealityKit Y-up (x, z, -y)"
+}
