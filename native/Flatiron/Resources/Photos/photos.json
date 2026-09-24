@@ -70,49 +70,49 @@
    "sourceURL": "https://commons.wikimedia.org/wiki/File:2013_Flatiron_Building_(New_York_City)_(1).jpg",
    "credit": "Chris06 \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons \u00b7 resized",
    "used": true,
-   "note": "Nine Broadway arcade crowns, prow and SE cornice, prow ground cornice, Broadway oculus; street-level height prior.",
+   "note": "Nine Broadway arcade crowns, prow and SE cornice, prow ground cornice, Broadway oculus; street-level height prior. Build 6: plus 16 prow window-column tops (stories 2-17), odd stories fitted, even held out.",
    "bayNote": "",
    "camera": {
     "positionBlender": [
-     -2.549498501584477,
-     98.56757861403784,
-     1.7824370965787804
+     0.06045125893925435,
+     123.2283632679328,
+     1.210905390929825
     ],
     "rightBlender": [
-     -0.9924211445434543,
-     0.12281214349274579,
-     -0.004177232789414863
+     -0.9936505250861863,
+     0.11218692091359798,
+     -0.00852811654896863
     ],
     "upBlender": [
-     0.05094440715198088,
-     0.4421307895659696,
-     0.8955026701789922
+     0.03501868489092859,
+     0.38041524731661774,
+     0.9241525476443525
     ],
     "forwardBlender": [
-     -0.11182548565954428,
-     -0.8885029782327626,
-     0.4450365360602628
+     -0.10692205434079788,
+     -0.9179860208004059,
+     0.38192844867930537
     ],
-    "hfovDeg": 57.26330788977751,
-    "vfovDeg": 56.33006134564585,
-    "headingDeg": 187.1734323374517,
-    "pitchDeg": 26.425676355864198,
-    "heightM": 1.7824370965787804,
+    "hfovDeg": 48.80410127106195,
+    "vfovDeg": 47.97021537265636,
+    "headingDeg": 186.64356795570717,
+    "pitchDeg": 22.45318646700583,
+    "heightM": 1.210905390929825,
     "anchorBlender": [
-     -0.5204260501233288,
-     0.994112965804131,
-     67.28153846153846
+     -7.00322347717623,
+     14.837678687510031,
+     51.794482758620696
     ],
     "anchorUV": [
-     0.3869560294223815,
-     0.373851805889275
+     0.4486371143780781,
+     0.45050767014121673
     ],
     "anchorUpUV": [
-     0.39082743697716743,
-     0.30887678604976065
+     0.44946516885068105,
+     0.3678735046796347
     ],
-    "fitRMSEpx": 16.59276875375173,
-    "holdoutRMSEpx": 14.455307356408204,
+    "fitRMSEpx": 18.72625744124392,
+    "holdoutRMSEpx": 13.874236662360508,
     "imageSizePx": [
      1608,
      1577
@@ -264,7 +264,7 @@
    "credit": "Epicgenius \u00b7 CC BY-SA 4.0 \u00b7 Wikimedia Commons \u00b7 resized",
    "used": true,
    "note": "Arcade crowns and 16th-story arched windows; EXIF focal. Bay index ASSUMED (centre oriel, pair 4): identical oriels at pairs 1/4/7; timestamps favour 4 but 7 is not excluded, so the position may be off by one oriel spacing (about 17 m) along Fifth.",
-   "bayNote": "ASSUMED: the visible oriel is the centre one (pair 4); the three oriels look identical. Inferred from the photo sequence (taken 63 s after photo 05 at the centre entrance) and the 5 Av title, not from a unique landmark",
+   "bayNote": "PINNED to the centre oriel (pair 4), moderate confidence: pair 1 is impossible (no arches north of pair 0), and cross-checks with photo 07 (rooftop rig boom within 0.7 m; cast-shadow edge 7.5 m vs 24 m for pair 7) favour pair 4. See docs/build6/photo06-bay-check.json.",
    "camera": {
     "positionBlender": [
      -49.355107553331244,
@@ -383,49 +383,49 @@
    "sourceURL": "https://commons.wikimedia.org/wiki/File:Flat_Iron_Building,_New_York_1909.jpg",
    "credit": "Unknown author (1909) \u00b7 Public domain \u00b7 Wikimedia Commons",
    "used": true,
-   "note": "Cornice and 17th-story cornice where they meet the three corners; SE ground. Elevated 1909 viewpoint.",
+   "note": "Cornice and 17th-story cornice where they meet the three corners; SE ground. Elevated 1909 viewpoint. Build 6: plus 12 prow window-column tops (stories 5-17), odd stories fitted, even held out.",
    "bayNote": "",
    "camera": {
     "positionBlender": [
-     -46.00986314321626,
-     227.99517688737131,
-     55.95753589937871
+     -56.122351489475136,
+     297.05411808808304,
+     52.535757687937114
     ],
     "rightBlender": [
-     -0.9897707985824546,
-     -0.1426435422534501,
-     0.002566345034804546
+     -0.9896700159516355,
+     -0.14329300090556796,
+     -0.004513913796939037
     ],
     "upBlender": [
-     0.019330306556639074,
-     -0.11626263696594487,
-     0.9930303814557492
+     0.007733810129539151,
+     -0.08480134107275622,
+     0.9963678641611953
     ],
     "forwardBlender": [
-     0.14135100113503202,
-     -0.9829220819063497,
-     -0.11783070643516934
+     0.14315532720499624,
+     -0.9860404902658606,
+     -0.0850335454340902
     ],
-    "hfovDeg": 28.084005937446136,
-    "vfovDeg": 36.99201678370148,
-    "headingDeg": 171.8165746693836,
-    "pitchDeg": -6.766922962732274,
-    "heightM": 55.95753589937871,
+    "hfovDeg": 22.480494002355115,
+    "vfovDeg": 29.771017591357243,
+    "headingDeg": 171.7394001188629,
+    "pitchDeg": -4.877953865298189,
+    "heightM": 52.535757687937114,
     "anchorBlender": [
-     -2.000983957910552,
-     -13.646777000730967,
-     65.45142857142856
+     -8.486991807644971,
+     11.447340580612435,
+     52.86526315789474
     ],
     "anchorUV": [
-     0.42529959391316247,
-     0.26359995693499516
+     0.4457467382602862,
+     0.3374911959823094
     ],
     "anchorUpUV": [
-     0.42514752633156966,
-     0.2009701943334227
+     0.4451913794848367,
+     0.271834144574804
     ],
-    "fitRMSEpx": 3.8009538257569657,
-    "holdoutRMSEpx": 12.02632111711746,
+    "fitRMSEpx": 8.833460868587004,
+    "holdoutRMSEpx": 11.34814671287022,
     "imageSizePx": [
      1920,
      2568

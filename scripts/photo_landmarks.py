@@ -54,7 +54,7 @@ def landmark(name):
             raise KeyError(f'{name}: {len(rows)} matching openings')
         r = rows[0]; s0, s1, zb, zt = r['s0'], r['s1'], r['zb'], r['zt']
         return {'bl': _pt(s0, 0, zb), 'br': _pt(s1, 0, zb), 'tl': _pt(s0, 0, zt), 'tr': _pt(s1, 0, zt),
-                'crown': _pt((s0 + s1) / 2, 0, zt), 'cb': _pt((s0 + s1) / 2, 0, zb)}[corner]
+                'crown': _pt((s0 + s1) / 2, 0, zt), 'ct': _pt((s0 + s1) / 2, 0, zt), 'cb': _pt((s0 + s1) / 2, 0, zb)}[corner]
     raise KeyError(name)
 
 

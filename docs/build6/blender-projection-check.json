@@ -1,0 +1,30 @@
+{
+  "flatiron_02.jpg": {
+    "blender_vs_solver_max_px": 0.058842801550973864,
+    "render": "outputs/build6/renders/render-flatiron_02.png"
+  },
+  "flatiron_08.jpg": {
+    "blender_vs_solver_max_px": 0.061667145535018994,
+    "render": "outputs/build6/renders/render-flatiron_08.png"
+  },
+  "flatiron_01.jpg": {
+    "blender_vs_solver_max_px": 0.05144613082105606,
+    "render": "outputs/build6/renders/render-flatiron_01.png"
+  },
+  "flatiron_05.jpg": {
+    "blender_vs_solver_max_px": 0.06280028951636808,
+    "render": "outputs/build6/renders/render-flatiron_05.png"
+  },
+  "flatiron_04.jpg": {
+    "blender_vs_solver_max_px": 0.06534760757046337,
+    "render": "outputs/build6/renders/render-flatiron_04.png"
+  },
+  "flatiron_07.jpg": {
+    "blender_vs_solver_max_px": 0.05659127766423163,
+    "render": "outputs/build6/renders/render-flatiron_07.png"
+  },
+  "flatiron_06.jpg": {
+    "blender_vs_solver_max_px": 0.055936405932131485,
+    "render": "outputs/build6/renders/render-flatiron_06.png"
+  }
+}

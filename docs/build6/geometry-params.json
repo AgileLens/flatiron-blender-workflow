@@ -1,0 +1,26 @@
+{
+  "params": {
+    "lot_fifth": 60.198,
+    "lot_22nd": 26.2128,
+    "sw_angle_deg": 90.0,
+    "r_sw": 1.9,
+    "r_se": 1.7,
+    "r_prow": 1.05,
+    "pitch_Fifth": 5.5316,
+    "pitch_Broadway": 5.9888,
+    "pitch_22nd": 5.2268,
+    "prow_margin_Fifth": 1.736117409019613,
+    "prow_margin_Broadway": 2.0612625943924314,
+    "ww": 1.42,
+    "np": 0.85,
+    "z_ground": 5.6,
+    "h_base": 4.2,
+    "h_4": 4.1,
+    "h_shaft": 3.95,
+    "h_arcade": 4.1,
+    "h_20": 3.65
+  },
+  "accepted_groups": [],
+  "decision": "Only parameter groups that lower both within-photo held-out error and leave-one-photo-out error (no photo worse by more than 2 px) are applied; everything else stays at the build-4 value.",
+  "source": "scripts/select_geometry_changes.py"
+}

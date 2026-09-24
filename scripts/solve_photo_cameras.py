@@ -27,9 +27,10 @@ def project(R, C, f, W, H, X):
     return np.column_stack([f * q[:, 0] / q[:, 2] + W / 2, f * q[:, 1] / q[:, 2] + H / 2]), q[:, 2]
 
 
-def solve(entry):
+def solve(entry, lm=None, trials=24):
+    """lm: optional {name: xyz} from another geometry (e.g. landmarks_v5.compute); default is build 4."""
     W, H = entry['size']; pts = entry['points']
-    X = np.array([landmark(p['name']) for p in pts]); uv = np.array([p['uv'] for p in pts], float)
+    X = np.array([lm[p['name']] if lm else landmark(p['name']) for p in pts]); uv = np.array([p['uv'] for p in pts], float)
     fit = np.array([not p.get('holdout', False) for p in pts])
     f_fixed = entry.get('focal_px')
     C0 = np.array(entry['init']['C'], float); R0 = look_rotation(C0, entry['init']['target'])
@@ -50,7 +51,7 @@ def solve(entry):
 
     best = None
     rng = np.random.default_rng(7)
-    for trial in range(24):
+    for trial in range(trials):
         C = C0 + (rng.normal(0, 6, 3) if trial else 0)
         R = Rotation.from_matrix(look_rotation(C, np.array(entry['init']['target']) + (rng.normal(0, 4, 3) if trial else 0)))
         x0 = np.concatenate([R.as_rotvec(), C] + ([] if f_fixed else [[math.log(f0 * (1 if trial < 12 else rng.uniform(.6, 1.6)))]]))
@@ -65,7 +66,7 @@ def solve(entry):
     return {'R_world_to_camera_rdf': R.tolist(), 'C': C.tolist(), 'focal_px': f, 'focal_source': 'EXIF' if f_fixed else 'solved',
             'size': [W, H], 'hfov_deg': math.degrees(2 * math.atan(W / 2 / f)), 'vfov_deg': math.degrees(2 * math.atan(H / 2 / f)),
             'heading_deg_from_north': yaw % 360, 'pitch_deg': math.degrees(math.asin(fwd[2])),
-            'camera_height_m': float(C[2]), 'distance_to_prow_m': float(np.linalg.norm(C[:2] - np.array(landmark('ground/Prow'))[:2])),
+            'camera_height_m': float(C[2]),
             'fit_points': int(fit.sum()), 'holdout_points': int((~fit).sum()),
             'fit_rmse_px': rms(fit), 'holdout_rmse_px': rms(~fit), 'all_rmse_px': rms(np.ones_like(fit)),
             'rmse_percent_of_diagonal': float(np.sqrt(np.mean(err ** 2)) / math.hypot(W, H) * 100),

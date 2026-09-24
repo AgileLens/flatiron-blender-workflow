@@ -137,9 +137,12 @@ struct PhotoPanel: View {
                                 camera.fitRMSEpx, camera.holdoutRMSEpx, camera.heightM,
                                 abs(camera.pitchDeg), camera.pitchDeg >= 0 ? "up" : "down"))
                         .font(.caption).foregroundStyle(.secondary)
-                    if !photo.bayNote.isEmpty && photo.bayNote.hasPrefix("ASSUMED") {
+                    if photo.bayNote.hasPrefix("ASSUMED") {
                         Text("Position along Fifth Avenue is assumed: the three oriels look identical.")
                             .font(.caption).foregroundStyle(.orange)
+                    } else if photo.bayNote.hasPrefix("PINNED") {
+                        Text("Oriel identified as the centre one by cross-checks with photo 07 (moderate confidence).")
+                            .font(.caption).foregroundStyle(.secondary)
                     }
                     HStack {
                         Button("Align walkaround") { Task { status = await experience.align(to: photo, library: library) } }

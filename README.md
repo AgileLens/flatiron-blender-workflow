@@ -125,3 +125,25 @@ The overlays also show where the model is still off. In photo 02 the prow and th
 The native viewer (build 5) bundles all eight photos with their credits and licence links: two public-domain photos, one CC BY 3.0 and five CC BY-SA 4.0, resized. Credits are shown in the app. To repopulate `native/Flatiron/Resources/Photos`, run `scripts/download_references.py` and then `scripts/build_photo_manifest.py`. Photo binaries are not committed here.
 
 The overlay sheets in `docs/build5/` combine the credited photos with renders. The CC BY-SA ones are shared under CC BY-SA 4.0; see [photo credits](docs/photo-credits.md).
+
+## Build 6: can the photos correct the geometry?
+
+[Refit report](docs/build6/refit-report.json) · [Cross-validated selection](docs/build6/geometry-selection.json) · [Overlay contact sheet](docs/build6/overlay-contact-sheet.jpg) · [Photo 06 oriel check](docs/build6/photo06-bay-check.json)
+
+`scripts/flatiron_v5.py` is the build-4 generator with every photo-constrainable dimension exposed as a parameter. With the build-4 values it reproduces build 4's geometry exactly (hash-checked). Its layout-only mode takes about 2 ms, which is fast enough to fit. `scripts/refit_geometry.py` fits the geometry and all seven cameras jointly on the fit points only. It has priors (the surveyed lot tightly, estimates loosely), leave-one-photo-out refits, and a guard that shrinks any change driven by a single photo. `scripts/select_geometry_changes.py` then applies a parameter group only if it lowers both the within-photo held-out error and the leave-one-photo-out error, without making any photo more than 2 px worse.
+
+To give the fit more to work with, the correspondences were extended with the prow's window-column tops in photos 02 and 08 (stories 2–17; odd stories fitted, even held out).
+
+**Result: no geometry change survived cross-validation, so the model is unchanged.** Fitting every parameter lowers the fit error but raises held-out error on five of seven photos:
+
+| Photo | Held-out RMSE, build 4 geometry | Held-out RMSE, full refit |
+|---|---:|---:|
+| 01 | 10.3 px | 11.2 px |
+| 02 | 13.9 px | 12.5 px |
+| 04 | 15.7 px | 23.2 px |
+| 05 | 6.1 px | 4.4 px |
+| 06 | 31.1 px | 40.3 px |
+| 07 | 8.3 px | 9.7 px |
+| 08 | 11.3 px | 19.8 px |
+
+Tested one group at a time, the prow radius, corner radii, bay pitch and prow-end margins, window and pier widths, lot shape and each group of story heights all either leave held-out error unchanged or make it worse. The build-5 hypotheses came from reading the overlays by eye: a Broadway proportion error in photo 02, and an end pier 1.5–2 m short in photo 07. The camera solves absorb both; the fitted end-pier change is only about 0.25 m. What build 6 does improve is the two whole-building cameras (02 and 08), which the extra prow points now constrain better. Photo 06's oriel is pinned to the centre one at moderate confidence, using two cross-checks against photo 07: a rooftop rig and a cast-shadow edge.
