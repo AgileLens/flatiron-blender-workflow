@@ -1,6 +1,6 @@
 # Flatiron tabletop and immersive viewer
 
-A SwiftUI/RealityKit viewer for the procedural Flatiron building. Inspect a tabletop or enter a mixed-immersion walkaround at the model's approximate original scale. This build3 candidate includes corrected normals and backed medallions, visible resizing and an optional slow turntable. Controls passed seven math tests and a visionOS source-check build; latest device/wearer verification is separate.
+A SwiftUI/RealityKit viewer for the procedural Flatiron building. Inspect a tabletop or enter a mixed-immersion walkaround at the model's approximate original scale. This build4 candidate bundles the reference-guided build-4 model (zero floating facade parts), plus the build-3 controls: visible resizing and an optional slow turntable. Controls passed seven math tests and a visionOS source-check build; latest device/wearer verification is separate.
 
 ## Quickstart
 
@@ -20,6 +20,6 @@ The native ACCVR interaction precedent uses a fixed parent frame and moves the s
 
 Initial/reset placement uses ARKit WorldTrackingProvider device-anchor poses. Missing tracking pauses placement explicitly; resizing an already placed building does not require a fresh pose. Immersive size ranges from1% to200% of the estimated original; tabletop sizing ranges from25% to115% of its normalized size, with the horizontal diagonal included in volume-fit calculations. Two-hand scaling is not implemented.
 
-The USDZ exporter reduced source dimensions by1/87; full scale restores exactly87x, rather than inferring height from bounds. Dimensions are artistic estimates, not survey measurements. The bundled supported-model SHA256 is `c37f707c7423b468d0b7744912cad908808155794bd3d344e4ee04fc35b06582`. See the root README for geometry validation and preserved earlier variants.
+The USDZ exporter reduced source dimensions by1/87; full scale restores exactly87x, rather than inferring height from bounds. Dimensions are artistic estimates, not survey measurements. The bundled build-4 model SHA256 is `1e7d436c480de9b11ed85d05fcb2311177a890d523aa4289ed33889a307b8772`; the build-3 supported model (`c37f707c7423b468d0b7744912cad908808155794bd3d344e4ee04fc35b06582`) stays in `docs/flatiron_tabletop_supported.usdz`. See the root README for geometry validation and preserved earlier variants.
 
 Build-specific load, placement, scale and turntable JSON receipts are written to the app's Documents folder. They prove applied state, not wearer appearance or interaction acceptance.

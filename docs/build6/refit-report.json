@@ -1,0 +1,485 @@
+{
+  "photos": [
+    "flatiron_02.jpg",
+    "flatiron_08.jpg",
+    "flatiron_01.jpg",
+    "flatiron_05.jpg",
+    "flatiron_04.jpg",
+    "flatiron_07.jpg",
+    "flatiron_06.jpg"
+  ],
+  "keys": [
+    "lot_fifth",
+    "lot_22nd",
+    "sw_angle_deg",
+    "r_prow",
+    "r_sw",
+    "r_se",
+    "pitch_Fifth",
+    "pitch_Broadway",
+    "prow_margin_Fifth",
+    "prow_margin_Broadway",
+    "ww",
+    "np",
+    "z_ground",
+    "h_base",
+    "h_4",
+    "h_shaft",
+    "h_arcade",
+    "h_20"
+  ],
+  "priors": {
+    "lot_fifth": {
+      "mean": 60.198,
+      "sigma": 0.3,
+      "why": "surveyed lot, 197.5 ft"
+    },
+    "lot_22nd": {
+      "mean": 26.2128,
+      "sigma": 0.3,
+      "why": "surveyed lot, 86 ft"
+    },
+    "sw_angle_deg": {
+      "mean": 90.0,
+      "sigma": 1.0,
+      "why": "lot is a near-right triangle (89.3 deg from the three frontages)"
+    },
+    "r_prow": {
+      "mean": 1.05,
+      "sigma": 0.6,
+      "why": "prow about 2 m wide"
+    },
+    "r_sw": {
+      "mean": 1.9,
+      "sigma": 0.6,
+      "why": "estimate"
+    },
+    "r_se": {
+      "mean": 1.7,
+      "sigma": 0.6,
+      "why": "estimate"
+    },
+    "pitch_Fifth": {
+      "mean": 5.5316,
+      "sigma": 0.3,
+      "why": "17 ft column spacing + 0.35 m"
+    },
+    "pitch_Broadway": {
+      "mean": 5.9888,
+      "sigma": 0.3,
+      "why": "18.5 ft + 0.35 m"
+    },
+    "prow_margin_Fifth": {
+      "mean": 1.736117409019613,
+      "sigma": 1.5,
+      "why": "estimate (centred layout)"
+    },
+    "prow_margin_Broadway": {
+      "mean": 2.0612625943924314,
+      "sigma": 1.5,
+      "why": "estimate (centred layout)"
+    },
+    "ww": {
+      "mean": 1.42,
+      "sigma": 0.15,
+      "why": "estimate"
+    },
+    "np": {
+      "mean": 0.85,
+      "sigma": 0.15,
+      "why": "estimate"
+    },
+    "z_ground": {
+      "mean": 5.6,
+      "sigma": 0.4,
+      "why": "estimate"
+    },
+    "h_base": {
+      "mean": 4.2,
+      "sigma": 0.3,
+      "why": "estimate"
+    },
+    "h_4": {
+      "mean": 4.1,
+      "sigma": 0.3,
+      "why": "estimate"
+    },
+    "h_shaft": {
+      "mean": 3.95,
+      "sigma": 0.15,
+      "why": "13 ft"
+    },
+    "h_arcade": {
+      "mean": 4.1,
+      "sigma": 0.3,
+      "why": "estimate"
+    },
+    "h_20": {
+      "mean": 3.65,
+      "sigma": 0.3,
+      "why": "estimate"
+    }
+  },
+  "total_height_prior_m": [
+    86.9,
+    1.5
+  ],
+  "px_per_sigma": 10.0,
+  "theta_v4": {
+    "lot_fifth": 60.198,
+    "lot_22nd": 26.2128,
+    "sw_angle_deg": 90.0,
+    "r_prow": 1.05,
+    "r_sw": 1.9,
+    "r_se": 1.7,
+    "pitch_Fifth": 5.5316,
+    "pitch_Broadway": 5.9888,
+    "prow_margin_Fifth": 1.736117409019613,
+    "prow_margin_Broadway": 2.0612625943924314,
+    "ww": 1.42,
+    "np": 0.85,
+    "z_ground": 5.6,
+    "h_base": 4.2,
+    "h_4": 4.1,
+    "h_shaft": 3.95,
+    "h_arcade": 4.1,
+    "h_20": 3.65
+  },
+  "theta_joint": {
+    "lot_fifth": 60.20489533931442,
+    "lot_22nd": 26.241509049715592,
+    "sw_angle_deg": 90.18183417861867,
+    "r_prow": 1.1517385200456396,
+    "r_sw": 1.9550592776808882,
+    "r_se": 1.4042017903927737,
+    "pitch_Fifth": 5.443211971948209,
+    "pitch_Broadway": 6.318845713370212,
+    "prow_margin_Fifth": 1.9795876717450962,
+    "prow_margin_Broadway": 1.648821552183762,
+    "ww": 1.2290288599209147,
+    "np": 0.9625695245219406,
+    "z_ground": 5.707436242500281,
+    "h_base": 4.189968912507851,
+    "h_4": 3.956636509519284,
+    "h_shaft": 3.827487084872975,
+    "h_arcade": 4.463454610975376,
+    "h_20": 3.7660303056280258
+  },
+  "theta_final": {
+    "lot_fifth": 60.20489533931442,
+    "lot_22nd": 26.241509049715592,
+    "sw_angle_deg": 90.18183417861867,
+    "r_prow": 1.1517385200456396,
+    "r_sw": 1.9550592776808882,
+    "r_se": 1.4042017903927737,
+    "pitch_Fifth": 5.443211971948209,
+    "pitch_Broadway": 6.153822856685107,
+    "prow_margin_Fifth": 1.9795876717450962,
+    "prow_margin_Broadway": 1.648821552183762,
+    "ww": 1.2290288599209147,
+    "np": 0.9062847622609702,
+    "z_ground": 5.707436242500281,
+    "h_base": 4.189968912507851,
+    "h_4": 3.956636509519284,
+    "h_shaft": 3.8887435424364876,
+    "h_arcade": 4.463454610975376,
+    "h_20": 3.7660303056280258
+  },
+  "flags": {
+    "pitch_Broadway": "driven by flatiron_02.jpg alone: change shrunk to half",
+    "np": "driven by flatiron_04.jpg alone: change shrunk to half",
+    "h_shaft": "driven by flatiron_02.jpg alone: change shrunk to half"
+  },
+  "loo_theta": {
+    "flatiron_02.jpg": {
+      "lot_fifth": 60.17173013979902,
+      "lot_22nd": 26.271772940728482,
+      "sw_angle_deg": 89.93620065334645,
+      "r_prow": 1.5855417041644788,
+      "r_sw": 1.825000148555337,
+      "r_se": 1.536189155723659,
+      "pitch_Fifth": 5.474274517838378,
+      "pitch_Broadway": 5.9888,
+      "prow_margin_Fifth": 1.1969296732343715,
+      "prow_margin_Broadway": 2.0612625943924314,
+      "ww": 1.240829472443531,
+      "np": 0.9676934137652867,
+      "z_ground": 5.642743769480451,
+      "h_base": 4.215037657338291,
+      "h_4": 4.005827560124301,
+      "h_shaft": 3.8891006195268663,
+      "h_arcade": 4.332075927257807,
+      "h_20": 3.7737891757962805
+    },
+    "flatiron_08.jpg": {
+      "lot_fifth": 60.21098241095768,
+      "lot_22nd": 26.230705254662542,
+      "sw_angle_deg": 90.06646030647033,
+      "r_prow": 1.1582999888398637,
+      "r_sw": 1.971561061850866,
+      "r_se": 1.4172982185515215,
+      "pitch_Fifth": 5.478705750240858,
+      "pitch_Broadway": 6.30858034661052,
+      "prow_margin_Fifth": 1.8989761062318675,
+      "prow_margin_Broadway": 1.5400823734652036,
+      "ww": 1.244037797145463,
+      "np": 0.9661651356798482,
+      "z_ground": 5.715340190629228,
+      "h_base": 4.213976567910771,
+      "h_4": 3.9816491288162967,
+      "h_shaft": 3.8204023476854205,
+      "h_arcade": 4.3720619427298155,
+      "h_20": 3.811884816347853
+    },
+    "flatiron_01.jpg": {
+      "lot_fifth": 60.23644524104062,
+      "lot_22nd": 26.27456361917917,
+      "sw_angle_deg": 90.1148050597851,
+      "r_prow": 0.8654683073536709,
+      "r_sw": 1.8358175427451102,
+      "r_se": 1.3182840903433737,
+      "pitch_Fifth": 5.186047215518377,
+      "pitch_Broadway": 6.443282986985871,
+      "prow_margin_Fifth": 1.7361167531680333,
+      "prow_margin_Broadway": 1.8392150778258027,
+      "ww": 1.1714612115967478,
+      "np": 0.9254601643706435,
+      "z_ground": 5.721252978985443,
+      "h_base": 4.049116111700036,
+      "h_4": 3.860102119173115,
+      "h_shaft": 3.7198129405560483,
+      "h_arcade": 4.2273581595233924,
+      "h_20": 3.6913607066370107
+    },
+    "flatiron_05.jpg": {
+      "lot_fifth": 60.21465299237837,
+      "lot_22nd": 26.219715589588578,
+      "sw_angle_deg": 90.22867157572146,
+      "r_prow": 1.1331288457549595,
+      "r_sw": 1.9927649748935947,
+      "r_se": 1.4420624142997547,
+      "pitch_Fifth": 5.469655880214891,
+      "pitch_Broadway": 6.323702028837906,
+      "prow_margin_Fifth": 1.9751566270656584,
+      "prow_margin_Broadway": 1.579847338812349,
+      "ww": 1.2638071604344037,
+      "np": 0.9559925086818905,
+      "z_ground": 5.729370579366768,
+      "h_base": 4.249754130107549,
+      "h_4": 3.979471072687356,
+      "h_shaft": 3.802512461286433,
+      "h_arcade": 4.265686221932464,
+      "h_20": 3.82820549472629
+    },
+    "flatiron_04.jpg": {
+      "lot_fifth": 60.21874154629623,
+      "lot_22nd": 26.241026049922425,
+      "sw_angle_deg": 90.21907197269597,
+      "r_prow": 1.1145661523180974,
+      "r_sw": 1.9386199006113023,
+      "r_se": 1.4007509627705845,
+      "pitch_Fifth": 5.540144919618845,
+      "pitch_Broadway": 6.341985691587098,
+      "prow_margin_Fifth": 1.9705831162719747,
+      "prow_margin_Broadway": 1.5570138629881112,
+      "ww": 1.3201701200045481,
+      "np": 0.8812217245785656,
+      "z_ground": 5.833246392349671,
+      "h_base": 4.220023641720484,
+      "h_4": 3.922086669331849,
+      "h_shaft": 3.791076936256581,
+      "h_arcade": 4.202185986267107,
+      "h_20": 3.848597907819867
+    },
+    "flatiron_07.jpg": {
+      "lot_fifth": 60.2105104465089,
+      "lot_22nd": 26.246037540037552,
+      "sw_angle_deg": 90.22815556576413,
+      "r_prow": 1.1940510577894354,
+      "r_sw": 1.9538885780084334,
+      "r_se": 1.345494798162107,
+      "pitch_Fifth": 5.449363165921048,
+      "pitch_Broadway": 6.308847142752791,
+      "prow_margin_Fifth": 1.990012264978666,
+      "prow_margin_Broadway": 1.5235510720432235,
+      "ww": 1.2361669306939056,
+      "np": 0.9666276441344701,
+      "z_ground": 5.7702916558330815,
+      "h_base": 4.1936917866352506,
+      "h_4": 3.961593570797949,
+      "h_shaft": 3.759292225892378,
+      "h_arcade": 4.187622079285877,
+      "h_20": 3.8283775496038053
+    },
+    "flatiron_06.jpg": {
+      "lot_fifth": 60.21360977718877,
+      "lot_22nd": 26.21477659706564,
+      "sw_angle_deg": 90.22458638793707,
+      "r_prow": 1.1146418787281944,
+      "r_sw": 1.9539226683864652,
+      "r_se": 1.419965733592306,
+      "pitch_Fifth": 5.530165295201332,
+      "pitch_Broadway": 6.3367797816084455,
+      "prow_margin_Fifth": 1.9578353213465243,
+      "prow_margin_Broadway": 1.639635921656932,
+      "ww": 1.2567011089871587,
+      "np": 0.9546831950339524,
+      "z_ground": 5.645786814345283,
+      "h_base": 4.225852500449694,
+      "h_4": 3.9627526671016837,
+      "h_shaft": 3.7538522977512105,
+      "h_arcade": 4.370296162050081,
+      "h_20": 3.7565270636706893
+    }
+  },
+  "per_photo": {
+    "flatiron_02.jpg": {
+      "before": {
+        "fit_rmse_px": 18.72625628080042,
+        "holdout_rmse_px": 13.874238497875387
+      },
+      "after": {
+        "fit_rmse_px": 16.009791935388133,
+        "holdout_rmse_px": 12.544727956807808,
+        "all_rmse_px": 14.79132326652796
+      },
+      "after_unguarded": {
+        "fit_rmse_px": 14.567655226907894,
+        "holdout_rmse_px": 11.210061002367354,
+        "all_rmse_px": 13.393537508846926
+      },
+      "out_of_sample": {
+        "fit_rmse_px": 18.006226467499783,
+        "holdout_rmse_px": 13.011350275474316,
+        "all_rmse_px": 16.29288298686011
+      }
+    },
+    "flatiron_08.jpg": {
+      "before": {
+        "fit_rmse_px": 8.833461152603832,
+        "holdout_rmse_px": 11.348144473384808
+      },
+      "after": {
+        "fit_rmse_px": 6.382901099783167,
+        "holdout_rmse_px": 19.847172826895086,
+        "all_rmse_px": 13.071199763602133
+      },
+      "after_unguarded": {
+        "fit_rmse_px": 6.041261968178531,
+        "holdout_rmse_px": 21.450546113921362,
+        "all_rmse_px": 13.87698521429256
+      },
+      "out_of_sample": {
+        "fit_rmse_px": 5.86037160835508,
+        "holdout_rmse_px": 22.23311533318882,
+        "all_rmse_px": 14.276051692456852
+      }
+    },
+    "flatiron_01.jpg": {
+      "before": {
+        "fit_rmse_px": 10.898701223853855,
+        "holdout_rmse_px": 10.311056007493567
+      },
+      "after": {
+        "fit_rmse_px": 11.38704073108202,
+        "holdout_rmse_px": 11.182837958469603,
+        "all_rmse_px": 11.329072668312783
+      },
+      "after_unguarded": {
+        "fit_rmse_px": 10.960327635324335,
+        "holdout_rmse_px": 11.727137138889987,
+        "all_rmse_px": 11.184781754796095
+      },
+      "out_of_sample": {
+        "fit_rmse_px": 19.48776842768418,
+        "holdout_rmse_px": 12.870158939852963,
+        "all_rmse_px": 17.849159939133497
+      }
+    },
+    "flatiron_05.jpg": {
+      "before": {
+        "fit_rmse_px": 7.882295685260033,
+        "holdout_rmse_px": 6.117128831750998
+      },
+      "after": {
+        "fit_rmse_px": 5.315519499519399,
+        "holdout_rmse_px": 4.392452822223894,
+        "all_rmse_px": 5.134997465424553
+      },
+      "after_unguarded": {
+        "fit_rmse_px": 5.229981704837643,
+        "holdout_rmse_px": 3.869048830407659,
+        "all_rmse_px": 4.974507565697028
+      },
+      "out_of_sample": {
+        "fit_rmse_px": 5.802869528774809,
+        "holdout_rmse_px": 4.271784850535355,
+        "all_rmse_px": 5.515967275755002
+      }
+    },
+    "flatiron_04.jpg": {
+      "before": {
+        "fit_rmse_px": 11.771306022232077,
+        "holdout_rmse_px": 15.747332731319041
+      },
+      "after": {
+        "fit_rmse_px": 7.032662346661722,
+        "holdout_rmse_px": 23.23605837947444,
+        "all_rmse_px": 13.7691192603462
+      },
+      "after_unguarded": {
+        "fit_rmse_px": 5.940600658043242,
+        "holdout_rmse_px": 18.482445316224958,
+        "all_rmse_px": 11.081872267202938
+      },
+      "out_of_sample": {
+        "fit_rmse_px": 7.946439394787258,
+        "holdout_rmse_px": 21.41113191407151,
+        "all_rmse_px": 13.26974343039015
+      }
+    },
+    "flatiron_07.jpg": {
+      "before": {
+        "fit_rmse_px": 10.828589435663188,
+        "holdout_rmse_px": 8.318783143159076
+      },
+      "after": {
+        "fit_rmse_px": 9.246689842047758,
+        "holdout_rmse_px": 9.703391740037167,
+        "all_rmse_px": 9.373451959764285
+      },
+      "after_unguarded": {
+        "fit_rmse_px": 9.289790434219682,
+        "holdout_rmse_px": 8.657543286003841,
+        "all_rmse_px": 9.12170646784534
+      },
+      "out_of_sample": {
+        "fit_rmse_px": 10.326415918521768,
+        "holdout_rmse_px": 8.428733294105387,
+        "all_rmse_px": 9.845209082261464
+      }
+    },
+    "flatiron_06.jpg": {
+      "before": {
+        "fit_rmse_px": 4.050546739482343,
+        "holdout_rmse_px": 31.09200698791588
+      },
+      "after": {
+        "fit_rmse_px": 5.249110081394555,
+        "holdout_rmse_px": 40.29197504937321,
+        "all_rmse_px": 24.655158247023422
+      },
+      "after_unguarded": {
+        "fit_rmse_px": 4.043315873013807,
+        "holdout_rmse_px": 41.09801906949241,
+        "all_rmse_px": 24.992048750985884
+      },
+      "out_of_sample": {
+        "fit_rmse_px": 4.808261627401027,
+        "holdout_rmse_px": 42.10893783685411,
+        "all_rmse_px": 25.68070772554748
+      }
+    }
+  },
+  "seconds": 12.2
+}

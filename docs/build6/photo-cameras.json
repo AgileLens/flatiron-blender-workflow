@@ -1,0 +1,1955 @@
+{
+  "flatiron_02.jpg": {
+    "R_world_to_camera_rdf": [
+      [
+        -0.9936505250861863,
+        0.11218692091359798,
+        -0.00852811654896863
+      ],
+      [
+        -0.03501868489092859,
+        -0.38041524731661774,
+        -0.9241525476443525
+      ],
+      [
+        -0.10692205434079788,
+        -0.9179860208004059,
+        0.38192844867930537
+      ]
+    ],
+    "C": [
+      0.06045125893925435,
+      123.2283632679328,
+      1.210905390929825
+    ],
+    "focal_px": 1772.239558242956,
+    "focal_source": "solved",
+    "size": [
+      1608,
+      1577
+    ],
+    "hfov_deg": 48.80410127106195,
+    "vfov_deg": 47.97021537265636,
+    "heading_deg_from_north": 186.64356795570717,
+    "pitch_deg": 22.45318646700583,
+    "camera_height_m": 1.210905390929825,
+    "fit_points": 18,
+    "holdout_points": 11,
+    "fit_rmse_px": 18.72625744124392,
+    "holdout_rmse_px": 13.874236662360508,
+    "all_rmse_px": 17.049166014792238,
+    "rmse_percent_of_diagonal": 0.7569864934563542,
+    "points": [
+      {
+        "name": "win/Broadway/8/pair/18/crown",
+        "observed": [
+          758,
+          314
+        ],
+        "projected": [
+          760.3,
+          345.7
+        ],
+        "error_px": 31.8,
+        "holdout": false,
+        "depth_m": 124.0
+      },
+      {
+        "name": "win/Broadway/7/pair/18/crown",
+        "observed": [
+          716,
+          372
+        ],
+        "projected": [
+          720.8,
+          389.7
+        ],
+        "error_px": 18.3,
+        "holdout": false,
+        "depth_m": 128.8
+      },
+      {
+        "name": "win/Broadway/6/pair/18/crown",
+        "observed": [
+          680,
+          422
+        ],
+        "projected": [
+          684.0,
+          430.6
+        ],
+        "error_px": 9.5,
+        "holdout": false,
+        "depth_m": 133.6
+      },
+      {
+        "name": "win/Broadway/5/pair/18/crown",
+        "observed": [
+          644,
+          470
+        ],
+        "projected": [
+          649.9,
+          468.7
+        ],
+        "error_px": 6.0,
+        "holdout": true,
+        "depth_m": 138.4
+      },
+      {
+        "name": "win/Broadway/4/pair/18/crown",
+        "observed": [
+          612,
+          514
+        ],
+        "projected": [
+          618.0,
+          504.2
+        ],
+        "error_px": 11.5,
+        "holdout": false,
+        "depth_m": 143.1
+      },
+      {
+        "name": "win/Broadway/3/pair/18/crown",
+        "observed": [
+          586,
+          554
+        ],
+        "projected": [
+          588.2,
+          537.4
+        ],
+        "error_px": 16.7,
+        "holdout": true,
+        "depth_m": 147.9
+      },
+      {
+        "name": "win/Broadway/2/pair/18/crown",
+        "observed": [
+          560,
+          590
+        ],
+        "projected": [
+          560.2,
+          568.5
+        ],
+        "error_px": 21.5,
+        "holdout": false,
+        "depth_m": 152.7
+      },
+      {
+        "name": "win/Broadway/1/pair/18/crown",
+        "observed": [
+          536,
+          626
+        ],
+        "projected": [
+          533.9,
+          597.8
+        ],
+        "error_px": 28.3,
+        "holdout": true,
+        "depth_m": 157.5
+      },
+      {
+        "name": "win/Broadway/0/pair/18/crown",
+        "observed": [
+          512,
+          654
+        ],
+        "projected": [
+          509.2,
+          625.3
+        ],
+        "error_px": 28.8,
+        "holdout": false,
+        "depth_m": 162.3
+      },
+      {
+        "name": "top/Prow",
+        "observed": [
+          830,
+          175
+        ],
+        "projected": [
+          821.5,
+          216.1
+        ],
+        "error_px": 42.0,
+        "holdout": false,
+        "depth_m": 120.2
+      },
+      {
+        "name": "top/SE",
+        "observed": [
+          476,
+          616
+        ],
+        "projected": [
+          480.9,
+          605.0
+        ],
+        "error_px": 12.1,
+        "holdout": false,
+        "depth_m": 170.7
+      },
+      {
+        "name": "oculus/Broadway",
+        "observed": [
+          590,
+          1395
+        ],
+        "projected": [
+          584.7,
+          1414.6
+        ],
+        "error_px": 20.3,
+        "holdout": false,
+        "depth_m": 116.6
+      },
+      {
+        "name": "band/Prow/ground_cornice",
+        "observed": [
+          815,
+          1426
+        ],
+        "projected": [
+          832.9,
+          1425.7
+        ],
+        "error_px": 17.9,
+        "holdout": false,
+        "depth_m": 91.7
+      },
+      {
+        "name": "win/Prow/0/1/17/ct",
+        "observed": [
+          822,
+          400
+        ],
+        "projected": [
+          815.9,
+          407.7
+        ],
+        "error_px": 9.8,
+        "holdout": false,
+        "depth_m": 116.3
+      },
+      {
+        "name": "win/Prow/0/1/16/ct",
+        "observed": [
+          822,
+          457
+        ],
+        "projected": [
+          816.5,
+          454.7
+        ],
+        "error_px": 6.0,
+        "holdout": true,
+        "depth_m": 114.9
+      },
+      {
+        "name": "win/Prow/0/1/15/ct",
+        "observed": [
+          822,
+          515
+        ],
+        "projected": [
+          817.2,
+          509.1
+        ],
+        "error_px": 7.6,
+        "holdout": false,
+        "depth_m": 113.3
+      },
+      {
+        "name": "win/Prow/0/1/14/ct",
+        "observed": [
+          822,
+          572
+        ],
+        "projected": [
+          817.9,
+          563.2
+        ],
+        "error_px": 9.7,
+        "holdout": true,
+        "depth_m": 111.8
+      },
+      {
+        "name": "win/Prow/0/1/13/ct",
+        "observed": [
+          822,
+          628
+        ],
+        "projected": [
+          818.7,
+          618.7
+        ],
+        "error_px": 9.9,
+        "holdout": false,
+        "depth_m": 110.3
+      },
+      {
+        "name": "win/Prow/0/1/12/ct",
+        "observed": [
+          822,
+          687
+        ],
+        "projected": [
+          819.4,
+          675.8
+        ],
+        "error_px": 11.5,
+        "holdout": true,
+        "depth_m": 108.8
+      },
+      {
+        "name": "win/Prow/0/1/11/ct",
+        "observed": [
+          822,
+          745
+        ],
+        "projected": [
+          820.2,
+          734.6
+        ],
+        "error_px": 10.6,
+        "holdout": false,
+        "depth_m": 107.3
+      },
+      {
+        "name": "win/Prow/0/1/10/ct",
+        "observed": [
+          822,
+          807
+        ],
+        "projected": [
+          821.0,
+          794.9
+        ],
+        "error_px": 12.1,
+        "holdout": true,
+        "depth_m": 105.8
+      },
+      {
+        "name": "win/Prow/0/1/9/ct",
+        "observed": [
+          822,
+          870
+        ],
+        "projected": [
+          821.8,
+          857.1
+        ],
+        "error_px": 12.9,
+        "holdout": false,
+        "depth_m": 104.3
+      },
+      {
+        "name": "win/Prow/0/1/8/ct",
+        "observed": [
+          825,
+          930
+        ],
+        "projected": [
+          822.6,
+          921.0
+        ],
+        "error_px": 9.3,
+        "holdout": true,
+        "depth_m": 102.8
+      },
+      {
+        "name": "win/Prow/0/1/7/ct",
+        "observed": [
+          825,
+          992
+        ],
+        "projected": [
+          823.5,
+          986.9
+        ],
+        "error_px": 5.3,
+        "holdout": false,
+        "depth_m": 101.3
+      },
+      {
+        "name": "win/Prow/0/1/6/ct",
+        "observed": [
+          825,
+          1055
+        ],
+        "projected": [
+          824.4,
+          1054.7
+        ],
+        "error_px": 0.7,
+        "holdout": true,
+        "depth_m": 99.8
+      },
+      {
+        "name": "win/Prow/0/1/5/ct",
+        "observed": [
+          825,
+          1120
+        ],
+        "projected": [
+          825.3,
+          1124.7
+        ],
+        "error_px": 4.7,
+        "holdout": false,
+        "depth_m": 98.2
+      },
+      {
+        "name": "win/Prow/0/1/4/ct",
+        "observed": [
+          825,
+          1188
+        ],
+        "projected": [
+          826.3,
+          1202.4
+        ],
+        "error_px": 14.4,
+        "holdout": true,
+        "depth_m": 96.6
+      },
+      {
+        "name": "win/Prow/0/1/3/ct",
+        "observed": [
+          825,
+          1260
+        ],
+        "projected": [
+          827.3,
+          1275.0
+        ],
+        "error_px": 15.2,
+        "holdout": false,
+        "depth_m": 95.1
+      },
+      {
+        "name": "win/Prow/0/1/2/ct",
+        "observed": [
+          825,
+          1340
+        ],
+        "projected": [
+          828.4,
+          1356.9
+        ],
+        "error_px": 17.3,
+        "holdout": true,
+        "depth_m": 93.5
+      }
+    ],
+    "used": true,
+    "why": "Nine Broadway arcade crowns, prow and SE cornice, prow ground cornice, Broadway oculus; street-level height prior. Build 6: plus 16 prow window-column tops (stories 2-17), odd stories fitted, even held out."
+  },
+  "flatiron_08.jpg": {
+    "R_world_to_camera_rdf": [
+      [
+        -0.9896700159516355,
+        -0.14329300090556796,
+        -0.004513913796939037
+      ],
+      [
+        -0.007733810129539151,
+        0.08480134107275622,
+        -0.9963678641611953
+      ],
+      [
+        0.14315532720499624,
+        -0.9860404902658606,
+        -0.0850335454340902
+      ]
+    ],
+    "C": [
+      -56.122351489475136,
+      297.05411808808304,
+      52.535757687937114
+    ],
+    "focal_px": 4830.543127984129,
+    "focal_source": "solved",
+    "size": [
+      1920,
+      2568
+    ],
+    "hfov_deg": 22.480494002355115,
+    "vfov_deg": 29.771017591357243,
+    "heading_deg_from_north": 171.7394001188629,
+    "pitch_deg": -4.877953865298189,
+    "camera_height_m": 52.535757687937114,
+    "fit_points": 12,
+    "holdout_points": 7,
+    "fit_rmse_px": 8.833460868587004,
+    "holdout_rmse_px": 11.34814671287022,
+    "all_rmse_px": 9.835016409480021,
+    "rmse_percent_of_diagonal": 0.306730457498448,
+    "points": [
+      {
+        "name": "band/Prow/cornice",
+        "observed": [
+          874,
+          301
+        ],
+        "projected": [
+          877.4,
+          323.1
+        ],
+        "error_px": 22.3,
+        "holdout": false,
+        "depth_m": 269.2
+      },
+      {
+        "name": "band/SE/cornice",
+        "observed": [
+          630,
+          424
+        ],
+        "projected": [
+          638.1,
+          425.5
+        ],
+        "error_px": 8.3,
+        "holdout": false,
+        "depth_m": 330.1
+      },
+      {
+        "name": "band/SW/cornice",
+        "observed": [
+          1037,
+          422
+        ],
+        "projected": [
+          1032.5,
+          419.0
+        ],
+        "error_px": 5.4,
+        "holdout": false,
+        "depth_m": 326.7
+      },
+      {
+        "name": "band/Prow/c17",
+        "observed": [
+          874,
+          564
+        ],
+        "projected": [
+          877.9,
+          565.6
+        ],
+        "error_px": 4.2,
+        "holdout": false,
+        "depth_m": 271.5
+      },
+      {
+        "name": "band/SE/c17",
+        "observed": [
+          654,
+          621
+        ],
+        "projected": [
+          652.0,
+          621.3
+        ],
+        "error_px": 2.1,
+        "holdout": false,
+        "depth_m": 330.5
+      },
+      {
+        "name": "band/SW/c17",
+        "observed": [
+          1015,
+          622
+        ],
+        "projected": [
+          1019.7,
+          617.1
+        ],
+        "error_px": 6.8,
+        "holdout": true,
+        "depth_m": 327.1
+      },
+      {
+        "name": "band/SE/ground",
+        "observed": [
+          652,
+          1648
+        ],
+        "projected": [
+          667.5,
+          1631.0
+        ],
+        "error_px": 23.0,
+        "holdout": true,
+        "depth_m": 336.0
+      },
+      {
+        "name": "win/Prow/0/1/17/ct",
+        "observed": [
+          881,
+          587
+        ],
+        "projected": [
+          877.6,
+          584.1
+        ],
+        "error_px": 4.5,
+        "holdout": false,
+        "depth_m": 272.1
+      },
+      {
+        "name": "win/Prow/0/1/16/ct",
+        "observed": [
+          881,
+          658
+        ],
+        "projected": [
+          877.9,
+          648.9
+        ],
+        "error_px": 9.6,
+        "holdout": true,
+        "depth_m": 272.4
+      },
+      {
+        "name": "win/Prow/0/1/15/ct",
+        "observed": [
+          881,
+          727
+        ],
+        "projected": [
+          878.4,
+          721.7
+        ],
+        "error_px": 6.0,
+        "holdout": false,
+        "depth_m": 272.7
+      },
+      {
+        "name": "win/Prow/0/1/14/ct",
+        "observed": [
+          881,
+          803
+        ],
+        "projected": [
+          878.8,
+          792.0
+        ],
+        "error_px": 11.3,
+        "holdout": true,
+        "depth_m": 273.1
+      },
+      {
+        "name": "win/Prow/0/1/13/ct",
+        "observed": [
+          881,
+          873
+        ],
+        "projected": [
+          879.2,
+          862.1
+        ],
+        "error_px": 11.0,
+        "holdout": false,
+        "depth_m": 273.4
+      },
+      {
+        "name": "win/Prow/0/1/12/ct",
+        "observed": [
+          881,
+          937
+        ],
+        "projected": [
+          879.6,
+          932.1
+        ],
+        "error_px": 5.1,
+        "holdout": true,
+        "depth_m": 273.8
+      },
+      {
+        "name": "win/Prow/0/1/11/ct",
+        "observed": [
+          881,
+          1010
+        ],
+        "projected": [
+          880.0,
+          1001.9
+        ],
+        "error_px": 8.2,
+        "holdout": false,
+        "depth_m": 274.1
+      },
+      {
+        "name": "win/Prow/0/1/9/ct",
+        "observed": [
+          881,
+          1137
+        ],
+        "projected": [
+          880.8,
+          1140.9
+        ],
+        "error_px": 3.9,
+        "holdout": false,
+        "depth_m": 274.8
+      },
+      {
+        "name": "win/Prow/0/1/8/ct",
+        "observed": [
+          881,
+          1203
+        ],
+        "projected": [
+          881.3,
+          1210.2
+        ],
+        "error_px": 7.2,
+        "holdout": true,
+        "depth_m": 275.1
+      },
+      {
+        "name": "win/Prow/0/1/7/ct",
+        "observed": [
+          881,
+          1277
+        ],
+        "projected": [
+          881.7,
+          1279.3
+        ],
+        "error_px": 2.4,
+        "holdout": false,
+        "depth_m": 275.4
+      },
+      {
+        "name": "win/Prow/0/1/6/ct",
+        "observed": [
+          881,
+          1343
+        ],
+        "projected": [
+          882.1,
+          1348.3
+        ],
+        "error_px": 5.4,
+        "holdout": true,
+        "depth_m": 275.8
+      },
+      {
+        "name": "win/Prow/0/1/5/ct",
+        "observed": [
+          881,
+          1410
+        ],
+        "projected": [
+          882.5,
+          1417.1
+        ],
+        "error_px": 7.2,
+        "holdout": false,
+        "depth_m": 276.1
+      }
+    ],
+    "used": true,
+    "why": "Cornice and 17th-story cornice where they meet the three corners; SE ground. Elevated 1909 viewpoint. Build 6: plus 12 prow window-column tops (stories 5-17), odd stories fitted, even held out."
+  },
+  "flatiron_01.jpg": {
+    "R_world_to_camera_rdf": [
+      [
+        -0.8006973740165516,
+        -0.5989378973328562,
+        -0.012534368013391362
+      ],
+      [
+        0.1122577270790418,
+        -0.12945495244323946,
+        -0.9852104435088809
+      ],
+      [
+        0.5884572354505002,
+        -0.7902624946347987,
+        0.17088964749082636
+      ]
+    ],
+    "C": [
+      -59.79576943401497,
+      74.00341408677181,
+      24.387115222703812
+    ],
+    "focal_px": 1647.207928559749,
+    "focal_source": "solved",
+    "size": [
+      1920,
+      2382
+    ],
+    "hfov_deg": 60.467639502015004,
+    "vfov_deg": 71.7369955490603,
+    "heading_deg_from_north": 143.32733456717992,
+    "pitch_deg": 9.839549058718196,
+    "camera_height_m": 24.387115222703812,
+    "fit_points": 10,
+    "holdout_points": 4,
+    "fit_rmse_px": 10.898701528549816,
+    "holdout_rmse_px": 10.311056699729251,
+    "all_rmse_px": 10.734086264739828,
+    "rmse_percent_of_diagonal": 0.35084851308787757,
+    "points": [
+      {
+        "name": "win/Fifth/0/pair/18/crown",
+        "observed": [
+          830,
+          353
+        ],
+        "projected": [
+          833.8,
+          356.3
+        ],
+        "error_px": 5.0,
+        "holdout": false,
+        "depth_m": 78.7
+      },
+      {
+        "name": "win/Fifth/1/pair/18/crown",
+        "observed": [
+          905,
+          411
+        ],
+        "projected": [
+          906.1,
+          414.4
+        ],
+        "error_px": 3.6,
+        "holdout": false,
+        "depth_m": 83.1
+      },
+      {
+        "name": "win/Fifth/2/pair/18/crown",
+        "observed": [
+          970,
+          466
+        ],
+        "projected": [
+          971.1,
+          466.7
+        ],
+        "error_px": 1.3,
+        "holdout": true,
+        "depth_m": 87.5
+      },
+      {
+        "name": "win/Fifth/3/pair/18/crown",
+        "observed": [
+          1029,
+          517
+        ],
+        "projected": [
+          1030.0,
+          514.0
+        ],
+        "error_px": 3.2,
+        "holdout": false,
+        "depth_m": 91.9
+      },
+      {
+        "name": "win/Fifth/4/pair/18/crown",
+        "observed": [
+          1084,
+          561
+        ],
+        "projected": [
+          1083.6,
+          557.0
+        ],
+        "error_px": 4.0,
+        "holdout": false,
+        "depth_m": 96.2
+      },
+      {
+        "name": "win/Fifth/5/pair/18/crown",
+        "observed": [
+          1134,
+          602
+        ],
+        "projected": [
+          1132.4,
+          596.3
+        ],
+        "error_px": 5.9,
+        "holdout": true,
+        "depth_m": 100.6
+      },
+      {
+        "name": "win/Fifth/6/pair/18/crown",
+        "observed": [
+          1176,
+          636
+        ],
+        "projected": [
+          1177.2,
+          632.3
+        ],
+        "error_px": 3.9,
+        "holdout": false,
+        "depth_m": 105.0
+      },
+      {
+        "name": "win/Fifth/7/pair/18/crown",
+        "observed": [
+          1215,
+          670
+        ],
+        "projected": [
+          1218.5,
+          665.4
+        ],
+        "error_px": 5.7,
+        "holdout": true,
+        "depth_m": 109.3
+      },
+      {
+        "name": "win/Fifth/8/pair/18/crown",
+        "observed": [
+          1259,
+          704
+        ],
+        "projected": [
+          1256.5,
+          696.0
+        ],
+        "error_px": 8.4,
+        "holdout": false,
+        "depth_m": 113.7
+      },
+      {
+        "name": "band/SW/cornice",
+        "observed": [
+          1310,
+          635
+        ],
+        "projected": [
+          1305.3,
+          654.7
+        ],
+        "error_px": 20.2,
+        "holdout": false,
+        "depth_m": 119.9
+      },
+      {
+        "name": "band/Prow/ground_cornice",
+        "observed": [
+          712,
+          1978
+        ],
+        "projected": [
+          711.7,
+          1981.4
+        ],
+        "error_px": 3.4,
+        "holdout": false,
+        "depth_m": 62.1
+      },
+      {
+        "name": "band/SW/ground_cornice",
+        "observed": [
+          1328,
+          1762
+        ],
+        "projected": [
+          1346.5,
+          1764.3
+        ],
+        "error_px": 18.6,
+        "holdout": false,
+        "depth_m": 106.5
+      },
+      {
+        "name": "oculus/Fifth",
+        "observed": [
+          1133,
+          1810
+        ],
+        "projected": [
+          1117.9,
+          1803.4
+        ],
+        "error_px": 16.4,
+        "holdout": false,
+        "depth_m": 84.4
+      },
+      {
+        "name": "band/Prow/dentil3",
+        "observed": [
+          712,
+          1767
+        ],
+        "projected": [
+          718.6,
+          1749.3
+        ],
+        "error_px": 18.9,
+        "holdout": true,
+        "depth_m": 63.8
+      }
+    ],
+    "used": true,
+    "why": "Arcade crowns on Fifth, cornice and ground-cornice ends, oculus. Prow cornice/c17 silhouette points were dropped: the rounded prow seen obliquely does not have its silhouette at the arc midpoint."
+  },
+  "flatiron_05.jpg": {
+    "R_world_to_camera_rdf": [
+      [
+        -0.013797526620143552,
+        -0.9999025262414517,
+        -0.0021368844445637802
+      ],
+      [
+        0.18708121463431227,
+        -0.0004821487135813207,
+        -0.9823443320259797
+      ],
+      [
+        0.9822475489356626,
+        -0.013953693008697754,
+        0.18706963158487855
+      ]
+    ],
+    "C": [
+      -44.52848426674479,
+      6.848516521961495,
+      1.8435973393607679
+    ],
+    "focal_px": 1808.1,
+    "focal_source": "EXIF",
+    "size": [
+      1920,
+      1280
+    ],
+    "hfov_deg": 55.93160592941988,
+    "vfov_deg": 38.98413019144724,
+    "heading_deg_from_north": 90.81388235036428,
+    "pitch_deg": 10.781820409103508,
+    "camera_height_m": 1.8435973393607679,
+    "fit_points": 15,
+    "holdout_points": 4,
+    "fit_rmse_px": 7.882295685260033,
+    "holdout_rmse_px": 6.117128831750998,
+    "all_rmse_px": 7.545078003939114,
+    "rmse_percent_of_diagonal": 0.3269731444781005,
+    "points": [
+      {
+        "name": "oculus/Fifth",
+        "observed": [
+          1413,
+          645
+        ],
+        "projected": [
+          1409.1,
+          641.8
+        ],
+        "error_px": 5.1,
+        "holdout": false,
+        "depth_m": 32.1
+      },
+      {
+        "name": "win/Fifth/1/pair/2/tl",
+        "observed": [
+          368,
+          562
+        ],
+        "projected": [
+          370.3,
+          563.8
+        ],
+        "error_px": 2.9,
+        "holdout": false,
+        "depth_m": 32.1
+      },
+      {
+        "name": "win/Fifth/1/pair/2/br",
+        "observed": [
+          573,
+          727
+        ],
+        "projected": [
+          572.7,
+          722.8
+        ],
+        "error_px": 4.2,
+        "holdout": false,
+        "depth_m": 31.6
+      },
+      {
+        "name": "win/Fifth/2/pair/2/tl",
+        "observed": [
+          682,
+          562
+        ],
+        "projected": [
+          682.5,
+          564.1
+        ],
+        "error_px": 2.2,
+        "holdout": false,
+        "depth_m": 32.2
+      },
+      {
+        "name": "win/Fifth/2/pair/2/br",
+        "observed": [
+          885,
+          727
+        ],
+        "projected": [
+          889.1,
+          722.8
+        ],
+        "error_px": 5.9,
+        "holdout": false,
+        "depth_m": 31.7
+      },
+      {
+        "name": "win/Fifth/3/pair/2/tl",
+        "observed": [
+          999,
+          562
+        ],
+        "projected": [
+          993.3,
+          564.5
+        ],
+        "error_px": 6.3,
+        "holdout": true,
+        "depth_m": 32.3
+      },
+      {
+        "name": "win/Fifth/3/pair/2/br",
+        "observed": [
+          1200,
+          727
+        ],
+        "projected": [
+          1204.1,
+          722.7
+        ],
+        "error_px": 5.9,
+        "holdout": true,
+        "depth_m": 31.8
+      },
+      {
+        "name": "win/Fifth/5/pair/2/tl",
+        "observed": [
+          1623,
+          562
+        ],
+        "projected": [
+          1610.2,
+          565.1
+        ],
+        "error_px": 13.1,
+        "holdout": false,
+        "depth_m": 32.4
+      },
+      {
+        "name": "win/Fifth/5/pair/2/br",
+        "observed": [
+          1825,
+          727
+        ],
+        "projected": [
+          1829.3,
+          722.6
+        ],
+        "error_px": 6.2,
+        "holdout": false,
+        "depth_m": 31.9
+      },
+      {
+        "name": "win/Fifth/1/pair/3/tl",
+        "observed": [
+          391,
+          343
+        ],
+        "projected": [
+          383.9,
+          338.8
+        ],
+        "error_px": 8.2,
+        "holdout": false,
+        "depth_m": 32.9
+      },
+      {
+        "name": "win/Fifth/1/pair/3/br",
+        "observed": [
+          576,
+          487
+        ],
+        "projected": [
+          581.6,
+          490.6
+        ],
+        "error_px": 6.6,
+        "holdout": false,
+        "depth_m": 32.4
+      },
+      {
+        "name": "win/Fifth/2/pair/3/tl",
+        "observed": [
+          693,
+          343
+        ],
+        "projected": [
+          688.7,
+          339.6
+        ],
+        "error_px": 5.5,
+        "holdout": true,
+        "depth_m": 33.0
+      },
+      {
+        "name": "win/Fifth/2/pair/3/br",
+        "observed": [
+          885,
+          487
+        ],
+        "projected": [
+          890.4,
+          491.1
+        ],
+        "error_px": 6.8,
+        "holdout": true,
+        "depth_m": 32.5
+      },
+      {
+        "name": "win/Fifth/3/pair/3/tl",
+        "observed": [
+          999,
+          343
+        ],
+        "projected": [
+          992.0,
+          340.5
+        ],
+        "error_px": 7.5,
+        "holdout": false,
+        "depth_m": 33.0
+      },
+      {
+        "name": "win/Fifth/3/pair/3/br",
+        "observed": [
+          1191,
+          487
+        ],
+        "projected": [
+          1197.7,
+          491.6
+        ],
+        "error_px": 8.1,
+        "holdout": false,
+        "depth_m": 32.6
+      },
+      {
+        "name": "win/Fifth/4/pair/3/tl",
+        "observed": [
+          1303,
+          343
+        ],
+        "projected": [
+          1293.9,
+          341.3
+        ],
+        "error_px": 9.3,
+        "holdout": false,
+        "depth_m": 33.1
+      },
+      {
+        "name": "win/Fifth/4/pair/3/br",
+        "observed": [
+          1495,
+          487
+        ],
+        "projected": [
+          1503.5,
+          492.1
+        ],
+        "error_px": 10.0,
+        "holdout": false,
+        "depth_m": 32.6
+      },
+      {
+        "name": "win/Fifth/5/pair/3/tl",
+        "observed": [
+          1602,
+          343
+        ],
+        "projected": [
+          1594.4,
+          342.2
+        ],
+        "error_px": 7.7,
+        "holdout": false,
+        "depth_m": 33.2
+      },
+      {
+        "name": "win/Fifth/5/pair/3/br",
+        "observed": [
+          1797,
+          487
+        ],
+        "projected": [
+          1808.0,
+          492.6
+        ],
+        "error_px": 12.3,
+        "holdout": false,
+        "depth_m": 32.7
+      }
+    ],
+    "used": true,
+    "why": "Oculus over the Fifth entrance plus 2nd/3rd-story twin openings of pairs 1-5. EXIF focal."
+  },
+  "flatiron_04.jpg": {
+    "R_world_to_camera_rdf": [
+      [
+        -0.025858474565204237,
+        -0.999660293488088,
+        -0.0032614285934322584
+      ],
+      [
+        0.3138158376067199,
+        -0.005019873574036049,
+        -0.9494706003539517
+      ],
+      [
+        0.9491316870489328,
+        -0.02557534931550426,
+        0.3138390385962785
+      ]
+    ],
+    "C": [
+      -47.75230668172793,
+      16.063525057256438,
+      2.9709773427175605
+    ],
+    "focal_px": 3788.3,
+    "focal_source": "EXIF",
+    "size": [
+      1920,
+      1280
+    ],
+    "hfov_deg": 28.44015836497215,
+    "vfov_deg": 19.17814996324796,
+    "heading_deg_from_north": 91.54352139855715,
+    "pitch_deg": 18.29074183993262,
+    "camera_height_m": 2.9709773427175605,
+    "fit_points": 10,
+    "holdout_points": 4,
+    "fit_rmse_px": 11.771306022232077,
+    "holdout_rmse_px": 15.747332731319041,
+    "all_rmse_px": 13.031693255000233,
+    "rmse_percent_of_diagonal": 0.5647408441949706,
+    "points": [
+      {
+        "name": "win/Fifth/1/0/4/tl",
+        "observed": [
+          782,
+          370
+        ],
+        "projected": [
+          782.7,
+          367.2
+        ],
+        "error_px": 2.9,
+        "holdout": false,
+        "depth_m": 37.3
+      },
+      {
+        "name": "win/Fifth/1/0/4/br",
+        "observed": [
+          919,
+          603
+        ],
+        "projected": [
+          926.9,
+          613.0
+        ],
+        "error_px": 12.7,
+        "holdout": false,
+        "depth_m": 36.6
+      },
+      {
+        "name": "win/Fifth/1/1/4/tl",
+        "observed": [
+          1015,
+          370
+        ],
+        "projected": [
+          1012.8,
+          368.8
+        ],
+        "error_px": 2.5,
+        "holdout": false,
+        "depth_m": 37.4
+      },
+      {
+        "name": "win/Fifth/1/1/4/br",
+        "observed": [
+          1152,
+          603
+        ],
+        "projected": [
+          1161.6,
+          614.2
+        ],
+        "error_px": 14.7,
+        "holdout": false,
+        "depth_m": 36.6
+      },
+      {
+        "name": "win/Fifth/2/0/4/tl",
+        "observed": [
+          1351,
+          370
+        ],
+        "projected": [
+          1342.2,
+          371.0
+        ],
+        "error_px": 8.9,
+        "holdout": false,
+        "depth_m": 37.5
+      },
+      {
+        "name": "win/Fifth/2/0/4/br",
+        "observed": [
+          1481,
+          603
+        ],
+        "projected": [
+          1497.5,
+          616.0
+        ],
+        "error_px": 20.9,
+        "holdout": false,
+        "depth_m": 36.7
+      },
+      {
+        "name": "win/Fifth/2/1/4/tl",
+        "observed": [
+          1591,
+          370
+        ],
+        "projected": [
+          1570.6,
+          372.6
+        ],
+        "error_px": 20.6,
+        "holdout": true,
+        "depth_m": 37.5
+      },
+      {
+        "name": "win/Fifth/2/1/4/br",
+        "observed": [
+          1714,
+          603
+        ],
+        "projected": [
+          1730.3,
+          617.2
+        ],
+        "error_px": 21.6,
+        "holdout": true,
+        "depth_m": 36.8
+      },
+      {
+        "name": "win/Fifth/0/1/4/tl",
+        "observed": [
+          453,
+          370
+        ],
+        "projected": [
+          450.8,
+          364.9
+        ],
+        "error_px": 5.5,
+        "holdout": true,
+        "depth_m": 37.3
+      },
+      {
+        "name": "win/Fifth/0/1/4/br",
+        "observed": [
+          590,
+          603
+        ],
+        "projected": [
+          588.4,
+          611.2
+        ],
+        "error_px": 8.4,
+        "holdout": true,
+        "depth_m": 36.5
+      },
+      {
+        "name": "win/Fifth/1/pair/3/tl",
+        "observed": [
+          789,
+          747
+        ],
+        "projected": [
+          778.1,
+          741.3
+        ],
+        "error_px": 12.3,
+        "holdout": false,
+        "depth_m": 36.1
+      },
+      {
+        "name": "win/Fifth/1/pair/3/br",
+        "observed": [
+          1173,
+          1042
+        ],
+        "projected": [
+          1170.4,
+          1035.7
+        ],
+        "error_px": 6.8,
+        "holdout": false,
+        "depth_m": 35.3
+      },
+      {
+        "name": "win/Fifth/2/pair/3/tl",
+        "observed": [
+          1371,
+          747
+        ],
+        "projected": [
+          1356.2,
+          743.8
+        ],
+        "error_px": 15.1,
+        "holdout": false,
+        "depth_m": 36.3
+      },
+      {
+        "name": "win/Fifth/2/pair/3/br",
+        "observed": [
+          1755,
+          1042
+        ],
+        "projected": [
+          1760.1,
+          1037.1
+        ],
+        "error_px": 7.1,
+        "holdout": false,
+        "depth_m": 35.5
+      }
+    ],
+    "used": true,
+    "why": "4th-story sash windows and 3rd-story twin openings, pairs counted from the face-medallion end pier (same series as 05). EXIF focal."
+  },
+  "flatiron_07.jpg": {
+    "R_world_to_camera_rdf": [
+      [
+        -0.7065290918320664,
+        -0.7068494452306805,
+        -0.034358465798621785
+      ],
+      [
+        0.4430814265766879,
+        -0.4039797419430087,
+        -0.8002994549057418
+      ],
+      [
+        0.5518111015716546,
+        -0.5806584451092911,
+        0.5986153007612968
+      ]
+    ],
+    "C": [
+      -64.42219712097685,
+      72.59722230735142,
+      4.752006521281475
+    ],
+    "focal_px": 7087.2,
+    "focal_source": "EXIF",
+    "size": [
+      1920,
+      2880
+    ],
+    "hfov_deg": 15.428151155572843,
+    "vfov_deg": 22.970387985869085,
+    "heading_deg_from_north": 136.45917714720804,
+    "pitch_deg": 36.77079010539789,
+    "camera_height_m": 4.752006521281475,
+    "fit_points": 8,
+    "holdout_points": 3,
+    "fit_rmse_px": 10.828589435663188,
+    "holdout_rmse_px": 8.318783143159076,
+    "all_rmse_px": 10.205494296870299,
+    "rmse_percent_of_diagonal": 0.29484321297132354,
+    "points": [
+      {
+        "name": "win/Fifth/0/pair/18/crown",
+        "observed": [
+          825,
+          451
+        ],
+        "projected": [
+          823.7,
+          449.6
+        ],
+        "error_px": 2.0,
+        "holdout": false,
+        "depth_m": 101.9
+      },
+      {
+        "name": "win/Fifth/1/pair/18/crown",
+        "observed": [
+          1085,
+          605
+        ],
+        "projected": [
+          1091.4,
+          630.5
+        ],
+        "error_px": 26.3,
+        "holdout": false,
+        "depth_m": 105.1
+      },
+      {
+        "name": "win/Fifth/2/pair/18/crown",
+        "observed": [
+          1344,
+          797
+        ],
+        "projected": [
+          1343.3,
+          800.7
+        ],
+        "error_px": 3.7,
+        "holdout": true,
+        "depth_m": 108.3
+      },
+      {
+        "name": "win/Fifth/3/pair/18/crown",
+        "observed": [
+          1584,
+          960
+        ],
+        "projected": [
+          1580.6,
+          961.0
+        ],
+        "error_px": 3.5,
+        "holdout": false,
+        "depth_m": 111.6
+      },
+      {
+        "name": "win/Fifth/4/pair/18/crown",
+        "observed": [
+          1805,
+          1113
+        ],
+        "projected": [
+          1804.7,
+          1112.4
+        ],
+        "error_px": 0.6,
+        "holdout": false,
+        "depth_m": 114.8
+      },
+      {
+        "name": "win/Fifth/0/0/16/crown",
+        "observed": [
+          791,
+          1071
+        ],
+        "projected": [
+          783.1,
+          1064.6
+        ],
+        "error_px": 10.1,
+        "holdout": false,
+        "depth_m": 94.0
+      },
+      {
+        "name": "win/Fifth/0/1/16/crown",
+        "observed": [
+          912,
+          1133
+        ],
+        "projected": [
+          904.9,
+          1138.0
+        ],
+        "error_px": 8.7,
+        "holdout": true,
+        "depth_m": 95.3
+      },
+      {
+        "name": "win/Fifth/1/0/16/crown",
+        "observed": [
+          1069,
+          1238
+        ],
+        "projected": [
+          1074.1,
+          1240.0
+        ],
+        "error_px": 5.4,
+        "holdout": false,
+        "depth_m": 97.2
+      },
+      {
+        "name": "win/Fifth/1/1/16/crown",
+        "observed": [
+          1187,
+          1306
+        ],
+        "projected": [
+          1188.0,
+          1308.6
+        ],
+        "error_px": 2.8,
+        "holdout": false,
+        "depth_m": 98.5
+      },
+      {
+        "name": "win/Fifth/2/0/16/crown",
+        "observed": [
+          1338,
+          1411
+        ],
+        "projected": [
+          1346.4,
+          1404.1
+        ],
+        "error_px": 10.9,
+        "holdout": true,
+        "depth_m": 100.4
+      },
+      {
+        "name": "win/Fifth/2/1/16/crown",
+        "observed": [
+          1453,
+          1478
+        ],
+        "projected": [
+          1453.2,
+          1468.4
+        ],
+        "error_px": 9.6,
+        "holdout": false,
+        "depth_m": 101.7
+      }
+    ],
+    "used": true,
+    "why": "Arcade crowns and 16th-story arched windows next to the scaffolded prow; EXIF focal. Model prow windows land about 1.5-2 m closer to pair 0 than the real prow (model end-pier too short), noted."
+  },
+  "flatiron_06.jpg": {
+    "R_world_to_camera_rdf": [
+      [
+        0.3232407455283872,
+        -0.9456813086856058,
+        0.03467395035083676
+      ],
+      [
+        0.8146078142438106,
+        0.2594180813206539,
+        -0.5187642702199448
+      ],
+      [
+        0.4815906242891089,
+        0.19593142036587827,
+        0.8542138778492396
+      ]
+    ],
+    "C": [
+      -49.355107553331244,
+      -16.12181421744945,
+      1.517665137078397
+    ],
+    "focal_px": 7087.2,
+    "focal_source": "EXIF",
+    "size": [
+      1920,
+      2880
+    ],
+    "hfov_deg": 15.428151155572843,
+    "vfov_deg": 22.970387985869085,
+    "heading_deg_from_north": 67.86143051039453,
+    "pitch_deg": 58.67299561338439,
+    "camera_height_m": 1.517665137078397,
+    "fit_points": 7,
+    "holdout_points": 4,
+    "fit_rmse_px": 4.050546739482343,
+    "holdout_rmse_px": 31.09200698791588,
+    "all_rmse_px": 19.025581095814502,
+    "rmse_percent_of_diagonal": 0.5496611232889226,
+    "points": [
+      {
+        "name": "win/Fifth/2/pair/18/crown",
+        "observed": [
+          162,
+          1188
+        ],
+        "projected": [
+          156.5,
+          1187.6
+        ],
+        "error_px": 5.5,
+        "holdout": false,
+        "depth_m": 87.2
+      },
+      {
+        "name": "win/Fifth/3/pair/18/crown",
+        "observed": [
+          576,
+          1065
+        ],
+        "projected": [
+          577.1,
+          1066.3
+        ],
+        "error_px": 1.7,
+        "holdout": false,
+        "depth_m": 86.1
+      },
+      {
+        "name": "win/Fifth/4/pair/18/crown",
+        "observed": [
+          1004,
+          943
+        ],
+        "projected": [
+          1008.5,
+          941.8
+        ],
+        "error_px": 4.7,
+        "holdout": false,
+        "depth_m": 85.0
+      },
+      {
+        "name": "win/Fifth/5/pair/18/crown",
+        "observed": [
+          1448,
+          819
+        ],
+        "projected": [
+          1451.0,
+          814.2
+        ],
+        "error_px": 5.7,
+        "holdout": true,
+        "depth_m": 83.9
+      },
+      {
+        "name": "win/Fifth/3/0/16/crown",
+        "observed": [
+          384,
+          1630
+        ],
+        "projected": [
+          386.4,
+          1632.2
+        ],
+        "error_px": 3.2,
+        "holdout": false,
+        "depth_m": 75.9
+      },
+      {
+        "name": "win/Fifth/3/1/16/crown",
+        "observed": [
+          588,
+          1575
+        ],
+        "projected": [
+          584.6,
+          1578.1
+        ],
+        "error_px": 4.6,
+        "holdout": true,
+        "depth_m": 75.5
+      },
+      {
+        "name": "win/Fifth/4/0/16/crown",
+        "observed": [
+          871,
+          1504
+        ],
+        "projected": [
+          873.5,
+          1499.1
+        ],
+        "error_px": 5.5,
+        "holdout": false,
+        "depth_m": 74.8
+      },
+      {
+        "name": "win/Fifth/4/1/16/crown",
+        "observed": [
+          1081,
+          1442
+        ],
+        "projected": [
+          1077.5,
+          1443.3
+        ],
+        "error_px": 3.7,
+        "holdout": false,
+        "depth_m": 74.4
+      },
+      {
+        "name": "win/Fifth/5/0/16/crown",
+        "observed": [
+          1377,
+          1361
+        ],
+        "projected": [
+          1375.0,
+          1362.0
+        ],
+        "error_px": 2.3,
+        "holdout": false,
+        "depth_m": 73.7
+      },
+      {
+        "name": "win/Fifth/5/1/16/crown",
+        "observed": [
+          1583,
+          1306
+        ],
+        "projected": [
+          1585.1,
+          1304.6
+        ],
+        "error_px": 2.5,
+        "holdout": true,
+        "depth_m": 73.3
+      },
+      {
+        "name": "oriel/Fifth/4/hood",
+        "observed": [
+          970,
+          1813
+        ],
+        "projected": [
+          920.8,
+          1775.8
+        ],
+        "error_px": 61.7,
+        "holdout": true,
+        "depth_m": 68.2
+      }
+    ],
+    "used": true,
+    "why": "Arcade crowns and 16th-story arched windows; EXIF focal. Bay index ASSUMED (centre oriel, pair 4): identical oriels at pairs 1/4/7; timestamps favour 4 but 7 is not excluded, so the position may be off by one oriel spacing (about 17 m) along Fifth."
+  }
+}

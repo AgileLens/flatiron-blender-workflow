@@ -1,0 +1,37 @@
+{
+ "question": "Photo 06 shows one of three identical oriels (Fifth pairs 1, 4, 7). Which one?",
+ "pair1": "excluded: the photo shows full arcade arches two pairs north of the oriel; under pair 1 that would be pair -1, where the prow is.",
+ "cross_photo_checks": {
+  "rooftop_rig_boom": {
+   "photo07_rigs_y_m": {
+    "R1": 12.7,
+    "R2": 3.0,
+    "R3": -1.1
+   },
+   "photo06_davit_poles_y_m": {
+    "pair4": [
+     3.7,
+     -4.3,
+     -11.9
+    ],
+    "pair7": [
+     -12.9,
+     -20.9,
+     -28.5
+    ]
+   },
+   "reading": "Under pair 4 the davit boom seen in 06 lands 0.7 m from rig R2 in photo 07 (taken 3 min earlier); under pair 7 no 06 feature lines up with any 07 rig."
+  },
+  "shadow_edge_at_arcade": {
+   "photo07_y_m": 9.5,
+   "photo06_y_m": {
+    "pair4": 2.0,
+    "pair7": -14.6
+   },
+   "reading": "The cast-shadow edge crossing the arcade should move well under 1 m in 3 minutes. Pair 4 leaves a 7.5 m mismatch (plausible given steep-view solve error along a diagonal edge); pair 7 leaves 24 m."
+  },
+  "timestamps": "05 at the centre entrance 10:56:41, 06 at 10:57:44: both pair 4 (23 m walk) and pair 7 (40 m) are plausible, so timestamps do not decide."
+ },
+ "verdict": "pair 4, moderate confidence (two independent cross-photo checks against photo 07 favour it; neither is exact).",
+ "method": "Ray-plane intersection of annotated pixels with the Fifth facade plane (x=-13.1 m, cornice x=-14.6 m) using each solved camera."
+}

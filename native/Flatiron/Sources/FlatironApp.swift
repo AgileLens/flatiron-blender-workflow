@@ -20,6 +20,8 @@ enum Receipt {
 @main
 struct FlatironApp: App {
     @State private var experience = FlatironExperience()
+    @State private var tabletop = FlatironTabletop()
+    @State private var library = PhotoLibrary()
 
     init() {
         TurntableComponent.registerComponent()
@@ -35,11 +37,11 @@ struct FlatironApp: App {
 
     var body: some SwiftUI.Scene {
         WindowGroup("Flatiron", id: "controls") {
-            FlatironControls(experience: experience)
+            FlatironControls(experience: experience, tabletop: tabletop, library: library)
         }
         .windowResizability(.contentSize)
 
-        WindowGroup("Flatiron Tabletop", id: "tabletop") { FlatironView() }
+        WindowGroup("Flatiron Tabletop", id: "tabletop") { FlatironView(tabletop: tabletop) }
             .windowStyle(.volumetric)
             .defaultSize(width: 1.2, height: 1.2, depth: 1.2, in: .meters)
 
@@ -51,13 +53,13 @@ struct FlatironApp: App {
 }
 
 struct FlatironView: View {
-    @State private var tabletop = FlatironTabletop()
+    let tabletop: FlatironTabletop
 
     var body: some View {
         RealityView { content, attachments in
             await tabletop.install(in: content)
             if let controls = attachments.entity(for: "controls") {
-                controls.position = [0, -0.52, 0.35]
+                controls.position = [0, -0.52, 0.55]
                 content.add(controls)
             }
         } attachments: {
@@ -79,10 +81,20 @@ struct FlatironView: View {
                         Button("Rotate left", systemImage: "arrow.counterclockwise") { tabletop.rotate(by: .pi / 8) }
                         Button("Rotate right", systemImage: "arrow.clockwise") { tabletop.rotate(by: -.pi / 8) }
                     }
-                    Toggle("Slow turntable · 2 minutes per turn", isOn: Binding(
+                    Toggle("Turntable", isOn: Binding(
                         get: { tabletop.turntableEnabled },
                         set: { tabletop.setTurntable($0) }))
-                    Text("Size is limited to fit this volume · Agile Lens")
+                    HStack {
+                        Text("Speed")
+                        Slider(value: Binding(get: { tabletop.turntableDegreesPerSecond },
+                                              set: { tabletop.setTurntableSpeed($0) }),
+                               in: 1...30, onEditingChanged: { editing in if !editing { tabletop.recordTurntableSpeed() } })
+                            .frame(width: 220)
+                        Text(String(format: "%.0f°/s · %.0f s per turn", tabletop.turntableDegreesPerSecond,
+                                    360 / tabletop.turntableDegreesPerSecond))
+                            .monospacedDigit().font(.caption)
+                    }
+                    Text("Resizing keeps the building standing on the table · Agile Lens")
                         .font(.caption).foregroundStyle(.secondary)
                 }
                 .disabled(!tabletop.ready)
@@ -90,6 +102,7 @@ struct FlatironView: View {
                 .glassBackgroundEffect()
             }
         }
-        .onDisappear { tabletop.setTurntable(false) }
+        .onAppear { tabletop.isOpen = true }
+        .onDisappear { tabletop.setTurntable(false); tabletop.clearAlignment(); tabletop.isOpen = false }
     }
 }

@@ -4,3 +4,4 @@ build/
 *.xcuserstate
 .build/
 .swiftpm/
+Resources/Photos/*.jpg

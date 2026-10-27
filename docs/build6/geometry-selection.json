@@ -1,0 +1,381 @@
+{
+  "baseline (build 4 geometry)": {
+    "A": {
+      "flatiron_02.jpg": 13.874201419740256,
+      "flatiron_08.jpg": 11.348144473384808,
+      "flatiron_01.jpg": 10.311056007493567,
+      "flatiron_05.jpg": 6.117128831750998,
+      "flatiron_04.jpg": 15.747332731319041,
+      "flatiron_07.jpg": 8.318783104657113,
+      "flatiron_06.jpg": 31.092007381151788
+    },
+    "B": {
+      "flatiron_02.jpg": 17.43752076656924,
+      "flatiron_08.jpg": 9.049325076185774,
+      "flatiron_01.jpg": 10.17380625419841,
+      "flatiron_05.jpg": 7.543737278227386,
+      "flatiron_04.jpg": 12.707498008956277,
+      "flatiron_07.jpg": 9.692541453499159,
+      "flatiron_06.jpg": 16.554495357126395
+    }
+  },
+  "prow radius": {
+    "free": [
+      "r_prow"
+    ],
+    "theta": {
+      "r_prow": 1.2055242075978754
+    },
+    "A": {
+      "flatiron_02.jpg": 13.665351857797226,
+      "flatiron_08.jpg": 11.599197304421661,
+      "flatiron_01.jpg": 10.380690322893066,
+      "flatiron_05.jpg": 6.117130242450905,
+      "flatiron_04.jpg": 15.747328764210208,
+      "flatiron_07.jpg": 8.31878313667886,
+      "flatiron_06.jpg": 31.092007026983104
+    },
+    "B": {
+      "flatiron_02.jpg": 17.509907683319923,
+      "flatiron_08.jpg": 9.026126826587607,
+      "flatiron_01.jpg": 10.442877025202995,
+      "flatiron_05.jpg": 7.543737184127175,
+      "flatiron_04.jpg": 12.70749843339986,
+      "flatiron_07.jpg": 9.69254175801207,
+      "flatiron_06.jpg": 16.554495449982088
+    },
+    "delta_mean_A_px": 0.015976386562496003,
+    "delta_mean_B_px": 0.04546573798129394,
+    "worst_photo_B_px": 0.2690707710045839,
+    "accepted": false
+  },
+  "SE corner radius": {
+    "free": [
+      "r_se"
+    ],
+    "theta": {
+      "r_se": 1.4372058059877821
+    },
+    "A": {
+      "flatiron_02.jpg": 13.890304991236524,
+      "flatiron_08.jpg": 13.192353941638096,
+      "flatiron_01.jpg": 10.31105538488641,
+      "flatiron_05.jpg": 6.117127859742239,
+      "flatiron_04.jpg": 15.747333012341837,
+      "flatiron_07.jpg": 8.318782849837758,
+      "flatiron_06.jpg": 31.092006905280076
+    },
+    "B": {
+      "flatiron_02.jpg": 17.425902472047245,
+      "flatiron_08.jpg": 9.050505473163343,
+      "flatiron_01.jpg": 10.17380625419841,
+      "flatiron_05.jpg": 7.543737278227386,
+      "flatiron_04.jpg": 12.707498008956277,
+      "flatiron_07.jpg": 9.692541453499159,
+      "flatiron_06.jpg": 16.554495357126395
+    },
+    "delta_mean_A_px": 0.2657587136379096,
+    "delta_mean_B_px": -0.0014911282206320209,
+    "worst_photo_B_px": 0.0011803969775687762,
+    "accepted": false
+  },
+  "SW corner radius": {
+    "free": [
+      "r_sw"
+    ],
+    "theta": {
+      "r_sw": 1.9165824364888595
+    },
+    "A": {
+      "flatiron_02.jpg": 13.874199246297403,
+      "flatiron_08.jpg": 11.29139300440962,
+      "flatiron_01.jpg": 10.31443138176388,
+      "flatiron_05.jpg": 6.117128688624495,
+      "flatiron_04.jpg": 15.74733360542901,
+      "flatiron_07.jpg": 8.318783072549023,
+      "flatiron_06.jpg": 31.092007271121663
+    },
+    "B": {
+      "flatiron_02.jpg": 17.43752606791384,
+      "flatiron_08.jpg": 9.052686763815997,
+      "flatiron_01.jpg": 10.206408611394135,
+      "flatiron_05.jpg": 7.543737230630361,
+      "flatiron_04.jpg": 12.707498839786613,
+      "flatiron_07.jpg": 9.692541513339746,
+      "flatiron_06.jpg": 16.55449531827198
+    },
+    "delta_mean_A_px": -0.007625382757495913,
+    "delta_mean_B_px": 0.005138592912860673,
+    "worst_photo_B_px": 0.03260235719572435,
+    "accepted": false
+  },
+  "Broadway bays": {
+    "free": [
+      "pitch_Broadway",
+      "prow_margin_Broadway"
+    ],
+    "theta": {
+      "pitch_Broadway": 6.313524798684126,
+      "prow_margin_Broadway": 1.731437239833231
+    },
+    "A": {
+      "flatiron_02.jpg": 12.209226057971229,
+      "flatiron_08.jpg": 11.348144473384808,
+      "flatiron_01.jpg": 10.311056007493567,
+      "flatiron_05.jpg": 6.117128831750998,
+      "flatiron_04.jpg": 15.747332731319041,
+      "flatiron_07.jpg": 8.318783104657113,
+      "flatiron_06.jpg": 31.092007381151788
+    },
+    "B": {
+      "flatiron_02.jpg": 17.43752076656924,
+      "flatiron_08.jpg": 9.049325076185774,
+      "flatiron_01.jpg": 10.17380625419841,
+      "flatiron_05.jpg": 7.543737278227386,
+      "flatiron_04.jpg": 12.707498008956277,
+      "flatiron_07.jpg": 9.692541453499159,
+      "flatiron_06.jpg": 16.554495357126395
+    },
+    "delta_mean_A_px": -0.23785362310986002,
+    "delta_mean_B_px": 0.0,
+    "worst_photo_B_px": 0.0,
+    "accepted": false
+  },
+  "Fifth bays": {
+    "free": [
+      "pitch_Fifth",
+      "prow_margin_Fifth"
+    ],
+    "theta": {
+      "pitch_Fifth": 5.613074984179762,
+      "prow_margin_Fifth": 1.9847188094173793
+    },
+    "A": {
+      "flatiron_02.jpg": 13.874201419740256,
+      "flatiron_08.jpg": 11.348144473384808,
+      "flatiron_01.jpg": 9.950720366300635,
+      "flatiron_05.jpg": 5.627376311107616,
+      "flatiron_04.jpg": 17.486012408048634,
+      "flatiron_07.jpg": 8.843336477279347,
+      "flatiron_06.jpg": 31.9520607248811
+    },
+    "B": {
+      "flatiron_02.jpg": 17.43752076656924,
+      "flatiron_08.jpg": 9.049325076185774,
+      "flatiron_01.jpg": 9.66742148093246,
+      "flatiron_05.jpg": 7.102742713550538,
+      "flatiron_04.jpg": 12.650376480958675,
+      "flatiron_07.jpg": 9.892102015511169,
+      "flatiron_06.jpg": 16.510234183231145
+    },
+    "delta_mean_A_px": 0.3247426044635482,
+    "delta_mean_B_px": -0.12131449683194973,
+    "worst_photo_B_px": 0.19956056201201022,
+    "accepted": false
+  },
+  "window/pier widths": {
+    "free": [
+      "ww",
+      "np"
+    ],
+    "theta": {
+      "ww": 1.254160013126068,
+      "np": 0.9807598536962429
+    },
+    "A": {
+      "flatiron_02.jpg": 13.874201419740256,
+      "flatiron_08.jpg": 11.348144473384808,
+      "flatiron_01.jpg": 10.311056007493567,
+      "flatiron_05.jpg": 3.806834736822242,
+      "flatiron_04.jpg": 18.559405702244177,
+      "flatiron_07.jpg": 8.727526063697564,
+      "flatiron_06.jpg": 31.794528987600053
+    },
+    "B": {
+      "flatiron_02.jpg": 17.43752076656924,
+      "flatiron_08.jpg": 9.049325076185774,
+      "flatiron_01.jpg": 10.17380625419841,
+      "flatiron_05.jpg": 5.139648225594849,
+      "flatiron_04.jpg": 11.164010844898453,
+      "flatiron_07.jpg": 9.758875170894544,
+      "flatiron_06.jpg": 16.606759166742503
+    },
+    "delta_mean_A_px": 0.23043477735501483,
+    "delta_mean_B_px": -0.546996955668412,
+    "worst_photo_B_px": 0.06633371739538596,
+    "accepted": false
+  },
+  "lot shape": {
+    "free": [
+      "lot_fifth",
+      "lot_22nd",
+      "sw_angle_deg"
+    ],
+    "theta": {
+      "lot_fifth": 60.18255480658499,
+      "lot_22nd": 26.270098779546167,
+      "sw_angle_deg": 90.1008614748279
+    },
+    "A": {
+      "flatiron_02.jpg": 13.886543293863165,
+      "flatiron_08.jpg": 11.861429509678155,
+      "flatiron_01.jpg": 10.311497355431708,
+      "flatiron_05.jpg": 6.1171292447413625,
+      "flatiron_04.jpg": 15.747345410947858,
+      "flatiron_07.jpg": 8.31878338256221,
+      "flatiron_06.jpg": 31.092007026578276
+    },
+    "B": {
+      "flatiron_02.jpg": 17.442066872733417,
+      "flatiron_08.jpg": 9.052521003876691,
+      "flatiron_01.jpg": 10.219197473125694,
+      "flatiron_05.jpg": 7.543737331364737,
+      "flatiron_04.jpg": 12.70749646959067,
+      "flatiron_07.jpg": 9.692541661719389,
+      "flatiron_06.jpg": 16.554495231074828
+    },
+    "delta_mean_A_px": 0.0751544677578817,
+    "delta_mean_B_px": 0.007590264103251698,
+    "worst_photo_B_px": 0.045391218927283816,
+    "accepted": false
+  },
+  "shaft story height": {
+    "free": [
+      "h_shaft"
+    ],
+    "theta": {
+      "h_shaft": 3.6555895433933636
+    },
+    "A": {
+      "flatiron_02.jpg": 12.010521638280899,
+      "flatiron_08.jpg": 30.643019953591335,
+      "flatiron_01.jpg": 13.34706114210194,
+      "flatiron_05.jpg": 6.117128831750998,
+      "flatiron_04.jpg": 15.747332731319041,
+      "flatiron_07.jpg": 8.454220547074828,
+      "flatiron_06.jpg": 40.03725623997653
+    },
+    "B": {
+      "flatiron_02.jpg": 16.29720559714164,
+      "flatiron_08.jpg": 7.524637616655803,
+      "flatiron_01.jpg": 10.026277737825545,
+      "flatiron_05.jpg": 7.543737278227386,
+      "flatiron_04.jpg": 12.707498008956277,
+      "flatiron_07.jpg": 9.741995923536148,
+      "flatiron_06.jpg": 23.590980322020535
+    },
+    "delta_mean_A_px": 4.221126733514,
+    "delta_mean_B_px": 0.6104868985143845,
+    "worst_photo_B_px": 7.036484964894139,
+    "accepted": false
+  },
+  "base story heights": {
+    "free": [
+      "z_ground",
+      "h_base",
+      "h_4"
+    ],
+    "theta": {
+      "z_ground": 5.543241001542068,
+      "h_base": 4.239948076786503,
+      "h_4": 4.007434015766664
+    },
+    "A": {
+      "flatiron_02.jpg": 13.805985903833133,
+      "flatiron_08.jpg": 11.56163827256234,
+      "flatiron_01.jpg": 11.226041805530913,
+      "flatiron_05.jpg": 6.04002061634332,
+      "flatiron_04.jpg": 14.298650229798584,
+      "flatiron_07.jpg": 8.316705599958338,
+      "flatiron_06.jpg": 31.101818220806056
+    },
+    "B": {
+      "flatiron_02.jpg": 17.441350506585387,
+      "flatiron_08.jpg": 9.06407445139169,
+      "flatiron_01.jpg": 10.380375939389644,
+      "flatiron_05.jpg": 7.745616025660354,
+      "flatiron_04.jpg": 13.495815258162475,
+      "flatiron_07.jpg": 9.693207498927338,
+      "flatiron_06.jpg": 16.551175190449896
+    },
+    "delta_mean_A_px": -0.06539904295212651,
+    "delta_mean_B_px": 0.1732415251148769,
+    "worst_photo_B_px": 0.7883172492061981,
+    "accepted": false
+  },
+  "crown heights": {
+    "free": [
+      "h_arcade",
+      "h_20"
+    ],
+    "theta": {
+      "h_arcade": 4.37422681786971,
+      "h_20": 3.802369037545953
+    },
+    "A": {
+      "flatiron_02.jpg": 14.128742306275234,
+      "flatiron_08.jpg": 14.622440428748556,
+      "flatiron_01.jpg": 9.989782226832189,
+      "flatiron_05.jpg": 6.117128831750998,
+      "flatiron_04.jpg": 15.747332731319041,
+      "flatiron_07.jpg": 7.760594945664051,
+      "flatiron_06.jpg": 34.9766848413502
+    },
+    "B": {
+      "flatiron_02.jpg": 16.928257074537033,
+      "flatiron_08.jpg": 7.519958277075295,
+      "flatiron_01.jpg": 10.17953837070561,
+      "flatiron_05.jpg": 7.543737278227386,
+      "flatiron_04.jpg": 12.707498008956277,
+      "flatiron_07.jpg": 9.482410827211659,
+      "flatiron_06.jpg": 19.351038913877584
+    },
+    "delta_mean_A_px": 0.9334360517775302,
+    "delta_mean_B_px": 0.07907350797545476,
+    "worst_photo_B_px": 2.796543556751189,
+    "accepted": false
+  },
+  "combined accepted": {
+    "free": [],
+    "theta": {
+      "lot_fifth": 60.198,
+      "lot_22nd": 26.2128,
+      "sw_angle_deg": 90.0,
+      "r_prow": 1.05,
+      "r_sw": 1.9,
+      "r_se": 1.7,
+      "pitch_Fifth": 5.5316,
+      "pitch_Broadway": 5.9888,
+      "prow_margin_Fifth": 1.736117409019613,
+      "prow_margin_Broadway": 2.0612625943924314,
+      "ww": 1.42,
+      "np": 0.85,
+      "z_ground": 5.6,
+      "h_base": 4.2,
+      "h_4": 4.1,
+      "h_shaft": 3.95,
+      "h_arcade": 4.1,
+      "h_20": 3.65
+    },
+    "A": {
+      "flatiron_02.jpg": 13.874201419740256,
+      "flatiron_08.jpg": 11.348144473384808,
+      "flatiron_01.jpg": 10.311056007493567,
+      "flatiron_05.jpg": 6.117128831750998,
+      "flatiron_04.jpg": 15.747332731319041,
+      "flatiron_07.jpg": 8.318783104657113,
+      "flatiron_06.jpg": 31.092007381151788
+    },
+    "B": {
+      "flatiron_02.jpg": 17.43752076656924,
+      "flatiron_08.jpg": 9.049325076185774,
+      "flatiron_01.jpg": 10.17380625419841,
+      "flatiron_05.jpg": 7.543737278227386,
+      "flatiron_04.jpg": 12.707498008956277,
+      "flatiron_07.jpg": 9.692541453499159,
+      "flatiron_06.jpg": 16.554495357126395
+    },
+    "delta_mean_A_px": 0.0,
+    "delta_mean_B_px": 0.0
+  }
+}

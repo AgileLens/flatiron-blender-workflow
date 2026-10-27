@@ -14,9 +14,9 @@ The replay is deterministic procedural Python captured from the successful MCP c
 
 ## Things to Try
 
-1. **Open `assets/flatiron_supported.blend` in Blender 5.2.1 and orbit the model** — you should see the corrected facade winding and backed medallion rings; `flatiron_accepted.blend` remains the original comparison baseline.
+1. **Open `assets/flatiron_build4.blend` in Blender 5.2.1 and orbit the model** — you should see the reference-guided build-4 facade with no floating parts; `flatiron_supported.blend` (build 3) and `flatiron_accepted.blend` (original) remain as comparison baselines.
 2. **Run `scripts/rebuild.py` in a fresh Blender GUI scene** — it should write the deterministic baseline scene and two previews under `outputs/rebuild/`.
-3. **Run `scripts/rebuild_supported.py` in another fresh scene** — it should write the winding-and-medallion-support candidate under `outputs/rebuild-supported/` without replacing the baseline.
+3. **Regenerate build 4 headless with `Blender -b --factory-startup --python scripts/flatiron_v4.py -- --out outputs/build4`, then run `scripts/audit_attachment.py` on the export** — the audit should report 0 floating parts.
 4. **Adjust a dimension or facade parameter in `scripts/flatiron_base.py`, then replay** — the generated Blender geometry should reflect the changed parameter while remaining editable.
 5. **Read `docs/token-receipt.md` before quoting the experiment cost** — you should be able to distinguish model output, cached input, and supervising-model usage rather than presenting one undifferentiated token total.
 
@@ -85,3 +85,67 @@ The candidate adds 33,984 vertices and 50,976 quads, bringing the USDZ to 25,634
 Run `scripts/rebuild_supported.py` in a fresh Blender GUI scene. It applies the winding correction and exact-topology backing helper before the final previews/save, writing to `outputs/rebuild-supported/`. `rebuild_corrected.py` still produces the normals-only version; `rebuild.py` retains the original baseline. The backing helper requires NumPy (included in the tested Blender install) and deliberately accepts only this diagnosed ring topology. SceneAudit informed the contact checks; its private source is not included.
 
 Native controls now resize around the building base rather than the viewer. Scaling around the viewer had changed size and viewing distance together, making the visible size change difficult to notice. Both tabletop and immersive views offer an optional 3°/second turntable; manual movement, scaling and reset stop it. No two-hand scale gesture is claimed.
+
+## Build 4: reference-guided facade, nothing floating
+
+[Build-4 Blender scene](assets/flatiron_build4.blend) · [Build-4 tabletop USDZ](docs/flatiron_tabletop_build4.usdz) · [Before/after renders](docs/build4/)
+
+M5 review of build 3 still showed facade pieces standing off the walls. `scripts/audit_attachment.py` (headless Blender, BVH contact graph over every loose part of the exported USDZ) measured the installed build-3 asset: **14,692 of 27,362 parts float**, 1.2 to 52 cm in front of the wall at full scale (median 15 cm; 0.13 to 5.3 mm in the tabletop). The gaps were authored in the generator, not added at export: the wall body was inset 12 cm (`ring(0,84.6,-.12,0)`) while glass, frames, sills, rustication and the later relief pass were placed from the lot line. For example, the glass was 8.5 cm proud of the wall. Build 3 backed only the medallions.
+
+`scripts/flatiron_v4.py` replaces the replayed facade with a generator that has a support contract. Every element is a closed, outward-wound solid (checked as it is built), and every facade piece is embedded in the element it hangs from. The same audit on the exported build-4 USDZ reports **0 floating parts out of 22,666**. A seeded 5 cm test block is detected at 5.0 cm, so the check works. Apple `usdchecker --arkit` passes. The file shrinks from 25.6 MB to 11.0 MB and from 483k to 344k triangles.
+
+Accuracy changes, from Wikipedia's *Flatiron Building* article and the credited input photos:
+
+- **Footprint:** a scalene right triangle, 197.5 ft on Fifth Avenue, 86 ft on 22nd Street and Broadway as the hypotenuse, with the prow rounded to about 2 m. The old model used a guessed isosceles 80 × 32 m triangle.
+- **Windows:** 18 bays on Fifth and Broadway and 8 on 22nd Street, in pairs with alternating wide and narrow piers at the documented column spacing, instead of one window every 3.05 m. Sash windows sit in 30 cm reveals with dark frames, meeting rails, sills and lintels. The rounded SW and SE corners have one window per story. The prow has three windows per story, the centre one wider.
+- **Stories:** a three-story rusticated limestone base with paired sashes in two-bay openings, storefronts, entrances with engaged columns and an oculus, and a projecting cornice. A transitional 4th story with wreaths and a roundel frieze. A meander frieze above the 6th. Three trapezoidal oriels on each long facade over the 7th–14th stories, with three windows per story. Rusticated 15th, arched 16th, transitional 17th. A double-height, double-width arcade on the 18th–19th. Square 20th-story windows with triglyphs. A main cornice with dentils and modillions projecting 1.7 m, a balustrade, a set-back attic and a penthouse.
+
+Still approximate: floor heights, pier widths, oriel projection, ornament shapes and the penthouse extent are estimates. The 1902 cowcatcher and the apex cherubs are not modeled. Colours are constant PBR values, slightly darker and warmer than the chalky build-3 stone. This is a reference-guided model, not a survey.
+
+## Build 5: reference photos, camera solves and Align
+
+[Solved cameras](docs/build5/photo-cameras.json) · [Correspondences](docs/build5/correspondences.json) · [Overlay contact sheet](docs/build5/overlay-contact-sheet.jpg) · [Licence check](docs/build5/photo-licenses.json)
+
+Each reference photo gets a pinhole camera solved against the build-4 model:
+- **Landmarks.** `scripts/photo_landmarks.py` names model points (window corners, arcade crowns, the corners where the cornices and bands meet, the entrance oculus). I picked the matching photo pixels by hand from gridded crops.
+- **Solve.** `scripts/solve_photo_cameras.py` runs perspective-n-point with SciPy's robust least squares, because OpenCV isn't installed here. It uses the EXIF focal length from the Commons record when one exists, and a street-level height prior for photos taken from the pavement. Some points are held out of each fit so the error can be checked.
+- **Checks.** `scripts/render_photo_overlays.py` renders the model from each solved camera in Blender, with glass in magenta and frames in yellow, and confirms numerically that Blender projects every landmark where the solver did (0.07 px maximum difference). The sheets in `docs/build5/` were inspected by eye.
+
+| Photo | Fit RMSE | Held-out RMSE | Focal | Used |
+|---|---:|---:|---|---|
+| 01 Underhill 1903 | 10.9 px | 10.3 px | solved | yes |
+| 02 Chris06 2013 | 16.6 px | 14.5 px | solved | yes |
+| 03 Gutierrez 2016 | n/a | n/a | EXIF | no: no unique landmark in the view |
+| 04 Epicgenius 2022 | 11.8 px | 15.7 px | EXIF 44 mm | yes |
+| 05 Epicgenius 2022 | 7.9 px | 6.1 px | EXIF 21 mm | yes |
+| 06 Epicgenius 2022 | 4.1 px | 31.1 px | EXIF 55 mm | yes, but the bay is assumed (identical oriels) |
+| 07 Epicgenius 2022 | 10.8 px | 8.3 px | EXIF 55 mm | yes |
+| 08 1909 | 3.8 px | 12.0 px | solved | yes |
+
+The overlays also show where the model is still off. In photo 02 the prow and the far end of Broadway can't both fit, and in photo 07 the model's end pier next to the prow is 1.5–2 m short. That is useful input for a later geometry pass.
+
+The native viewer (build 5) bundles all eight photos with their credits and licence links: two public-domain photos, one CC BY 3.0 and five CC BY-SA 4.0, resized. Credits are shown in the app. To repopulate `native/Flatiron/Resources/Photos`, run `scripts/download_references.py` and then `scripts/build_photo_manifest.py`. Photo binaries are not committed here.
+
+The overlay sheets in `docs/build5/` combine the credited photos with renders. The CC BY-SA ones are shared under CC BY-SA 4.0; see [photo credits](docs/photo-credits.md).
+
+## Build 6: can the photos correct the geometry?
+
+[Refit report](docs/build6/refit-report.json) · [Cross-validated selection](docs/build6/geometry-selection.json) · [Overlay contact sheet](docs/build6/overlay-contact-sheet.jpg) · [Photo 06 oriel check](docs/build6/photo06-bay-check.json)
+
+`scripts/flatiron_v5.py` is the build-4 generator with every photo-constrainable dimension exposed as a parameter. With the build-4 values it reproduces build 4's geometry exactly (hash-checked). Its layout-only mode takes about 2 ms, which is fast enough to fit. `scripts/refit_geometry.py` fits the geometry and all seven cameras jointly on the fit points only. It has priors (the surveyed lot tightly, estimates loosely), leave-one-photo-out refits, and a guard that shrinks any change driven by a single photo. `scripts/select_geometry_changes.py` then applies a parameter group only if it lowers both the within-photo held-out error and the leave-one-photo-out error, without making any photo more than 2 px worse.
+
+To give the fit more to work with, the correspondences were extended with the prow's window-column tops in photos 02 and 08 (stories 2–17; odd stories fitted, even held out).
+
+**Result: no geometry change survived cross-validation, so the model is unchanged.** Fitting every parameter lowers the fit error but raises held-out error on five of seven photos:
+
+| Photo | Held-out RMSE, build 4 geometry | Held-out RMSE, full refit |
+|---|---:|---:|
+| 01 | 10.3 px | 11.2 px |
+| 02 | 13.9 px | 12.5 px |
+| 04 | 15.7 px | 23.2 px |
+| 05 | 6.1 px | 4.4 px |
+| 06 | 31.1 px | 40.3 px |
+| 07 | 8.3 px | 9.7 px |
+| 08 | 11.3 px | 19.8 px |
+
+Tested one group at a time, the prow radius, corner radii, bay pitch and prow-end margins, window and pier widths, lot shape and each group of story heights all either leave held-out error unchanged or make it worse. The build-5 hypotheses came from reading the overlays by eye: a Broadway proportion error in photo 02, and an end pier 1.5–2 m short in photo 07. The camera solves absorb both; the fitted end-pier change is only about 0.25 m. What build 6 does improve is the two whole-building cameras (02 and 08), which the extra prow points now constrain better. Photo 06's oriel is pinned to the centre one at moderate confidence, using two cross-checks against photo 07: a rooftop rig and a cast-shadow edge.
