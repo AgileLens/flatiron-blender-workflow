@@ -6,19 +6,19 @@ An editable architectural approximation built with GPT-6 Astra, Codex and live B
 
 [Watch the 29-second showcase](https://agilelens.github.io/flatiron-blender-workflow/flatiron-showcase.mp4)
 
-## Things to try
-
-1. Open `assets/flatiron_build4.blend` in Blender 5.2.1 and orbit the reference-guided build-4 model; `flatiron_supported.blend` (build 3) and `flatiron_accepted.blend` (original) remain as comparison baselines.
-2. Regenerate build 4 headless with `Blender -b --factory-startup --python scripts/flatiron_v4.py -- --out outputs/build4`, then run `scripts/audit_attachment.py` on the export and confirm it reports 0 floating parts.
-3. Adjust the dimensions and facade parameters in `scripts/flatiron_base.py`, then replay.
-4. Use the prompts below with your own photos and compare rendered views after each revision.
-5. Read the [token receipt](docs/token-receipt.md) before quoting the cost.
-
-## Replay
+## Quickstart
 
 In Blender's Scripting workspace, open `scripts/rebuild.py` and run it. It clears the active scene, so use a new file. The script writes the rebuilt scene and two previews under `outputs/rebuild/`. Tested baseline: Blender 5.2.1 LTS on macOS, live GUI. Headless rendering crashed on the original Mac; a live GUI process worked.
 
 The replay is deterministic procedural Python captured from the successful MCP calls. It does not rerun a language model or guarantee what a fresh model session will produce. The accepted `.blend` is the comparison control.
+
+## Things to Try
+
+1. **Open `assets/flatiron_build4.blend` in Blender 5.2.1 and orbit the model** — you should see the reference-guided build-4 facade with no floating parts; `flatiron_supported.blend` (build 3) and `flatiron_accepted.blend` (original) remain as comparison baselines.
+2. **Run `scripts/rebuild.py` in a fresh Blender GUI scene** — it should write the deterministic baseline scene and two previews under `outputs/rebuild/`.
+3. **Regenerate build 4 headless with `Blender -b --factory-startup --python scripts/flatiron_v4.py -- --out outputs/build4`, then run `scripts/audit_attachment.py` on the export** — the audit should report 0 floating parts.
+4. **Adjust a dimension or facade parameter in `scripts/flatiron_base.py`, then replay** — the generated Blender geometry should reflect the changed parameter while remaining editable.
+5. **Read `docs/token-receipt.md` before quoting the experiment cost** — you should be able to distinguish model output, cached input, and supervising-model usage rather than presenting one undifferentiated token total.
 
 ## Agent workflow
 
@@ -37,6 +37,8 @@ The original successful pass used Astra medium. Claude Sonnet 5 supervised the w
 ## Credits and reuse
 
 Code: MIT. Generated model: CC BY-SA 4.0. Photo-derived presentation media: CC BY-SA 4.0. [Reference photo credits](docs/photo-credits.md). No private session logs or FSLA production assets are included.
+
+Maintained by **Agile Lens**.
 
 ## Verification
 
