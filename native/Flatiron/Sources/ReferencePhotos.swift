@@ -122,9 +122,9 @@ struct PhotoPanel: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
                 HStack {
-                    Button("Previous", systemImage: "chevron.left") { library.step(-1); status = nil }
+                    Button("Previous", systemImage: "chevron.left") { experience.clearAlignment(); tabletop.clearAlignment(); library.step(-1); status = nil }
                     Text("\(library.index + 1) of \(library.photos.count)").monospacedDigit()
-                    Button("Next", systemImage: "chevron.right") { library.step(1); status = nil }
+                    Button("Next", systemImage: "chevron.right") { experience.clearAlignment(); tabletop.clearAlignment(); library.step(1); status = nil }
                 }
                 Text(photo.title).font(.callout).lineLimit(2)
                 Text("Photo: \(photo.credit)").font(.caption)
@@ -145,9 +145,9 @@ struct PhotoPanel: View {
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     HStack {
-                        Button("Align walkaround") { Task { status = await experience.align(to: photo, library: library) } }
+                        Button("Align walkaround") { Task { if let result = await experience.align(to: photo, library: library) { status = result } } }
                             .disabled(!(experience.ready && experience.positioned))
-                        Button("Align tabletop") { Task { status = await tabletop.align(to: photo, library: library) } }
+                        Button("Align tabletop") { Task { if let result = await tabletop.align(to: photo, library: library) { status = result } } }
                             .disabled(!(tabletop.ready && tabletop.isOpen))
                     }
                     Text("Walkaround moves you to where the photographer stood, facing the same way. Tabletop turns the model so the photo's view faces you.")

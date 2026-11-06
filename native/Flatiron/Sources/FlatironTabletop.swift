@@ -18,6 +18,7 @@ final class FlatironTabletop {
     @ObservationIgnored private let root = Entity()
     @ObservationIgnored private let stage = Entity()
     @ObservationIgnored private var model: Entity?
+    @ObservationIgnored private let alignmentRequest = PhotoAlignmentRequest()
     @ObservationIgnored private var photoOverlay: ModelEntity?
     @ObservationIgnored private var alignedPhoto: ReferencePhoto?
 
@@ -117,10 +118,14 @@ final class FlatironTabletop {
     /// A volume cannot see the viewer's head, so instead of moving the viewer we turn the upright
     /// model so the photo camera's heading points into the volume from its front, and lay the photo
     /// over it at the model's scale, anchored at a solved landmark.
-    func align(to photo: ReferencePhoto, library: PhotoLibrary) async -> String {
+    func align(to photo: ReferencePhoto, library: PhotoLibrary) async -> String? {
         guard ready, let camera = photo.camera else { return "Align needs a solved photo and an open tabletop." }
         let texture: TextureResource
-        do { texture = try await library.texture(for: photo) } catch { return "Photo could not load: \(error.localizedDescription)" }
+        do {
+            guard let loaded = try await alignmentRequest.load({ try await library.texture(for: photo) }) else { return nil }
+            texture = loaded
+        } catch { return "Photo could not load: \(error.localizedDescription)" }
+        guard ready, library.current?.id == photo.id else { return nil }
         setTurntable(false)
         clearAlignment()
         root.orientation = simd_quatf(angle: PhotoAlignMath.tabletopYaw(cameraForward: camera.forward), axis: [0, 1, 0])
@@ -171,6 +176,7 @@ final class FlatironTabletop {
     }
 
     func clearAlignment() {
+        alignmentRequest.invalidate()
         photoOverlay?.removeFromParent()
         photoOverlay = nil
         alignedPhoto = nil

@@ -26,6 +26,7 @@ final class FlatironExperience {
     @ObservationIgnored private let buildingTarget = Entity()
     @ObservationIgnored private var assetBounds: BoundingBox?
     @ObservationIgnored private var drag = WorldDrag()
+    @ObservationIgnored private let alignmentRequest = PhotoAlignmentRequest()
     @ObservationIgnored private var photoOverlay: ModelEntity?
     private(set) var alignedPhotoID: String?
 
@@ -212,11 +213,15 @@ final class FlatironExperience {
     /// position and its heading turns onto the viewer's current heading. Full source scale.
     /// The photo is shown as a world-fixed plane on the camera's view axis, 2.5 m ahead, sized to
     /// the solved field of view, so it lines up with the model when you look the way the camera did.
-    func align(to photo: ReferencePhoto, library: PhotoLibrary) async -> String {
+    func align(to photo: ReferencePhoto, library: PhotoLibrary) async -> String? {
         guard ready, let camera = photo.camera else { return "Align needs a solved photo and a loaded walkaround." }
-        guard let pose = tracking.pose() else { return "Waiting for head tracking; try Align again in a moment." }
         let texture: TextureResource
-        do { texture = try await library.texture(for: photo) } catch { return "Photo could not load: \(error.localizedDescription)" }
+        do {
+            guard let loaded = try await alignmentRequest.load({ try await library.texture(for: photo) }) else { return nil }
+            texture = loaded
+        } catch { return "Photo could not load: \(error.localizedDescription)" }
+        guard ready, library.current?.id == photo.id else { return nil }
+        guard let pose = tracking.pose() else { return "Waiting for head tracking; try Align again in a moment." }
         setTurntable(false)
         clearAlignment()
         drag.end()
@@ -254,6 +259,7 @@ final class FlatironExperience {
     }
 
     func clearAlignment() {
+        alignmentRequest.invalidate()
         photoOverlay?.removeFromParent()
         photoOverlay = nil
         alignedPhotoID = nil
@@ -363,7 +369,7 @@ struct FlatironControls: View {
         library.select(value("-FlatironSelfTestPhoto").flatMap(Int.init) ?? 1)
         if let photo = library.current, photo.used {
             let status = await tabletop.align(to: photo, library: library)
-            Receipt.write("selftest-aligned", ["photo": photo.id, "status": status])
+            Receipt.write("selftest-aligned", ["photo": photo.id, "status": status ?? "Alignment cancelled"])
         }
     }
 
