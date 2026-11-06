@@ -122,9 +122,9 @@ struct PhotoPanel: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
                 HStack {
-                    Button("Previous", systemImage: "chevron.left") { library.step(-1); status = nil }
+                    Button("Previous", systemImage: "chevron.left") { experience.clearAlignment(); tabletop.clearAlignment(); library.step(-1); status = nil }
                     Text("\(library.index + 1) of \(library.photos.count)").monospacedDigit()
-                    Button("Next", systemImage: "chevron.right") { library.step(1); status = nil }
+                    Button("Next", systemImage: "chevron.right") { experience.clearAlignment(); tabletop.clearAlignment(); library.step(1); status = nil }
                 }
                 Text(photo.title).font(.callout).lineLimit(2)
                 Text("Photo: \(photo.credit)").font(.caption)
@@ -167,11 +167,6 @@ struct PhotoPanel: View {
                 }
                 if let status { Text(status).font(.caption).foregroundStyle(.secondary) }
             }
-        }
-        .onChange(of: library.index) { _, _ in
-            experience.clearAlignment()
-            tabletop.clearAlignment()
-            status = nil
         }
     }
 }
