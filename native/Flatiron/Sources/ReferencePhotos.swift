@@ -145,9 +145,9 @@ struct PhotoPanel: View {
                             .font(.caption).foregroundStyle(.secondary)
                     }
                     HStack {
-                        Button("Align walkaround") { Task { status = await experience.align(to: photo, library: library) } }
+                        Button("Align walkaround") { Task { if let result = await experience.align(to: photo, library: library) { status = result } } }
                             .disabled(!(experience.ready && experience.positioned))
-                        Button("Align tabletop") { Task { status = await tabletop.align(to: photo, library: library) } }
+                        Button("Align tabletop") { Task { if let result = await tabletop.align(to: photo, library: library) { status = result } } }
                             .disabled(!(tabletop.ready && tabletop.isOpen))
                     }
                     Text("Walkaround moves you to where the photographer stood, facing the same way. Tabletop turns the model so the photo's view faces you.")
@@ -167,6 +167,11 @@ struct PhotoPanel: View {
                 }
                 if let status { Text(status).font(.caption).foregroundStyle(.secondary) }
             }
+        }
+        .onChange(of: library.index) { _, _ in
+            experience.clearAlignment()
+            tabletop.clearAlignment()
+            status = nil
         }
     }
 }
